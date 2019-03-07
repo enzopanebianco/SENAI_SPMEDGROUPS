@@ -45,7 +45,7 @@ create table Situacao(
 );
 
 create table Agendamentos(
-	ID int primary key
+	ID int identity primary key
 	,ID_Paciente int foreign key references Pacientes(ID) not null
 	,ID_Medico int foreign key references Medicos(ID) not null
 	,DT_Agendamento date not null
