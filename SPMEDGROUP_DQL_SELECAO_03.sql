@@ -5,7 +5,7 @@ select COUNT(ID) as QUANTIDADE_DE_USUÁRIOS from Usuarios;
 ---------------------------------------------------------
 
 
- ---TRAZ O PACIENTE E A SITUACAO DO AGENDAMENTO E DATA ----|
+ ---TRAZ O PACIENTE E A SITUACAO DO AGENDAMENTO E DATA -----|
 select Usuarios.Nome , Agendamentos.ID_Medico,Situacao.Nome
 ,Agendamentos.DT_Agendamento							  --|						      
 from Agendamentos join Pacientes						  --|
@@ -54,8 +54,44 @@ alter view vwPacientes
   on Usuarios.ID_Clinica = Clinicas.ID
   ----------------------------------------------------------------------
 
-  
-  
-   
+---------Retorna todos os Usuários mesmo que não sejam Médicos----------
+  select Usuarios.Nome as Usuários , Medicos.ID_Usuario as Médicos
+  from Usuarios left join Medicos
+  on Medicos.ID_Usuario = Usuarios.ID 
+  ----------------------------------------------------------------------
+ 
+---------Retorna todos os Usuários mesmo que não sejam Pacientes----------
+  Create Procedure Buscas
+ as
+  begin
+	select Usuarios.Nome as Usuários , Pacientes.ID_Usuario as Pacientes
+	from Usuarios left join Pacientes
+	on Pacientes.ID_Usuario = Usuarios.ID
+  end
+  --------------
+   exec Buscas
+  ----------------------------------------------------------------------
+
+  -----Índice Agendamento Clusterizado----------------------------------
+  CREATE CLUSTERED INDEX Cluster
+    ON dbo.Agendamentos (ID);
+------------------------------------------------------------------------
+select Agendamentos.DT_Agendamento 
+from Agendamentos
 
 
+-------------------------------------------
+CREATE PROCEDURE CALCULAR_IDADE_PACIENTE
+	@ID_PACIENTE INT
+AS
+BEGIN
+	DECLARE @DATA_NASCIMENTO DATETIME
+	SET @DATA_NASCIMENTO = (SELECT DT_NASCIMENTO FROM PACIENTES WHERE ID = @ID_PACIENTE)
+
+	SELECT FLOOR(DATEDIFF(DAY, @DATA_NASCIMENTO, GETDATE()) / 365.25) AS IDADE_DO_PACIENTE
+END
+--------------------------------------------
+EXEC CALCULAR_IDADE_PACIENTE 11
+--------------------------------------------
+
+select * from Pacientes
