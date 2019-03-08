@@ -13,7 +13,7 @@ create table Usuarios(
 	,Nome varchar(255) not null
 	,Email varchar(255) not null
 	,Senha varchar(255) not null
-	,Tipo_Usuario bit not null
+	,Tipo_Usuario varchar(255) not null
 	,ID_Clinica int foreign key references Clinicas(ID)
 );
 
