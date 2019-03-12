@@ -1,0 +1,330 @@
+{
+	"id": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+	"name": "SPMEDGROUP",
+	"description": "",
+	"order": [
+		"cf797ad3-5d13-d6a5-e52c-45120d1f33ff",
+		"a7de06ca-8980-b621-f891-8a24fd8a075b",
+		"9123e629-2c71-84bb-1991-ce3ef7827cfb",
+		"b670715e-f2c0-a3cb-c035-b24dac92f7bc",
+		"b44563b6-a063-2b93-5e5f-b13b642601c2",
+		"1fd5d52a-4366-edb5-024d-7d34c7af5c73",
+		"424aff50-855e-bdbd-aa98-e6198632389c",
+		"813828d7-4063-446a-1751-a891006ae7a2",
+		"7fc0a477-1df5-65a3-213c-7206d6fad770",
+		"0f09b284-e950-0347-e69e-9c86c08b81c8"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1551986366781,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "0f09b284-e950-0347-e69e-9c86c08b81c8",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1IiwiZW1haWwiOiJyaWNhcmRvLmxlbW9zQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE1NTI0MTk4NzIsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.21Sdlsympi9fW_Yb8bBxHyvRIuZrCAPk99Z0SeQgoko\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1IiwiZW1haWwiOiJyaWNhcmRvLmxlbW9zQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE1NTI0MTk4NzIsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.21Sdlsympi9fW_Yb8bBxHyvRIuZrCAPk99Z0SeQgoko",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/agendamentos/medicos",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5000/api/agendamentos/medicos",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1552418279979,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "1fd5d52a-4366-edb5-024d-7d34c7af5c73",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyIiwiZW1haWwiOiJsaWdpYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTUyMDczNjk0LCJpc3MiOiJTcG1lZGdyb3VwLldlYkFwaSIsImF1ZCI6IlNwbWVkZ3JvdXAuV2ViQXBpIn0.NdJLuhyaN_JuUmN05SkFw7emci5pByWy4btBsio0D4g\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyIiwiZW1haWwiOiJsaWdpYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTUyMDczNjk0LCJpc3MiOiJTcG1lZGdyb3VwLldlYkFwaSIsImF1ZCI6IlNwbWVkZ3JvdXAuV2ViQXBpIn0.NdJLuhyaN_JuUmN05SkFw7emci5pByWy4btBsio0D4g",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/usuarios",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5000/api/usuarios",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1552072898446,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"Nome\":\"Enzaoo\" \n\t,\"Email\":\"Enzawoo@e.com\"\n\t,\"Senha\":\"123\"\n\t,\"TipoUsuario\":\"1\" \n\t,\"IdClinica\":\"1\"\n}"
+		},
+		{
+			"id": "424aff50-855e-bdbd-aa98-e6198632389c",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJlbnpvQGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMCIsImV4cCI6MTU1MjA3NTEyMiwiaXNzIjoiU3BtZWRncm91cC5XZWJBcGkiLCJhdWQiOiJTcG1lZGdyb3VwLldlYkFwaSJ9.SdvOuOskPs_VRPTiVXh4VfzcOTdaeaZoCdezAqQtTg4\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJlbnpvQGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMCIsImV4cCI6MTU1MjA3NTEyMiwiaXNzIjoiU3BtZWRncm91cC5XZWJBcGkiLCJhdWQiOiJTcG1lZGdyb3VwLldlYkFwaSJ9.SdvOuOskPs_VRPTiVXh4VfzcOTdaeaZoCdezAqQtTg4",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/clinicas",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5000/api/clinicas",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1552073439045,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "7fc0a477-1df5-65a3-213c-7206d6fad770",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMSIsImVtYWlsIjoiQWxlQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI0MTk3MjUsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.aIgEODcmN_M23L5_OPeRZq5q9UKjeGskyvtHKLtHMeU\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMSIsImVtYWlsIjoiQWxlQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI0MTk3MjUsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.aIgEODcmN_M23L5_OPeRZq5q9UKjeGskyvtHKLtHMeU",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/agendamentos/pacientes",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5000/api/agendamentos/pacientes",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1552418007917,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"id\":\"9\"\n\t,\n\t\"idpaciente\":\"2\"\n\t,\"idmedico\":\"2\"\n\t,\"dtagendamento\":\"2019-03-09\"\n\t,\"descricao\":\"aa\"\n\t,\"idsituacao\":\"3\"\n}"
+		},
+		{
+			"id": "813828d7-4063-446a-1751-a891006ae7a2",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMSIsImVtYWlsIjoiQWxlQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI0MTk3MjUsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.aIgEODcmN_M23L5_OPeRZq5q9UKjeGskyvtHKLtHMeU\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMSIsImVtYWlsIjoiQWxlQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI0MTk3MjUsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.aIgEODcmN_M23L5_OPeRZq5q9UKjeGskyvtHKLtHMeU",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/agendamentos/pacientes",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1552417996465,
+			"name": "http://localhost:5000/api/agendamentos",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"responses": [],
+			"rawModeData": "{\n\t\"id\":\"9\"\n\t,\n\t\"idpaciente\":\"2\"\n\t,\"idmedico\":\"2\"\n\t,\"dtagendamento\":\"2019-03-09\"\n\t,\"descricao\":\"aa\"\n\t,\"idsituacao\":\"3\"\n}"
+		},
+		{
+			"id": "9123e629-2c71-84bb-1991-ce3ef7827cfb",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/usuarios",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5000/api/usuarios",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1551988549101,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\n\t\"Nome\":\"Enzaoo\" \n\t,\"Email\":\"Enzaoo@e.com\"\n\t,\"Senha\":\"123\"\n\t,\"TipoUsuario\":\"true\" \n\t,\"IdClinica\":\"1\"\n}"
+		},
+		{
+			"id": "a7de06ca-8980-b621-f891-8a24fd8a075b",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5000/api/medicos",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:5000/api/medicos",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1551986420290,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b44563b6-a063-2b93-5e5f-b13b642601c2",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5000/api/login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1552068019993,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"email\":\"enzo@e.com\"\n    ,\"senha\":\"2121\"\n}"
+		},
+		{
+			"id": "b670715e-f2c0-a3cb-c035-b24dac92f7bc",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:5000/api/agendamentos",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:5000/api/agendamentos",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1551989445196,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"id\":\"7\"\n\t,\"idpaciente\":\"16\"\n\t,\"idmedico\":\"2\"\n\t,\"dtagendamento\":\"2019-02-09\"\n\t,\"descricao\":\"N/D\"\n\t,\"idsituacao\":\"3\"\n}"
+		},
+		{
+			"id": "cf797ad3-5d13-d6a5-e52c-45120d1f33ff",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:5000/api/pacientes",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1551986385586,
+			"name": "http://localhost:5000/api/pacientes",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"responses": []
+		}
+	]
+}
