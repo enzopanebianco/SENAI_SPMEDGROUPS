@@ -10,5 +10,6 @@ namespace Senai_Spmedgroups_Web_Api.Interfaces
     {
         List<Medicos> Listar();
         Medicos Procurar(int id);
+        
     }
 }

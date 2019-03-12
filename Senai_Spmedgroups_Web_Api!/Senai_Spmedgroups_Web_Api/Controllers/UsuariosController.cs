@@ -35,7 +35,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             catch (Exception ex)
             {
                 return BadRequest();
-                throw;
+                
             }
         }
     }

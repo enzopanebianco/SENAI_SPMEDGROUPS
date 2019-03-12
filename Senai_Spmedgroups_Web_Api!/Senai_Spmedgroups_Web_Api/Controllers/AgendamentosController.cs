@@ -79,7 +79,10 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(new
+                {
+                    mensagem = "Paciente não Encontrado"
+                });
             }
         }
         [HttpGet]
@@ -97,7 +100,11 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+
+                return BadRequest(new
+                {
+                    mensagem = "Médico não Encontrado"
+                });
             }
         }
         [Authorize(Roles = "0")]

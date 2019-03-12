@@ -64,7 +64,10 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(new
+                {
+                    mensagem = "Usuário não Encontrado"
+                });
             }
         }
     }
