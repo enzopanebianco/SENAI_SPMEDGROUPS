@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using Senai_Spmedgroups_Web_Api.Domains;
 using Senai_Spmedgroups_Web_Api.Interfaces;
 using Senai_Spmedgroups_Web_Api.Repositories;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace Senai_Spmedgroups_Web_Api.Controllers
 {
@@ -29,7 +31,9 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
         {
             try
             {
+
                 UsuarioRepository.Cadastrar(usuarios);
+               
                 return Ok();
             }
             catch (Exception ex)
@@ -38,5 +42,6 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 
             }
         }
+        
     }
 }

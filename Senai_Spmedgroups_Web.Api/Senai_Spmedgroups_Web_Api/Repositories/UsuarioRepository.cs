@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Senai_Spmedgroups_Web_Api.Domains;
 using Senai_Spmedgroups_Web_Api.Interfaces;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,8 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
+       
+        
         public Usuarios Buscar(string email, string senha)
         {
             using (SpmedContext ctx = new SpmedContext())

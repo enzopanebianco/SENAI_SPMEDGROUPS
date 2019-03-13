@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "07708059b39f7107dba9beeb82ecdbe71d7d35e6"
+    "signature": "c9592166980b71a280c6dff578f73535a962733a"
   },
   "compilationOptions": {
     "defines": [
@@ -31,6 +31,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
+          "Sendgrid": "9.10.0",
+          "SendGrid.Net40": "5.1.0",
           "Swashbuckle.AspNetCore": "4.0.1",
           "Swashbuckle.AspNetCore.Swagger": "4.0.1"
         },
@@ -42,6 +44,36 @@
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
+      "Microsoft.Bcl/1.1.8": {
+        "dependencies": {
+          "Microsoft.Bcl.Build": "1.0.14"
+        }
+      },
+      "Microsoft.Bcl.Async/1.0.168": {
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.8"
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Threading.Tasks.Extensions.Desktop.dll": {
+            "assemblyVersion": "1.0.168.0",
+            "fileVersion": "1.0.168.0"
+          },
+          "lib/net40/Microsoft.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "1.0.12.0",
+            "fileVersion": "1.0.168.0"
+          },
+          "lib/net40/Microsoft.Threading.Tasks.dll": {
+            "assemblyVersion": "1.0.12.0",
+            "fileVersion": "1.0.168.0"
+          }
+        },
+        "compile": {
+          "lib/net40/Microsoft.Threading.Tasks.Extensions.Desktop.dll": {},
+          "lib/net40/Microsoft.Threading.Tasks.Extensions.dll": {},
+          "lib/net40/Microsoft.Threading.Tasks.dll": {}
+        }
+      },
+      "Microsoft.Bcl.Build/1.0.14": {},
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -380,6 +412,49 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "Sendgrid/9.10.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.1.1",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.10.0.0",
+            "fileVersion": "9.10.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
+      "SendGrid.Net40/5.1.0": {
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.8",
+          "Microsoft.Bcl.Async": "1.0.168",
+          "Microsoft.Bcl.Build": "1.0.14",
+          "SendGrid.SmtpApi": "1.1.3"
+        },
+        "runtime": {
+          "lib/net40/SendGridMail.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/net40/SendGridMail.dll": {}
+        }
+      },
+      "SendGrid.SmtpApi/1.1.3": {
+        "runtime": {
+          "lib/net40/SendGrid.SmtpApi.dll": {
+            "assemblyVersion": "1.1.3.0",
+            "fileVersion": "1.1.3.0"
+          }
+        },
+        "compile": {
+          "lib/net40/SendGrid.SmtpApi.dll": {}
         }
       },
       "Swashbuckle.AspNetCore/4.0.1": {
@@ -3539,6 +3614,27 @@
       "path": "microsoft.aspnetcore.razor.design/2.1.2",
       "hashPath": "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512"
     },
+    "Microsoft.Bcl/1.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MSXeIkTHuNHRHZCfVtLERRl4Hlg7Gfgutfl5H1kQIprMJ1OT//xescas5S8vSe3Z2lJ+96KG8u7wM/0bNt8X3Q==",
+      "path": "microsoft.bcl/1.1.8",
+      "hashPath": "microsoft.bcl.1.1.8.nupkg.sha512"
+    },
+    "Microsoft.Bcl.Async/1.0.168": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gnEeAJTwzGgyeT6HkRorILuo8QhAZznkyIbgX0xAlTKB7H5iIS4n62WrQZoINNBpYLIC5Npiikqy7SNvxd3ESg==",
+      "path": "microsoft.bcl.async/1.0.168",
+      "hashPath": "microsoft.bcl.async.1.0.168.nupkg.sha512"
+    },
+    "Microsoft.Bcl.Build/1.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TVFi0klpPcvqtP98eOY61ULPBw3AFcwrnuMAAdkhbYubMkQa/THPJWSYXoDSY/7uh2oUDCn41Nd+3EpUNzbZpQ==",
+      "path": "microsoft.bcl.build/1.0.14",
+      "hashPath": "microsoft.bcl.build.1.0.14.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3664,6 +3760,27 @@
       "sha512": "sha512-KuqDbPzjOWbUM6gPMbkvdhlQ10roQAoMM7mNZ8hcY/fH+9J4Zc+qT8dLWoNzGyr0OrxQVdZdbSjy/fxwoICgGg==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Sendgrid/9.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i6208SyPFvZ5bJRUbOimhBF/axjhiS4xQX71+KWPhzWUJGHbGX+yfwPrUg5y0D3deQlQz94mHeWF6AGHSZ81jQ==",
+      "path": "sendgrid/9.10.0",
+      "hashPath": "sendgrid.9.10.0.nupkg.sha512"
+    },
+    "SendGrid.Net40/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uLrJOw21ykVAlwFHlk/8+IwoZG5qfleNW2GUZNWZQhSU3dZrpTzJ1qcJlFHsMonrlCbd9+8NGHqu8Fil1pDFNg==",
+      "path": "sendgrid.net40/5.1.0",
+      "hashPath": "sendgrid.net40.5.1.0.nupkg.sha512"
+    },
+    "SendGrid.SmtpApi/1.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vK9Hq8tvn4LJsUgattQZC4scY9nHI3J3nuN23lMlx7LSjGGMCzdfV4AqZfht+eEBM780Zok1eDXsn5iPNivZug==",
+      "path": "sendgrid.smtpapi/1.1.3",
+      "hashPath": "sendgrid.smtpapi.1.1.3.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/4.0.1": {
       "type": "package",

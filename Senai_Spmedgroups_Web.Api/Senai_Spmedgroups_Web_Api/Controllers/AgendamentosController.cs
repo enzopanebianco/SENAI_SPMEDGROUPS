@@ -59,8 +59,8 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 return BadRequest();
             }
         }
-        
 
+        [Authorize(Roles = "0,1")]
         [HttpGet]
 
         [Route("pacientes")]
@@ -85,6 +85,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 });
             }
         }
+        [Authorize(Roles = "0,2")]
         [HttpGet]
         [Route("medicos")]
         
