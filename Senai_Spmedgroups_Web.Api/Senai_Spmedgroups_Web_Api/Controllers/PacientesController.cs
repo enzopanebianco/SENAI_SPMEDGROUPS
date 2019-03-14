@@ -52,5 +52,20 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 });
             }
         }
+        
+        [Authorize(Roles ="0")]
+        [HttpDelete]
+         public  IActionResult Delete(Pacientes pacientes)
+        {
+            try
+            {
+                PacienteRepository.Deletar(pacientes);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
     }
 }

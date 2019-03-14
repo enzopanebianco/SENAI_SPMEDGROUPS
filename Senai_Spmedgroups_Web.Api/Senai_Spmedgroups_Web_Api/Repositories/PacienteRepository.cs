@@ -18,6 +18,15 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             }
         }
 
+        public void Deletar(Pacientes pacientes)
+        {
+            using (SpmedContext ctx = new SpmedContext())
+            {
+                ctx.Pacientes.Remove(pacientes);
+                ctx.SaveChanges();
+            }
+        }
+
         public List<Pacientes> Listar()
         {
             using (SpmedContext ctx  = new SpmedContext())

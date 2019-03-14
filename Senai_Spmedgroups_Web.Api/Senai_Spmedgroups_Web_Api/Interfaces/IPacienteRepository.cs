@@ -11,5 +11,6 @@ namespace Senai_Spmedgroups_Web_Api.Interfaces
         List<Pacientes> Listar();
         Pacientes Procurar(int id);
         void Cadastrar(Pacientes pacientes);
+        void Deletar(Pacientes pacientes);
     }
 }
