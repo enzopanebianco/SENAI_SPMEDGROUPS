@@ -97,7 +97,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 Medicos medicos = MedicoRepository.Procurar(usuariosId);
                 
 
-                return Ok(AgendamentoRepository.ListarMedico(usuariosId));
+                return Ok(AgendamentoRepository.ListarMedico(medicos.Id));
             }
             catch (Exception ex)
             {

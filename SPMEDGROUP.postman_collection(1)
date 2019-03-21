@@ -2,90 +2,118 @@
 	"id": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 	"name": "SPMEDGROUP",
 	"description": "",
-	"order": [
-		"cf797ad3-5d13-d6a5-e52c-45120d1f33ff",
-		"a7de06ca-8980-b621-f891-8a24fd8a075b",
-		"9123e629-2c71-84bb-1991-ce3ef7827cfb",
-		"b670715e-f2c0-a3cb-c035-b24dac92f7bc",
-		"b44563b6-a063-2b93-5e5f-b13b642601c2",
-		"1fd5d52a-4366-edb5-024d-7d34c7af5c73",
-		"424aff50-855e-bdbd-aa98-e6198632389c",
-		"813828d7-4063-446a-1751-a891006ae7a2",
-		"7fc0a477-1df5-65a3-213c-7206d6fad770",
-		"0f09b284-e950-0347-e69e-9c86c08b81c8"
+	"order": [],
+	"folders": [
+		{
+			"name": "Clínica",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"order": [
+				"424aff50-855e-bdbd-aa98-e6198632389c"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "74955764-7d82-62f9-dd61-41c0309b51c9"
+		},
+		{
+			"name": "Login",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"order": [
+				"b44563b6-a063-2b93-5e5f-b13b642601c2"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "18726822-6eee-e445-2604-9eecbdb633fb"
+		},
+		{
+			"name": "Medicos",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"order": [
+				"a7de06ca-8980-b621-f891-8a24fd8a075b"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "8b09f69e-cc37-2ca0-bde2-c8667827040b"
+		},
+		{
+			"name": "Pacientes",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"order": [
+				"cf797ad3-5d13-d6a5-e52c-45120d1f33ff"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "625b54cf-2816-fac6-4221-1b08f6fb6aef"
+		},
+		{
+			"name": "Usuarios",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"order": [
+				"9123e629-2c71-84bb-1991-ce3ef7827cfb"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "04c0dd22-4c8d-8605-43e0-cf829fe9d804"
+		},
+		{
+			"name": "agendamentos",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"order": [
+				"b670715e-f2c0-a3cb-c035-b24dac92f7bc",
+				"813828d7-4063-446a-1751-a891006ae7a2",
+				"7fc0a477-1df5-65a3-213c-7206d6fad770",
+				"0f09b284-e950-0347-e69e-9c86c08b81c8"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "1e6e1662-51e9-285e-cd5a-05dddf11a7ff"
+		}
 	],
-	"folders": [],
-	"folders_order": [],
+	"folders_order": [
+		"625b54cf-2816-fac6-4221-1b08f6fb6aef",
+		"8b09f69e-cc37-2ca0-bde2-c8667827040b",
+		"1e6e1662-51e9-285e-cd5a-05dddf11a7ff",
+		"04c0dd22-4c8d-8605-43e0-cf829fe9d804",
+		"18726822-6eee-e445-2604-9eecbdb633fb",
+		"74955764-7d82-62f9-dd61-41c0309b51c9"
+	],
 	"timestamp": 1551986366781,
 	"owner": 0,
 	"public": false,
 	"requests": [
 		{
 			"id": "0f09b284-e950-0347-e69e-9c86c08b81c8",
-			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1IiwiZW1haWwiOiJyaWNhcmRvLmxlbW9zQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE1NTI0MTk4NzIsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.21Sdlsympi9fW_Yb8bBxHyvRIuZrCAPk99Z0SeQgoko\n",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMCIsImVtYWlsIjoiaGVucmlxdWVAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU4NjM0OCwiaXNzIjoiU3BtZWRncm91cC5XZWJBcGkiLCJhdWQiOiJTcG1lZGdyb3VwLldlYkFwaSJ9.wceCmktJaH0s3Gy5TeAr0Eto2Nu3fdTrzr50lNqW2PI\n",
 			"headerData": [
 				{
 					"key": "Authorization",
-					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1IiwiZW1haWwiOiJyaWNhcmRvLmxlbW9zQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE1NTI0MTk4NzIsImlzcyI6IlNwbWVkZ3JvdXAuV2ViQXBpIiwiYXVkIjoiU3BtZWRncm91cC5XZWJBcGkifQ.21Sdlsympi9fW_Yb8bBxHyvRIuZrCAPk99Z0SeQgoko",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMCIsImVtYWlsIjoiaGVucmlxdWVAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU4NjM0OCwiaXNzIjoiU3BtZWRncm91cC5XZWJBcGkiLCJhdWQiOiJTcG1lZGdyb3VwLldlYkFwaSJ9.wceCmktJaH0s3Gy5TeAr0Eto2Nu3fdTrzr50lNqW2PI",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:5000/api/agendamentos/medicos",
+			"url": "http://localhost:5000/api/agendamentos",
+			"folder": "1e6e1662-51e9-285e-cd5a-05dddf11a7ff",
 			"queryParams": [],
+			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
 			"method": "GET",
-			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"data": null,
 			"dataMode": "params",
-			"name": "http://localhost:5000/api/agendamentos/medicos",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1552418279979,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
-		},
-		{
-			"id": "1fd5d52a-4366-edb5-024d-7d34c7af5c73",
-			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyIiwiZW1haWwiOiJsaWdpYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTUyMDczNjk0LCJpc3MiOiJTcG1lZGdyb3VwLldlYkFwaSIsImF1ZCI6IlNwbWVkZ3JvdXAuV2ViQXBpIn0.NdJLuhyaN_JuUmN05SkFw7emci5pByWy4btBsio0D4g\nContent-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyIiwiZW1haWwiOiJsaWdpYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTUyMDczNjk0LCJpc3MiOiJTcG1lZGdyb3VwLldlYkFwaSIsImF1ZCI6IlNwbWVkZ3JvdXAuV2ViQXBpIn0.NdJLuhyaN_JuUmN05SkFw7emci5pByWy4btBsio0D4g",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:5000/api/usuarios",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "POST",
-			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
-			"data": [],
-			"dataMode": "raw",
-			"name": "http://localhost:5000/api/usuarios",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1552072898446,
-			"version": 2,
-			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"rawModeData": "{\n\t\"Nome\":\"Enzaoo\" \n\t,\"Email\":\"Enzawoo@e.com\"\n\t,\"Senha\":\"123\"\n\t,\"TipoUsuario\":\"1\" \n\t,\"IdClinica\":\"1\"\n}"
+			"time": 1553019737315,
+			"name": "Agendamento.Todos",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"responses": []
 		},
 		{
 			"id": "424aff50-855e-bdbd-aa98-e6198632389c",
@@ -107,7 +135,7 @@
 			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"data": null,
 			"dataMode": "params",
-			"name": "http://localhost:5000/api/clinicas",
+			"name": "Listar.Clinica",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1552073439045,
@@ -115,7 +143,8 @@
 			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
-			"helperAttributes": {}
+			"helperAttributes": {},
+			"folder": "74955764-7d82-62f9-dd61-41c0309b51c9"
 		},
 		{
 			"id": "7fc0a477-1df5-65a3-213c-7206d6fad770",
@@ -134,24 +163,23 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:5000/api/agendamentos/pacientes",
+			"url": "http://localhost:5000/api/agendamentos/medicos",
+			"folder": "1e6e1662-51e9-285e-cd5a-05dddf11a7ff",
 			"queryParams": [],
+			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
 			"method": "GET",
-			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"data": [],
 			"dataMode": "raw",
-			"name": "http://localhost:5000/api/agendamentos/pacientes",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1552418007917,
-			"version": 2,
-			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
+			"time": 1553019700852,
+			"name": "Agendamento.Medico",
+			"description": "",
+			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
+			"responses": [],
 			"rawModeData": "{\n\t\"id\":\"9\"\n\t,\n\t\"idpaciente\":\"2\"\n\t,\"idmedico\":\"2\"\n\t,\"dtagendamento\":\"2019-03-09\"\n\t,\"descricao\":\"aa\"\n\t,\"idsituacao\":\"3\"\n}"
 		},
 		{
@@ -172,6 +200,7 @@
 				}
 			],
 			"url": "http://localhost:5000/api/agendamentos/pacientes",
+			"folder": "1e6e1662-51e9-285e-cd5a-05dddf11a7ff",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -183,7 +212,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1552417996465,
-			"name": "http://localhost:5000/api/agendamentos",
+			"name": "Agendamento.Paciente",
 			"description": "",
 			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"responses": [],
@@ -209,7 +238,7 @@
 			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"data": [],
 			"dataMode": "raw",
-			"name": "http://localhost:5000/api/usuarios",
+			"name": "Cadastrar",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1551988549101,
@@ -218,6 +247,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
+			"folder": "04c0dd22-4c8d-8605-43e0-cf829fe9d804",
 			"rawModeData": "{\n\t\n\t\"Nome\":\"Enzaoo\" \n\t,\"Email\":\"Enzaoo@e.com\"\n\t,\"Senha\":\"123\"\n\t,\"TipoUsuario\":\"true\" \n\t,\"IdClinica\":\"1\"\n}"
 		},
 		{
@@ -233,7 +263,7 @@
 			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"data": null,
 			"dataMode": "params",
-			"name": "http://localhost:5000/api/medicos",
+			"name": "Medicos.Listar",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1551986420290,
@@ -241,7 +271,8 @@
 			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
-			"helperAttributes": {}
+			"helperAttributes": {},
+			"folder": "8b09f69e-cc37-2ca0-bde2-c8667827040b"
 		},
 		{
 			"id": "b44563b6-a063-2b93-5e5f-b13b642601c2",
@@ -263,7 +294,7 @@
 			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"data": [],
 			"dataMode": "raw",
-			"name": "http://localhost:5000/api/login",
+			"name": "Login",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1552068019993,
@@ -272,6 +303,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
+			"folder": "18726822-6eee-e445-2604-9eecbdb633fb",
 			"rawModeData": "{\n    \"email\":\"enzo@e.com\"\n    ,\"senha\":\"2121\"\n}"
 		},
 		{
@@ -294,7 +326,7 @@
 			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"data": [],
 			"dataMode": "raw",
-			"name": "http://localhost:5000/api/agendamentos",
+			"name": "Atualizar.Agendamentos",
 			"description": "",
 			"descriptionFormat": "html",
 			"time": 1551989445196,
@@ -303,6 +335,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
+			"folder": "1e6e1662-51e9-285e-cd5a-05dddf11a7ff",
 			"rawModeData": "{\n\t\"id\":\"7\"\n\t,\"idpaciente\":\"16\"\n\t,\"idmedico\":\"2\"\n\t,\"dtagendamento\":\"2019-02-09\"\n\t,\"descricao\":\"N/D\"\n\t,\"idsituacao\":\"3\"\n}"
 		},
 		{
@@ -310,6 +343,7 @@
 			"headers": "",
 			"headerData": [],
 			"url": "http://localhost:5000/api/pacientes",
+			"folder": "625b54cf-2816-fac6-4221-1b08f6fb6aef",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -321,7 +355,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1551986385586,
-			"name": "http://localhost:5000/api/pacientes",
+			"name": "Pacientes.Listar",
 			"description": "",
 			"collectionId": "a1534185-7607-05a1-eca6-ad4bf77f1ba6",
 			"responses": []
