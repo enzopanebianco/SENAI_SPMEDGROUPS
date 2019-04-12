@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Variable', sans-serif;
+}
+.header h1{
+    color: #80bdde;
+    font-weight: 800;
+    font-style: italic;
+    position: relative;
+    left: 150px;
+    top: 30px;
+    font-size: 25pt;
+}
+.header img{
+    position: relative;
+    left: 50px;
+    top: -25px;
+}
+.header-list{
+    border-radius: 50px 0px 0px 50px;
+    width: 694px;
+    height: 90px;
+    background: #80bdde;
+    display: flex;
+    position: relative;
+    left: 55%;
+    transform: translateY(82px);
+}
+.header-list ul{
+    display: flex;
+    padding: 1px;
+    margin: -1px;
+    outline: none;
+}
+.header-list ul li{
+    list-style-type: none;
+    padding: 40px;    
+}
+.header ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 11pt;
+}
+.header ul li:hover{
+    background: #80e298;
+    border-radius: 50px;
+    
+}
+
+.banner img{
+    width: 390px;
+    height: 315px;
+    position: absolute;
+    left: 150px;
+    top: 120px;
+}
+.banner h2{
+    text-align: center;
+    margin-left:500px;
+    float: none;
+    transform: translateY(-60px);
+    font-weight: bold;
+    font-style: italic; 
+    color: #4390ba;
+    font-size: 21pt;
+}
+.banner p{
+    width: 380px;
+    height: 300px;
+    position: relative;
+    left:55%;
+    font-style: italic;
+    color: gray;
+    top: -40px;
+}
+.barrinha img{
+    position: absolute;
+    transform: rotateY(180deg);
+    width: 1522px;
+}
+.sobre{
+    margin: 0;
+    padding: 0;
+    
+}
+.clinica{
+    position: relative;
+    width: 555px;
+    height: 254px;
+    top: 80px;
+    background: #efefef;
+    
+}
+.clinica h3{
+    color: #4390ba;
+    font-style: italic;
+    text-align: center;
+    transform: translateY(30px);
+}
+.clinica p{
+    text-align: left;
+    color: #585858;
+    transform: translateY(50px);
+    justify-content: center;
+    width: 300px;
+    left: 50px;
+    position: relative;
+}
+.medicos{
+    position: relative;
+    width: 555px;
+    height: 254px;
+    top: 80px;
+    background: #efefef;
+    left: 64%;
+}
+.medicos h3{
+    color: #4390ba;
+    font-style: italic;
+    text-align: center;
+    transform: translateY(30px);
+}
+.medicos p{
+    text-align: left;
+    color: #585858;
+    transform: translateY(50px);
+    justify-content: center;
+    width: 300px;
+    left: 50px;
+    position: relative;
+}
