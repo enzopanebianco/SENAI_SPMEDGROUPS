@@ -1,31 +1,17 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import '../../assets/CSS/index.css';
-import logo from '../../assets/imagens/Ativo 1.png'
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'
-import imgprontuario from '../../assets/imagens/appointment-book-blur-care-40568.jpg'
+import imgprontuario from '../../assets/imagens/ambulance-architecture-building-263402.jpg'
+import Cabecalho from '../Componentes/Cabecalho';
+import Rodape from '../Componentes/Rodape';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <section className="header">
-          <h1>SPMEDICALGROUP</h1>
-          <img src={logo} />
-
-          <div className="header-list">
-            <ul>
-
-              <li><a href="">HOME</a></li>
-              <li><a href="">SOBRE A CLÍNICA</a></li>
-              <li><a href="">CONSULTAS</a></li>
-              <li><a href="">LOGIN</a></li>
-
-            </ul>
-
-          </div>
-        </section>
+        <Cabecalho />
         <section className="banner">
           <img src={imgmedicos} alt="medicos" />
           <h2>SPMEDICALGROUP</h2>
@@ -39,11 +25,12 @@ class App extends Component {
         <div className="barrinha">
           <img src={barrinha} alt="" />
         </div>
-        <br />
+        
         <section className="sobre" id="flex-container">
           <div className="flex">
             <article className="clinica">
               <h3>SOBRE A CLÍNICA</h3>
+              
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod orem ipsum
                   dolor sit amet, consectetuer adipiscing elit,orem ipsum dolor sit amet, consectetuer adipiscing
                     elit, sed diam nonumm sed diam nonumm</p>
@@ -66,6 +53,15 @@ class App extends Component {
             </article>
           </div>
         </section>
+        <section className="local">
+          <img src={imgprontuario} />
+          <div className="local-txt">
+            <h3>LOCALIZAÇÃO</h3>
+            <p>Lorem ipsum dolor sit amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor sit
+                  amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor</p>
+          </div>
+        </section>
+        <Rodape />
       </div>
     );
   }
