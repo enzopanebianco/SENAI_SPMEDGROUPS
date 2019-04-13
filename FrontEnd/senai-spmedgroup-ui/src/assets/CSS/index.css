@@ -89,22 +89,21 @@
     
 }
 .clinica{
-    position: relative;
-    width: 555px;
-    height: 254px;
-    top: 80px;
-    background: #efefef;
+    
+    background: #80bdde;
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
     
 }
 .clinica h3{
-    color: #4390ba;
+    color: #ffffff;
+    text-shadow: 0.2px  0.5px 0px rgb(114, 113, 113);
     font-style: italic;
     text-align: center;
     transform: translateY(30px);
 }
 .clinica p{
     text-align: left;
-    color: #585858;
     transform: translateY(50px);
     justify-content: center;
     width: 300px;
@@ -112,26 +111,79 @@
     position: relative;
 }
 .medicos{
-    position: relative;
-    width: 585px;
-    height: 254px;
-    top: 80px;
-    background: #efefef;
-    left: 61%;
-    top: -30px;
+    background: #80bdde;
+    top: -390px;
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
 }
 .medicos h3{
-    color: #4390ba;
+    color: #ffffff;
+    text-shadow: 0.2px  0.5px 0px rgb(114, 113, 113);
     font-style: italic;
     text-align: center;
     transform: translateY(30px);
 }
 .medicos p{
     text-align: left;
-    color: #585858;
     transform: translateY(50px);
     justify-content: center;
     width: 300px;
     left: 50px;
     position: relative;
 }
+.app{
+    background: #80E290;
+    position: relative;
+    top: 200px;
+    -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+
+}
+.app h3{
+    color: #ffffff;
+    text-shadow: 0.2px  0.5px 0px rgb(114, 113, 113);
+    font-style: italic;
+    text-align: center;
+    transform: translateY(30px);
+}
+.app p{
+    text-align: left;
+    transform: translateY(50px);
+    justify-content: center;
+    width: 300px;
+    left: 50px;
+    position: relative;
+}
+.sobre {
+    position: relative;
+    text-align: center;
+    padding: 1em;
+    padding: 10px;
+    margin: 20px;
+}
+.sobre article{
+    width: 350px;
+    height: 231px;
+    padding: 32px;
+}
+#flex-container{
+    display: flex;
+    flex-wrap: nowrap;
+}
+#flex-container > .sobre {
+    width: 100px;
+    margin: 40px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .flex{
+    position: relative;
+    text-align: center;
+    padding: 2.8em;
+  }
+  .flex p{
+    color: rgb(255, 255, 255);
+    font-family: segoe ui ;
+    text-shadow: 0.2px 0.2px 0.1px rgb(59, 59, 59);
+    font-size: 11pt;
+  }

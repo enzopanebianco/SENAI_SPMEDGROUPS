@@ -4,6 +4,7 @@ import '../../assets/CSS/index.css';
 import logo from '../../assets/imagens/Ativo 1.png'
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'
+import imgprontuario from '../../assets/imagens/appointment-book-blur-care-40568.jpg'
 
 class App extends Component {
   render() {
@@ -39,20 +40,30 @@ class App extends Component {
           <img src={barrinha} alt="" />
         </div>
         <br />
-        <section className="sobre">
-          <div>
-            <nav className="clinica">
+        <section className="sobre" id="flex-container">
+          <div className="flex">
+            <article className="clinica">
               <h3>SOBRE A CLÍNICA</h3>
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod orem ipsum
                   dolor sit amet, consectetuer adipiscing elit,orem ipsum dolor sit amet, consectetuer adipiscing
                     elit, sed diam nonumm sed diam nonumm</p>
-            </nav>
-            <nav className="medicos">
+            </article>
+          </div>
+          <div className="flex">
+           <article className="app">
+              <h3>Applicativo SPMEDICALGROUP</h3>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod orem ipsum
+                  dolor sit amet, consectetuer adipiscing elit,orem ipsum dolor sit amet, consectetuer adipiscing
+                    elit, sed diam nonumm sed diam nonumm</p>
+           </article>
+           </div>
+           <div className="flex">
+            <article className="medicos">
               <h3>OS MELHORES MÉDICOS</h3>
               <p>Lorem ipsum dolor sit amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor sit
                   amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor
                     sit amet, consectetudolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod </p>
-            </nav>
+            </article>
           </div>
         </section>
       </div>
