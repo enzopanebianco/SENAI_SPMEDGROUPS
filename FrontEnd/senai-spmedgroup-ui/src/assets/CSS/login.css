@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.campo-Logar form {
+    text-align: center;
+}
+.campo-Logar h2{
+    top:-50px;
+    position: relative;
+    color: #80e289;
+    text-shadow: 0.5px 0.5px 0px rgb(146, 146, 146);
+    text-align: center;
+}
+.item{
+    display: inline;
+    padding: 10px;
+}
+.campo-Logar form input{
+    padding: 5px;
+    border-radius: 20px;
+    background: rgb(243, 243, 243);
+    border:0.1em solid rgb(201, 201, 201);
+    text-align: center;
+    transform: translateX(20px);
+    
+}
+.campo-Logar ::placeholder{
+    font-size: 10pt;
+    color: gray;
+}
+.campo-Logar button{
+    position: relative;
+    top: 70px;
+    right: 13%;
+    height: 30px;
+    background: #117fbb;
+    color: white;
+    box-shadow: none;
+    border: 1px solid rgb(136, 136, 136);
+    border-radius: 20px;
+    width: 90px;
+    font-size: 11pt;
+    font-weight: 500;
+}
+.campo-Logar button:active{
+    background: #15aafa;
+}
+.aa{
+    position: relative;
+    top: 345px;
+}

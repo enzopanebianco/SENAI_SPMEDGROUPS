@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import '../../assets/CSS/index.css';
+
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'
 import imgprontuario from '../../assets/imagens/ambulance-architecture-building-263402.jpg'
 import Cabecalho from '../Componentes/Cabecalho';
 import Rodape from '../Componentes/Rodape';
-
+import img from '../../assets/imagens/appointment-book-blur-care-40568.jpg'
 class App extends Component {
   render() {
     return (
@@ -30,7 +30,7 @@ class App extends Component {
           <div className="flex">
             <article className="clinica">
               <h3>SOBRE A CLÍNICA</h3>
-              
+              <img src={img} />
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod orem ipsum
                   dolor sit amet, consectetuer adipiscing elit,orem ipsum dolor sit amet, consectetuer adipiscing
                     elit, sed diam nonumm sed diam nonumm</p>

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/imagens/Ativo 1.png'
+import '../../assets/CSS/index.css';
+import App from '../Home/App';
 function Cabecalho() {
 
     return (
@@ -11,10 +14,10 @@ function Cabecalho() {
                 <div className="header-list">
                     <ul>
 
-                        <li><a href="">HOME</a></li>
+                        <li><Link to="/"><a >HOME</a></Link></li>
                         <li><a href="">SOBRE A CLÍNICA</a></li>
                         <li><a href="">CONSULTAS</a></li>
-                        <li><a href="">LOGIN</a></li>
+                        <li><Link to="/login"><a href="">LOGIN</a></Link></li>
 
                     </ul>
 

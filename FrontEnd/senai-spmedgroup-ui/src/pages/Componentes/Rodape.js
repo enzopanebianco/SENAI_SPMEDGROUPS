@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import '../../assets/CSS/index.css';
 function Rodape() {
     return(
         <div>
