@@ -12944,11 +12944,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\52742298835\\Desktop\\Dev2\\Sprint2\\SENAI_SPRINT1_PROJETO\\SENAI_SPMEDGROUPS\\Senai_Spmedgroups_Web.Api\\Senai_Spmedgroups_Web_Api\\Senai_Spmedgroups_Web_Api.csproj",
+      "projectUniqueName": "C:\\Users\\52742298835\\Desktop\\Dev2\\Sprint2\\SENAI_SPRINT1_PROJETO\\SENAI_SPMEDGROUPS\\BackEnd\\Senai_Spmedgroups_Web.Api\\Senai_Spmedgroups_Web_Api\\Senai_Spmedgroups_Web_Api.csproj",
       "projectName": "Senai_Spmedgroups_Web_Api",
-      "projectPath": "C:\\Users\\52742298835\\Desktop\\Dev2\\Sprint2\\SENAI_SPRINT1_PROJETO\\SENAI_SPMEDGROUPS\\Senai_Spmedgroups_Web.Api\\Senai_Spmedgroups_Web_Api\\Senai_Spmedgroups_Web_Api.csproj",
+      "projectPath": "C:\\Users\\52742298835\\Desktop\\Dev2\\Sprint2\\SENAI_SPRINT1_PROJETO\\SENAI_SPMEDGROUPS\\BackEnd\\Senai_Spmedgroups_Web.Api\\Senai_Spmedgroups_Web_Api\\Senai_Spmedgroups_Web_Api.csproj",
       "packagesPath": "C:\\Users\\52742298835\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\52742298835\\Desktop\\Dev2\\Sprint2\\SENAI_SPRINT1_PROJETO\\SENAI_SPMEDGROUPS\\Senai_Spmedgroups_Web.Api\\Senai_Spmedgroups_Web_Api\\obj\\",
+      "outputPath": "C:\\Users\\52742298835\\Desktop\\Dev2\\Sprint2\\SENAI_SPRINT1_PROJETO\\SENAI_SPMEDGROUPS\\BackEnd\\Senai_Spmedgroups_Web.Api\\Senai_Spmedgroups_Web_Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

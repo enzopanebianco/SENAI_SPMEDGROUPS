@@ -30,5 +30,6 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
                 ctx.SaveChanges();
             }
         }
+
     }
 }

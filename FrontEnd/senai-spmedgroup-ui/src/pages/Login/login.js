@@ -1,8 +1,44 @@
 import React, { Component } from 'react';
 import '../../assets/CSS/login.css'
+import { Link } from 'react-router-dom';
 import Cabecalho from '../Componentes/Cabecalho';
 import Rodape from '../Componentes/Rodape'
+import Axios from 'axios';
+import JwtDecode from 'jwt-decode';
+
 class Login extends Component{
+    constructor(){
+        super();
+        this.state={
+            email:"",
+            senha:""
+        }
+        this.atualizaEstadoEmailForm=this.atualizaEstadoEmail.bind(this);
+        this.atualizaEstadoSenhaForm=this.atualizaEstadoSenha.bind(this);
+    }
+
+    logar(event){
+        event.preventDefault();
+        Axios.post('http://localhost:5000/api/login',{
+            
+            email:this.state.email,
+            senha:this.state.senha
+        })
+        .then(data=>{
+            localStorage.setItem("spmed-usuario",data.data.token);
+            this.props.history.push("/consultas");
+            console.log(data);
+        })
+        .catch(erro=>("erro login",erro))
+        
+        
+    }
+    atualizaEstadoEmail(event){
+        this.setState({email:event.target.value})
+    }
+    atualizaEstadoSenha(event){
+        this.setState({senha:event.target.value})
+    }
     render(){
         return(
             <div>
@@ -10,25 +46,18 @@ class Login extends Component{
                     <section className="fundo">
                 <section className="campo-Logar">
                         <h2>LOGIN</h2>
-                    <form>
+                    <form onSubmit={this.logar.bind(this)}>
                         <div className="item">
-                        <input type="text" placeholder="Insira seu email" />
+                        <input type="text" placeholder="Insira seu email" value={this.state.email} onChange={this.atualizaEstadoEmailForm}/>
                         </div>
                         <div className="item">
-                        <input type="text" placeholder="Insira sua senha" />
+                        <input type="password" placeholder="Insira sua senha" value={this.state.senha} onChange={this.atualizaEstadoSenhaForm}/>
                         </div>
                         <button type="submit">Entrar</button>
                     </form>
-                {/* <script type="text/javascript">
-                     let item = document.querySelectior(".item");
-                     add.EventListener("keyup"function (event) 
-                     event.preventDefault()
-                     if (item.length.value>"5") {
-                         styleMedia.border="green"
-                        }
-                        )          
-                    </script> */}
+               
                     </section>
+                    <a><Link to="/consultas">aa</Link></a>
                 <div className="aa">
                     
             <Rodape />

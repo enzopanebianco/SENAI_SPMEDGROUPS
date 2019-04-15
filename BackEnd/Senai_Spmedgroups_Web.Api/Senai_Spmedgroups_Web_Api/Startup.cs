@@ -66,6 +66,7 @@ namespace Senai_Spmedgroups_Web_Api
             });
 
             app.UseAuthentication();
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseMvc();
         }
     }

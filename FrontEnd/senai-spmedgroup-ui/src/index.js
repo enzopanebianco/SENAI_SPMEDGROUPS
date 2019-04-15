@@ -5,13 +5,27 @@ import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom
 import App from '../src/pages/Home/App';
 import * as serviceWorker from './serviceWorker';
 import Login from '../src/pages/Login/login'
+import Consultas from '../src/pages/Consultas/consultas'
+import CadastrarUsuario from '../src/pages/CadastrarUsuario/CadastrarUsuario';
+import {UsuarioAutenticado} from './services/auth'
 
+const Permissao=({component:Component})=>(
+    <Route 
+        render={props=>UsuarioAutenticado()? 
+            (<Component {...props}/>):
+            (<Redirect to ={{pathname:'/login',state:{from:props.location}}} />)
+        }
+    />
+    
+);
 const rotas=(
     <Router>
         <div>
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route exact path="/login" component={Login} />
+                <Permissao exact path="/consultas" component={Consultas} />
+                <Permissao exact path="/cadastrarusuario" component={CadastrarUsuario}/>
                 {/* <Route component={NaoEncontrada} /> */}
             </Switch>
         </div>
