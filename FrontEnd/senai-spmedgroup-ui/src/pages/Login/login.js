@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import '../../assets/CSS/login.css'
-import { Link } from 'react-router-dom';
+
 import Cabecalho from '../Componentes/Cabecalho';
 import Rodape from '../Componentes/Rodape'
 import Axios from 'axios';
-import JwtDecode from 'jwt-decode';
+import {parseJwt} from '../../services/auth';
 
 class Login extends Component{
     constructor(){
@@ -25,9 +25,22 @@ class Login extends Component{
             senha:this.state.senha
         })
         .then(data=>{
-            localStorage.setItem("spmed-usuario",data.data.token);
-            this.props.history.push("/consultas");
-            console.log(data);
+            if(data.status === 200){
+                console.log(data);
+                localStorage.setItem("spmed-usuario", data.data.token);
+                //Verifica o tipo de usuário e redireciona para a página default
+                console.log(parseJwt().Role);
+                if(parseJwt().Role === "0"){
+                  this.props.history.push("/cadastrarusuario");
+                } else {
+                  this.props.history.push("/consultas");
+                }
+            }
+            
+        let jwtdecode = require('jwt-decode');
+          let decode = jwtdecode(localStorage.getItem("spmed-usuario"));
+          
+          console.log(decode);
         })
         .catch(erro=>("erro login",erro))
         
@@ -57,7 +70,7 @@ class Login extends Component{
                     </form>
                
                     </section>
-                    <a><Link to="/consultas">aa</Link></a>
+                    
                 <div className="aa">
                     
             <Rodape />

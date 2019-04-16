@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+
 
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
-import JwtDecode from 'jwt-decode';
+
 
 class CadastrarUsuario extends Component{
     constructor(){

@@ -7,7 +7,23 @@ import * as serviceWorker from './serviceWorker';
 import Login from '../src/pages/Login/login'
 import Consultas from '../src/pages/Consultas/consultas'
 import CadastrarUsuario from '../src/pages/CadastrarUsuario/CadastrarUsuario';
-import {UsuarioAutenticado} from './services/auth'
+import {UsuarioAutenticado} from './services/auth';
+import {parseJwt} from './services/auth';
+import TodasConsultas from '../src/pages/Consultas/todasconsultas'
+
+
+const PermissaoAdmin = ({ component: Component }) => (
+    <Route
+      render={props =>
+        UsuarioAutenticado() && parseJwt().Role === 0 ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/login" }} />
+        )
+      }
+    />
+  );
+
 
 const Permissao=({component:Component})=>(
     <Route 
@@ -26,6 +42,7 @@ const rotas=(
                 <Route exact path="/login" component={Login} />
                 <Permissao exact path="/consultas" component={Consultas} />
                 <Permissao exact path="/cadastrarusuario" component={CadastrarUsuario}/>
+                <Permissao exact path="/todasconsultas" component={TodasConsultas} />
                 {/* <Route component={NaoEncontrada} /> */}
             </Switch>
         </div>
