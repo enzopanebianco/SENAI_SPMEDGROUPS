@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
 }
+.campo-Logar{
+    position: relative;
+    top: 20px;
+}
 .campo-Logar form {
+
     text-align: center;
 }
 .campo-Logar h2{

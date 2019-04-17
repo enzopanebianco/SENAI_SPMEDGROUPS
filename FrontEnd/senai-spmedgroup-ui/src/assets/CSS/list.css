@@ -1,0 +1,97 @@
+.list{
+    position: relative;
+    left: 30%;
+    width: 600px;
+    border-radius: 10px;
+    top: -90px;
+}
+.list h2{
+    color: #4390ba; 
+    margin:20px ;
+    position: relative;
+    left: 35%;
+}
+.th{
+    color: #ffffff;
+    
+    background: #4d9c55;  
+    position: relative;
+    left: 40px;
+}
+.tb{
+    position: relative;
+    left: 40px;
+    color: rgb(90, 90, 90);
+    font-family: segoe ui light;
+}
+.list img{
+   z-index: -1;
+   position: absolute;
+   left: 35%;
+   top: 40%;
+   transform: rotateZ(40deg);
+   width: 151px;
+   height: 159px;
+    filter: opacity(30%);
+    
+}
+.cadastro{
+    position: relative;
+    display: inline;
+    left: 23%;
+}
+.cadastro h2{
+    color: #4390ba;
+    position: relative;
+    left: 20%;
+}
+.cadastro form{
+    background: rgb(233, 233, 233);
+   
+    height: 300px;
+    width: 800px;
+    text-align: center;
+}
+.item{
+    top: 10px;
+    display:flex;
+    padding: 10px;
+    position: relative;
+    left: 32%;
+    color: black;
+}
+.item a{
+    font-family: segoe ui;
+    position: relative;
+    right: 10px;
+}
+.item input{    
+    background:none ;
+    color: black;
+    height: 20px;
+    border: 0 none;
+    border-bottom: 2px solid #808080;
+    
+    outline: none;
+}
+.item select{
+    background: #80bdde;
+    color: white;
+    border-radius: 6px;
+}
+
+.cadastro button{
+    position: relative;
+    top: 75px;
+    background: #4d9c55;
+    height: 30px;
+    width: 100px;
+    color: white;
+    border: 1pt solid #afafaf;
+    border-radius: 12px;
+}
+.cadastro button:active{
+    background: #2f5e34;
+    
+}
+

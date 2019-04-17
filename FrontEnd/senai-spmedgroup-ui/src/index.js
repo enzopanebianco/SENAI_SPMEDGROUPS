@@ -5,12 +5,12 @@ import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom
 import App from '../src/pages/Home/App';
 import * as serviceWorker from './serviceWorker';
 import Login from '../src/pages/Login/login'
-import Consultas from '../src/pages/Consultas/consultas'
+import ConsultasMedicos from '../src/pages/Consultas/ConsultasMedicos'
 import CadastrarUsuario from '../src/pages/CadastrarUsuario/CadastrarUsuario';
 import {UsuarioAutenticado} from './services/auth';
 import {parseJwt} from './services/auth';
 import TodasConsultas from '../src/pages/Consultas/todasconsultas'
-
+import ConsultasPacientes from '../src/pages/Consultas/ConsultasPacientes'
 
 const PermissaoAdmin = ({ component: Component }) => (
     <Route
@@ -40,9 +40,10 @@ const rotas=(
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route exact path="/login" component={Login} />
-                <Permissao exact path="/consultas" component={Consultas} />
+                <Permissao exact path="/consultas/medicos" component={ConsultasMedicos} />
                 <Permissao exact path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <Permissao exact path="/todasconsultas" component={TodasConsultas} />
+                <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />
                 {/* <Route component={NaoEncontrada} /> */}
             </Switch>
         </div>

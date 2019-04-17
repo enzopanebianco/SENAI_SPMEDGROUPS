@@ -19,12 +19,12 @@
 }
 .header-list{
     border-radius: 50px 0px 0px 50px;
-    width: 694px;
+    width: 724px;
     height: 90px;
     background: #80bdde;
     display: flex;
     position: relative;
-    left: 55%;
+    left: 53%;
     transform: translateY(-132px);
 }
 .header-list ul{
@@ -35,7 +35,7 @@
 }
 .header-list ul li{
     list-style-type: none;
-    padding: 40px;    
+    padding: 35px;    
 }
 .header ul li a {
     color: white;

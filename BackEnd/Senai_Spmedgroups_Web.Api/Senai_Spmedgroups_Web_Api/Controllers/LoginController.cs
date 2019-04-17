@@ -43,6 +43,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                     new Claim(JwtRegisteredClaimNames.Jti, usuario.Id.ToString()),
                     new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
                     new Claim(ClaimTypes.Name, usuario.Nome),
+                    new Claim("nome",usuario.Nome),
                     new Claim(ClaimTypes.Role, usuario.TipoUsuario.ToString())
                     
                 };

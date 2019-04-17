@@ -33,14 +33,11 @@ class Login extends Component{
                 if(parseJwt().Role === "0"){
                   this.props.history.push("/cadastrarusuario");
                 } else {
-                  this.props.history.push("/consultas");
+                  this.props.history.push("/");
                 }
             }
             
-        let jwtdecode = require('jwt-decode');
-          let decode = jwtdecode(localStorage.getItem("spmed-usuario"));
-          
-          console.log(decode);
+       
         })
         .catch(erro=>("erro login",erro))
         
@@ -51,6 +48,9 @@ class Login extends Component{
     }
     atualizaEstadoSenha(event){
         this.setState({senha:event.target.value})
+    }
+    componentDidMount(){
+        localStorage.clear("spmed-usuario");
     }
     render(){
         return(

@@ -1,6 +1,11 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
+import Cabecalho from '../Componentes/Cabecalho' 
+import Rodape from '../Componentes/Rodape';
 
+import logofundo from '../../assets/imagens/logofundo.png';
+import '../../assets/CSS/list.css';
+import {NomeUsuario} from '../../services/auth'
 class TodasConsultas extends Component{
     constructor(){
         super();
@@ -78,9 +83,13 @@ class TodasConsultas extends Component{
     render(){
         return(
             <div>
-                <h2>Listar Todas</h2>
+                <Cabecalho />
+                {NomeUsuario}
+                <section className="list">
+                <h2>ListarTodas</h2>
+                    <img src={logofundo} alt="logo da empresa"/>
                 <table>
-                    <thead>
+                    <thead className="th">
                         <tr>
                         <th>Paciente</th>
                         <th>Médico</th>
@@ -89,7 +98,8 @@ class TodasConsultas extends Component{
                         <th>Situacao</th>
                         </tr>
                     </thead>
-                           <tbody>{
+                    
+                           <tbody className="tb">{
                         this.state.lista.map(function(consulta){
                             return(
                                 <tr key={consulta.id}>
@@ -103,50 +113,45 @@ class TodasConsultas extends Component{
                             );
                         })
                     }
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                   
                     </tbody>
                 </table>
+                </section>
+                <section className="cadastro">
                 <h2>CADASTRAR</h2>
                 <form onSubmit={this.cadastrarConsultas.bind(this)}>
-                    <div>
-                        idPaciente
+                    <div className="item">
+                        <a>idPaciente</a>
                         <input type="text" value={this.state.idPaciente} onChange={this.atualizaIdPacienteForm} />
                     </div>
                     
-                    <div>
-                        idMedico
+                    <div className="item">
+                        <a>idMedico</a>
                         <input type="text" value={this.state.idMedico} onChange={this.atualizaIdMedicoForm} />
                     </div>
                     
-                    <div>
-                        data
+                    <div className="item">
+                        <a>data</a>
                         <input type="text" value={this.state.dtAgendamento} onChange={this.atualizaDataForm} />
                     </div>
                     
-                    <div>
-                        Descricao
+                    <div className="item">
+                        <a>Descricao</a>
                         <input type="text" value={this.state.descricao} onChange={this.atualizaDescricaoForm} />
                     </div>
                     
-                    <div>
-                        idsituacao
+                    <div className="item">
+                    <a>idsituacao</a>
                         <select value={this.state.idSituacao} onChange={this.atualizaIdSituacaoForm}>
                             <option value="1">Agendada</option>
                             <option value="2">Realizada</option>
                             <option value="3">Cancelada</option>
                         </select>
                     </div>
-                    <button type="submit">CADASTRAR</button>
+                    <button type="submit">Cadastrar</button>
                 </form>
+                </section>
+                <Rodape />  
             </div>
         );
     }

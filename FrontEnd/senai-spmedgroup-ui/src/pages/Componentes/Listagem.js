@@ -1,28 +1,12 @@
 import React,{Component} from 'react';
 
+function listagem (){
 
-class Consultas extends Component{
-    // constructor(){
-    //     super();
-    //     this.state={
-    //         lista:[],
-    //         idPaciente:"",
-    //         idMedico:"",
-    //         dtAgendamento:"",
-    //         descricao:"",
-    //         idsituacao:""
-    //     }
-    // }
-    // buscarNome(){
-    //     let jwtdecode = require('jwt-decode');
-    //     let decode = jwtdecode(localStorage.getItem("spmed-usuario"));
-    //     let nomePaciente = decode.nomePaciente;
-    //     this.setState({idPaciente:nomePaciente});
-    // }
-    render(){
-        return(
-            <div>
-                {/* <table>
+    
+    return(
+        <div>
+           
+                <table>
                     <thead>
                         <tr>
                         <th>Paciente</th>
@@ -46,11 +30,10 @@ class Consultas extends Component{
                             );
                         })
                     }
+                    
                     </tbody>
-                </table> */}s
-            </div>
-        );
-
-    }
+                </table>
+        </div>
+    );
 }
-export default Consultas;
+export default listagem;
