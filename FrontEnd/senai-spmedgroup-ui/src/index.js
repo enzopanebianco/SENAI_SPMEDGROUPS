@@ -11,6 +11,7 @@ import {UsuarioAutenticado} from './services/auth';
 import {parseJwt} from './services/auth';
 import TodasConsultas from '../src/pages/Consultas/todasconsultas'
 import ConsultasPacientes from '../src/pages/Consultas/ConsultasPacientes'
+import Sobre from '../src/pages/Sobre/sobre'
 
 const PermissaoAdmin = ({ component: Component }) => (
     <Route
@@ -44,6 +45,7 @@ const rotas=(
                 <Permissao exact path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <Permissao exact path="/todasconsultas" component={TodasConsultas} />
                 <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />
+                <Route exact path="/sobre" component={Sobre} />
                 {/* <Route component={NaoEncontrada} /> */}
             </Switch>
         </div>

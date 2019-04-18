@@ -5,7 +5,7 @@ import Rodape from '../Componentes/Rodape';
 
 import logofundo from '../../assets/imagens/logofundo.png';
 import '../../assets/CSS/list.css';
-import {NomeUsuario} from '../../services/auth'
+
 class TodasConsultas extends Component{
     constructor(){
         super();
@@ -84,7 +84,7 @@ class TodasConsultas extends Component{
         return(
             <div>
                 <Cabecalho />
-                {NomeUsuario}
+               
                 <section className="list">
                 <h2>ListarTodas</h2>
                     <img src={logofundo} alt="logo da empresa"/>

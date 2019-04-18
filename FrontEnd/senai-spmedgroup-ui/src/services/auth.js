@@ -6,6 +6,6 @@ export const parseJwt = () =>{
     
     return JSON.parse(window.atob(base64));
 }
-export const NomeUsuario=()=>jwtdecode(localStorage.getItem("spmed-usuario")).nome;
+
         
    

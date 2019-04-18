@@ -257,3 +257,32 @@ clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70
     font-style: italic;
     transform: translateY(20px);
 }
+.sub-header-list{
+    color: white;
+    position: absolute;
+    right:1.76%;
+    width: 600px;
+    top: 11.5%;
+    background: #4390ba;
+    text-align: center;
+    border-radius: 50px 0px 0px 50px;
+    display: none;
+}
+.sub-header-list ul{
+    display: flex;
+    font-size: 10pt;
+}
+.sub-header-list ul li{
+    list-style-type: none;
+    padding: 9px;
+    transform: translateX(50px);
+    font-weight: bold;
+}
+.sub-header-list ul li:hover{
+    background: #80bdde;
+    border-radius: 50px;
+}
+.menu:hover(.sub-header-list) {
+    display: block;
+
+}

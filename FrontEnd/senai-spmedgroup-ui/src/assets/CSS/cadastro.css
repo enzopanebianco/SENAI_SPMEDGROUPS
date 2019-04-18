@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+   }
+.cadastro{
+    position: relative;
+    background: rgb(3, 3, 77);
+    height: 300px;
+    border: 1pt solid gray;
+}
+.cadastro h2{
+text-align: center;
+padding: 10px;
+color: white;
+}
+.cadastro a{
+    margin: 1px;
+}
+.cadastro form{
+    display: flex;
+
+}
+

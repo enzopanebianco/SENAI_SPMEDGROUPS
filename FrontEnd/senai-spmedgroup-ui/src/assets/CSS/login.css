@@ -18,8 +18,9 @@
     text-align: center;
 }
 .item{
-    display: inline;
-    padding: 10px;
+    padding: 1px;
+    width: 200px;
+    transform: translateX(160px);
 }
 .campo-Logar form input{
     padding: 5px;
@@ -37,7 +38,7 @@
 .campo-Logar button{
     position: relative;
     top: 70px;
-    right: 12%;
+    right: 0%;
     height: 30px;
     background: #117fbb;
     color: white;
@@ -54,4 +55,7 @@
 .aa{
     position: relative;
     top: 345px;
+}
+.campo-Logar form input :active{
+    border:1em solid #117fbb;
 }

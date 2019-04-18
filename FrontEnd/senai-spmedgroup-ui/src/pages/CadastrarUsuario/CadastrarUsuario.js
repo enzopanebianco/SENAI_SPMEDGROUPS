@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
-
+import Cabecalho from '../Componentes/Cabecalho'
+import '../../assets/CSS/cadastro.css'
 
 class CadastrarUsuario extends Component{
     constructor(){
@@ -60,39 +61,41 @@ class CadastrarUsuario extends Component{
     render(){
         return(
             <div>
-                <h2>CadastrarUsuario</h2>
+                <Cabecalho />
+                <section className="cadastro">
+                <h2>CadastrarUsuário</h2>
                 <form onSubmit={this.Cadastrar.bind(this)}>
                     <div className="item">
-                        Nome
+                    <label>
+                        <a>Nome:</a>
                         <input type="text" value={this.state.nome} onChange={this.atualizaEstadoNomeForm} />    
+                        </label>
                     </div>
 
                     <div className="item">
-                        Email
+                    <label>
+                        <a>Email:</a>
                         <input type="text" value={this.state.email} onChange={this.atualizaEstadoEmailForm} />
+                    </label>
                     </div>
-                        
                     <div className="item">
-                    Senha
+                    <label>
+                    <a>Senha:</a>
                         <input type="password" value={this.state.senha} onChange={this.atualizaEstadoSenhaForm}/>
+                        </label>
                     </div>
                     
-                    {/* <div className="item">
-                        TipoUsuario
-                        <input type="text" placeholder="
-                        0-Administrador
-                        1-Paciente
-                        2-Médico
-                        " value={this.state.tipousuario} onChange={this.atualizaEstadoTipoUsuarioForm}
-                       />
-                    </div> */}
+                  <div className="item">
+                        <a>Tipo de Usuario:</a>
                     <select value={this.state.tipousuario} onChange={this.atualizaEstadoTipoUsuarioForm}>
                         <option value="1">Paciente</option>
                         <option value="0">Administrador</option>
                         <option value="2">Médico</option>
                     </select>
+                    </div>
                     <button type="submit">Cadastrar</button>
                 </form>
+                </section>
             </div>
         );
     }
