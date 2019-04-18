@@ -11,7 +11,9 @@ class TodasConsultas extends Component{
         super();
         this.state={
             lista:[],
+            listaP:[],
             idPaciente:"",
+            listaM:[],
             idMedico:"",
             dtAgendamento:"",
             descricao:"",
@@ -24,7 +26,14 @@ class TodasConsultas extends Component{
     
         this.atualizaIdSituacaoForm=this.atualizaIdSituacao.bind(this);
         }
-    
+    ListarPaciente(){
+        Axios.get('http:localhost:5000/api/pacientes')
+        .then(data=>{
+            console.log(data)
+            this.setState({listaP:data.data});
+        })
+        .catch(erro=>console.log(erro))
+    }
     cadastrarConsultas(event){
         event.preventDefault();
         
@@ -79,6 +88,7 @@ class TodasConsultas extends Component{
     }
     componentDidMount(){
         this.listartodas();
+        this.ListarPaciente();
     }
     render(){
         return(
@@ -103,8 +113,7 @@ class TodasConsultas extends Component{
                         this.state.lista.map(function(consulta){
                             return(
                                 <tr key={consulta.id}>
-                                
-                                <td>{consulta.idPaciente}</td>
+                                <td>{consulta.idPaciente}</td>   
                                 <td>{consulta.idMedico}</td>
                                 <td>{consulta.dtAgendamento}</td>
                                 <td>{consulta.descricao}</td>
@@ -143,9 +152,9 @@ class TodasConsultas extends Component{
                     <div className="item">
                     <a>idsituacao</a>
                         <select value={this.state.idSituacao} onChange={this.atualizaIdSituacaoForm}>
-                            <option value="1">Agendada</option>
-                            <option value="2">Realizada</option>
-                            <option value="3">Cancelada</option>
+                            <option value="1" className="agendada">Agendada</option>
+                            <option value="2" className="realizada">Realizada</option>
+                            <option value="3" className="cancelada">Cancelada</option>
                         </select>
                     </div>
                     <button type="submit">Cadastrar</button>

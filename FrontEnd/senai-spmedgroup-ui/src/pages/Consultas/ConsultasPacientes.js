@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
 import Listagem from '../Componentes/Listagem';
-import {logofundo} from '../../assets/imagens/Ativo 1.png'
+import {logofundo} from '../../assets/imagens/Ativo 1.png';
+
+import {decode} from '../../services/auth';
 
 class ConsultasPacientes extends Component{
     constructor(){
@@ -22,6 +24,7 @@ class ConsultasPacientes extends Component{
         
         this.setState({idPaciente:nomePaciente});
         console.log(decode.nome);    
+        console.log(decode);
         let tokenP = localStorage.getItem("spmed-usuario");
         var config = {
             headers: {
@@ -40,7 +43,7 @@ class ConsultasPacientes extends Component{
         }
        
     componentDidMount(){
-        
+        console.log(decode());
         this.listarConsultas();
      
 

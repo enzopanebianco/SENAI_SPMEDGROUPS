@@ -6,6 +6,13 @@ export const parseJwt = () =>{
     
     return JSON.parse(window.atob(base64));
 }
+export const decode=()=>{
+    let jwtdecode = require('jwt-decode');
+    let decode = jwtdecode(localStorage.getItem("spmed-usuario"));
+    let permissao = decode.admin;
+
+    return(permissao);
+}
 
         
    

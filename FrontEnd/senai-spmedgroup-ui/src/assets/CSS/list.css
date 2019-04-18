@@ -53,11 +53,11 @@
     text-align: center;
 }
 .item{
-    top: 10px;
+    top: 20px;
     display:flex;
     padding: 10px;
     position: relative;
-    left: 32%;
+    left: 18%;
     color: black;
 }
 .item a{
@@ -75,9 +75,23 @@
     outline: none;
 }
 .item select{
-    background: #80bdde;
-    color: white;
+    
+    color: rgb(0, 0, 0);
     border-radius: 6px;
+    border: 0.25pt solid gray;
+}
+
+.agendada{
+    background: white;
+    color: black;
+}
+.realizada{
+    background: green;
+    color: #fff;
+}
+.cancelada{
+    color: #fff;
+    background: red;
 }
 
 .cadastro button{

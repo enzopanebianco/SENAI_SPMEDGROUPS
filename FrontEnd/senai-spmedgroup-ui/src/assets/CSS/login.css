@@ -7,11 +7,13 @@
     top: 20px;
 }
 .campo-Logar form {
-
-    text-align: center;
+    display: flex;
+    justify-content: center;
+   position: relative;
+   right: 200px;
 }
 .campo-Logar h2{
-    top:-50px;
+   
     position: relative;
     color: #80e289;
     text-shadow: 0.5px 0.5px 0px rgb(146, 146, 146);
@@ -20,7 +22,6 @@
 .item{
     padding: 1px;
     width: 200px;
-    transform: translateX(160px);
 }
 .campo-Logar form input{
     padding: 5px;
@@ -28,8 +29,9 @@
     background: rgb(243, 243, 243);
     border:0.1em solid rgb(201, 201, 201);
     text-align: center;
-    transform: translateX(20px);
     
+    justify-content: center;
+    display: flex;
 }
 .campo-Logar ::placeholder{
     font-size: 10pt;
@@ -38,7 +40,7 @@
 .campo-Logar button{
     position: relative;
     top: 70px;
-    right: 0%;
+    right: 1%;
     height: 30px;
     background: #117fbb;
     color: white;

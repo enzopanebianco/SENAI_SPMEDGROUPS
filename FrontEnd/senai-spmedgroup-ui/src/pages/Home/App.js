@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'
-import imgprontuario from '../../assets/imagens/ambulance-architecture-building-263402.jpg'
+import imgprontuario from '../../assets/imagens/ambulance-architecture-building-263402.jpg';
+import imgApp from '../../assets/imagens/1x/Ativo 2.png'
 import Cabecalho from '../Componentes/Cabecalho';
 import Rodape from '../Componentes/Rodape';
 import img from '../../assets/imagens/appointment-book-blur-care-40568.jpg'
@@ -39,6 +40,7 @@ class App extends Component {
           <div className="flex">
            <article className="app">
               <h3>Applicativo SPMEDICALGROUP</h3>
+              <img src={imgApp} />
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod orem ipsum
                   dolor sit amet, consectetuer adipiscing elit,orem ipsum dolor sit amet, consectetuer adipiscing
                     elit, sed diam nonumm sed diam nonumm</p>
@@ -47,6 +49,7 @@ class App extends Component {
            <div className="flex">
             <article className="medicos">
               <h3>OS MELHORES MÉDICOS</h3>
+             
               <p>Lorem ipsum dolor sit amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor sit
                   amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor sit amet, consectetudolor
                     sit amet, consectetudolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod </p>

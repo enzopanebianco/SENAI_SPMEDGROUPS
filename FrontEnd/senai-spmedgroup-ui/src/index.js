@@ -9,21 +9,25 @@ import ConsultasMedicos from '../src/pages/Consultas/ConsultasMedicos'
 import CadastrarUsuario from '../src/pages/CadastrarUsuario/CadastrarUsuario';
 import {UsuarioAutenticado} from './services/auth';
 import {parseJwt} from './services/auth';
+import {decode} from './services/auth';
 import TodasConsultas from '../src/pages/Consultas/todasconsultas'
 import ConsultasPacientes from '../src/pages/Consultas/ConsultasPacientes'
 import Sobre from '../src/pages/Sobre/sobre'
+import CadastrarMedico from '../src/pages/CadastrarMedico/cadastrarmedico';
+import CadastrarPaciente from  '../src/pages/CadastrarPaciente/cadastrarpaciente';
 
 const PermissaoAdmin = ({ component: Component }) => (
     <Route
       render={props =>
-        UsuarioAutenticado() && parseJwt().Role === 0 ? (
+        UsuarioAutenticado() && decode()=="0" ? (
           <Component {...props} />
         ) : (
-          <Redirect to={{ pathname: "/login" }} />
+          <Redirect to={{ pathname: "/" }} />
         )
       }
     />
   );
+
 
 
 const Permissao=({component:Component})=>(
@@ -43,9 +47,11 @@ const rotas=(
                 <Route exact path="/login" component={Login} />
                 <Permissao exact path="/consultas/medicos" component={ConsultasMedicos} />
                 <Permissao exact path="/cadastrarusuario" component={CadastrarUsuario}/>
-                <Permissao exact path="/todasconsultas" component={TodasConsultas} />
+                <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
                 <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />
-                <Route exact path="/sobre" component={Sobre} />
+                <PermissaoAdmin exact path="/sobre" component={Sobre} />
+                <PermissaoAdmin exact path="/cadastrarmedico" component={CadastrarMedico}/>
+                <PermissaoAdmin exact path="/cadastrarpaciente" component={CadastrarPaciente}/>
                 {/* <Route component={NaoEncontrada} /> */}
             </Switch>
         </div>
