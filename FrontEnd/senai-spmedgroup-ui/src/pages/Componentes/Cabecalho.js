@@ -14,13 +14,14 @@ if (token==null || token=="") {
         <div>
             <section className="header">
                 <h1>SPMEDICALGROUP</h1>
+               
                 <img src={logo} />
 
                 <div className="header-list">
                     <ul>
 
                         <li><Link to="/"><a >HOME</a></Link></li>
-                        <li><a href="">SOBRE A CLÍNICA</a></li>
+                        <li><Link to="/sobre"><a>SOBRE A CLÍNICA</a></Link></li>
                         <li><a href="">CONSULTAS</a></li>
                         <li><Link to="/login"><a href="">LOGIN</a></Link></li>
                         

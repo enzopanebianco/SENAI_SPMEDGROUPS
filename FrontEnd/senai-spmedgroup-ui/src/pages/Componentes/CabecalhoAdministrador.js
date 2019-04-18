@@ -8,26 +8,28 @@ function CabecalhoAdmin() {
         <div>
             <section className="header">
             <h1>SPMEDICALGROUP</h1>
+           
             <img src={logo} />
 
             <div className="header-list">
                 <ul>
 
                     <li><Link to="/"><a >HOME</a></Link></li>
-                    <li><a href="">SOBRE A CLÍNICA</a></li>
+                    <li><Link to="/sobre"><a>SOBRE A CLÍNICA</a></Link></li>
                     <li><a href="">CONSULTAS</a></li>
                     <li><Link to="/login"><a href="">LOGIN</a></Link></li>
                     <li><Link to="/login"><a href="">SAIR</a></Link></li>
-                    <li><a className="menu" type="checkbox">...</a></li>
+                
                 </ul>
+                   
 
             </div>
         </section>
             <div className="sub-header-list">
             <ul>
-                <li><a>Cadastrar Paciente</a></li>
+                <li><Link ><a>Cadastrar Paciente</a></Link></li>
                 <li><a>Cadastrar Médico</a></li>
-                <li><a>Todas as Consultas</a></li>
+                <li><Link to="/todasconsultas"><a>Todas as Consultas</a></Link></li>
             </ul>
             </div>
         </div>

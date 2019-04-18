@@ -11,6 +11,8 @@
     left: 180px;
     top: 30px;
     font-size: 25pt;
+
+
 }
 .header img{
     position: relative;
@@ -45,7 +47,9 @@
 }
 .header ul li:hover{
     background: #80e298;
-    border-radius: 50px;
+    border-radius: 60px;
+    transition: 0.3s;
+
 }
 
 .banner img{
@@ -266,7 +270,8 @@ clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70
     background: #4390ba;
     text-align: center;
     border-radius: 50px 0px 0px 50px;
-    display: none;
+    transition: 0.7s;
+   
 }
 .sub-header-list ul{
     display: flex;
@@ -281,8 +286,9 @@ clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70
 .sub-header-list ul li:hover{
     background: #80bdde;
     border-radius: 50px;
+    transition: 0.3s;
 }
-.menu:hover(.sub-header-list) {
-    display: block;
 
+.chk{
+    display: none;
 }
