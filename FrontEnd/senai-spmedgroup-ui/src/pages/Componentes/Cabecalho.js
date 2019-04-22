@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/imagens/Ativo 1.png'
 import '../../assets/CSS/index.css';
-import {decode} from '../../services/auth';
 
-class Cabecalho extends Component {
-   
+function Cabecalho () {
     
-   render(){
-       
+      
     return (
         <div>
             <section className="header">
@@ -32,7 +29,8 @@ class Cabecalho extends Component {
             </section>
         </div>
     );
-    } 
-}
+       }
+     
+
 
 export default Cabecalho;

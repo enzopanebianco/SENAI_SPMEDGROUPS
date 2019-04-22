@@ -30,8 +30,8 @@ class Login extends Component{
                 localStorage.setItem("spmed-usuario", data.data.token);
                 //Verifica o tipo de usuário e redireciona para a página default
                 console.log(parseJwt().Role);
-                if(parseJwt().Role === "0"){
-                  this.props.history.push("/cadastrarusuario");
+                if(parseJwt().tipo === "0"){
+                  this.props.history.push("/todasconsultas");
                 } else {
                   this.props.history.push("/");
                 }

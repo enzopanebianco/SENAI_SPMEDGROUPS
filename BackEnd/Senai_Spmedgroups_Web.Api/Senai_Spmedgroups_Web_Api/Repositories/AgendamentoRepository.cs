@@ -1,4 +1,5 @@
-﻿using Senai_Spmedgroups_Web_Api.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai_Spmedgroups_Web_Api.Domains;
 using Senai_Spmedgroups_Web_Api.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,12 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
         {
             using (SpmedContext ctx = new SpmedContext())
             {
-                return ctx.Agendamentos.ToList();
+
+                return ctx.Agendamentos
+                      .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation.Nome)
+                    .Include(x => x.IdPacienteNavigation.IdUsuarioNavigation.Nome)
+                    .
+                    ToList();
             }
         }
 
@@ -41,7 +47,11 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
         {
             using (SpmedContext ctx = new SpmedContext())
             {
-                return ctx.Agendamentos.Where(x => x.IdMedico == id).ToList();
+                
+                return ctx.Agendamentos
+                    .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation.Nome)
+                    .Include(x=>x.IdPacienteNavigation.IdUsuarioNavigation.Nome)
+                    .Where(x => x.IdMedico == id).ToList();
             }
 
         }

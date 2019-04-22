@@ -13,10 +13,10 @@
    right: 200px;
 }
 .campo-Logar h2{
-   
+    font-style: normal;
     position: relative;
     color: #80e289;
-    text-shadow: 0.5px 0.5px 0px rgb(146, 146, 146);
+    text-shadow: 0.2px 0.2px 0px #000;
     text-align: center;
 }
 .item{
@@ -53,6 +53,7 @@
 }
 .campo-Logar button:active{
     background: #15aafa;
+    box-shadow: 0.5px 0.5px #000;
 }
 .aa{
     position: relative;

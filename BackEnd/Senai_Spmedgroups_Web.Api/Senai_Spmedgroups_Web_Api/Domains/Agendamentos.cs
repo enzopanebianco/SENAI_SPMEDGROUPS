@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Senai_Spmedgroups_Web_Api.Domains
 {
@@ -13,7 +14,9 @@ namespace Senai_Spmedgroups_Web_Api.Domains
         public int IdSituacao { get; set; }
 
         public Medicos IdMedicoNavigation { get; set; }
+
         public Pacientes IdPacienteNavigation { get; set; }
+        
         public Situacao IdSituacaoNavigation { get; set; }
     }
 }

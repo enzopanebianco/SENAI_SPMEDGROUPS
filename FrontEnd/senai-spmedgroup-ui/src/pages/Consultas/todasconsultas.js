@@ -88,6 +88,7 @@ class TodasConsultas extends Component{
     componentDidMount(){
         this.listartodas();
         this.ListarPaciente();
+        
     }
     render(){
         return(
@@ -95,20 +96,20 @@ class TodasConsultas extends Component{
                 <Cabecalho />
                
                 <section className="list">
-                <h2>ListarTodas</h2>
+              
                 <table>
                     
                         <Listagem />
                   
-                           <tbody className="tb">{
+                           <tbody className="corpo">{
                         this.state.lista.map(function(consulta){
                             return(
                                 <tr key={consulta.id}>
                                 <td>{consulta.idPaciente}</td>   
-                                <td>{consulta.idMedico}</td>
-                                <td>{consulta.dtAgendamento}</td>
-                                <td>{consulta.descricao}</td>
-                                <td>{consulta.idSituacao}</td>
+                                <td className="medi">{consulta.idMedico}</td>
+                                <td className="dat">{consulta.dtAgendamento}</td>
+                                <td className="descri">{consulta.descricao}</td>
+                                <td className="situ">{consulta.idSituacao}</td>
                             </tr>
                             );
                         })

@@ -26,7 +26,7 @@
     background: #80bdde;
     display: flex;
     position: relative;
-    left: 55%;
+    left: 54.5%;
     transform: translateY(-132px);
 }
 .header-list ul{
@@ -48,7 +48,7 @@
 .header ul li:hover{
     background: #80e298;
     border-radius: 60px;
-    transition: 0.3s;
+    transition: 0.1s;
 
 }
 
@@ -268,7 +268,7 @@ clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70
     color: white;
 }
 .rodape{
-    width: 100%;
+    width: 1536px;
     height: 50px;
     background: #dbdbdb;
     transform: translateY(-2px);
@@ -310,4 +310,7 @@ clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70
     background: #80bdde;
     border-radius: 50px;
     transition: 0.3s;
+}
+.ajudinha{
+   
 }

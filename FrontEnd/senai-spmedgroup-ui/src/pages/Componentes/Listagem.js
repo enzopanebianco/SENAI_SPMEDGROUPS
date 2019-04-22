@@ -16,7 +16,7 @@ function listagem (){
                         </tr>
                     </thead>
             </section>
-                    <img src={logofundo} alt="logo da empresa"/>
+                    {/* <img src={logofundo} alt="logo da empresa"/> */}
         </div>
     );
 }

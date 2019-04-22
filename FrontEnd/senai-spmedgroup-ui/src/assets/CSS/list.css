@@ -1,37 +1,49 @@
 .list{
    align-items: center;
     position: relative;
-    left: 40%;
-    width: 350px;
+    left: 35%;
     
-    top: -90px;
- 
-    
+    top: 10px;   
 }
 ._list{
     background: #4d9c55;  
-    width: 370px;
-}
-.list h2{
-    color: #4390ba; 
-    /* margin:20px ;
-    position: relative;
-    left: 10%; */
+    width: 500px;
 }
 
+.list h2{
+    color: #4390ba; 
+    position: absolute;
+    left: 10%;
+    top: -10%;    
+}
+.h2consu{
+    color: #4390ba; 
+    color: #000;
+    left: 10%;
+    top: 90%;    
+    
+}
 .th th{
     color: #ffffff;
-    left: 10px;
+    left: 80px;
     padding: 5px;
     text-align: center;
-    position: relative;   
+    position: relative;  
 }
-.tb{
-    position: relative;
-    text-align: center;
-    /* left: 40px;
-    color: rgb(90, 90, 90);
-    font-family: segoe ui light; */
+.corpo{
+    float: left;
+    padding: 10px;
+    transform: translateX(90px);
+}
+.dat{
+    font-size: 9pt;   
+}
+.descri{
+    font-size: 9pt;
+    transform: translateX(45px);
+}
+.situ{
+    transform: translateX(50px);
 }
 .list img{
    z-index: -1;
@@ -116,5 +128,9 @@
 .cadastro button:active{
     background: #2f5e34;
     
+}
+.idu{
+    position: absolute;
+    left: 38%;
 }
 

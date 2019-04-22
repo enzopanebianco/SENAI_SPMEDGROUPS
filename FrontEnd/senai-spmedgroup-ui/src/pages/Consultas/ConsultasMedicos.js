@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
-import Listagem from '../Componentes/Listagem';
 
+import Cabecalho from '../Componentes/Cabecalho' 
+import Rodape from '../Componentes/Rodape';
 
 class ConsultasMedicos extends Component{
     constructor(){
@@ -43,12 +44,22 @@ class ConsultasMedicos extends Component{
     render(){
         return(
             <div>
-              <table>
+                <Cabecalho />
                    
-              <Listagem />
+              <section className="list">
+              <table>
+             <thead className="_list">
+                        <tr>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th>Data</th>
+                        <th>Descricao</th>
+                        <th>Situacao</th>
+                        </tr>
+                    </thead>
                            <tbody>{
-                        this.state.lista.map(function(consulta){
-                            return(
+                               this.state.lista.map(function(consulta){
+                                   return(
                                 <tr key={consulta.id}>
                                 
                                 <td>{consulta.idPaciente}</td>
@@ -63,6 +74,8 @@ class ConsultasMedicos extends Component{
                     
                     </tbody>
                 </table>
+                    </section>
+                <Rodape />
             </div>
         );
 

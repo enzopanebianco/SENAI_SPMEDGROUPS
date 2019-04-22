@@ -9,7 +9,7 @@ export const parseJwt = () =>{
 export const decode=()=>{
     let jwtdecode = require('jwt-decode');
     let decode = jwtdecode(localStorage.getItem("spmed-usuario"));
-    let permissao = decode.admin;
+    let permissao = decode.tipo;
 
     return(permissao);
 }

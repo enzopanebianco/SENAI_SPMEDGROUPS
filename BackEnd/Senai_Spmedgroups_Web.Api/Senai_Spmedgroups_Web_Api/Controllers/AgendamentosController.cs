@@ -71,6 +71,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             {
                 int usuariosId = Convert.ToInt32(HttpContext.User.Claims.First(a => a.Type == JwtRegisteredClaimNames.Jti).Value);
                 Pacientes pacientes = PacienteRepository.Procurar(usuariosId);
+                
                 if (pacientes==null)
                 {
                     return NotFound();
@@ -96,7 +97,6 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 int usuariosId = Convert.ToInt32(HttpContext.User.Claims.First(a => a.Type == JwtRegisteredClaimNames.Jti).Value);
                 Medicos medicos = MedicoRepository.Procurar(usuariosId);
                 
-
                 return Ok(AgendamentoRepository.ListarMedico(medicos.Id));
             }
             catch (Exception ex)

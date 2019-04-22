@@ -8,7 +8,7 @@ import Login from '../src/pages/Login/login'
 import ConsultasMedicos from '../src/pages/Consultas/ConsultasMedicos'
 import CadastrarUsuario from '../src/pages/CadastrarUsuario/CadastrarUsuario';
 import {UsuarioAutenticado} from './services/auth';
-import {parseJwt} from './services/auth';
+
 import {decode} from './services/auth';
 import TodasConsultas from '../src/pages/Consultas/todasconsultas'
 import ConsultasPacientes from '../src/pages/Consultas/ConsultasPacientes'
@@ -46,9 +46,9 @@ const rotas=(
                 <Route exact path="/" component={App} />
                 <Route exact path="/login" component={Login} />
                 <Permissao exact path="/consultas/medicos" component={ConsultasMedicos} />
-                <Permissao exact path="/cadastrarusuario" component={CadastrarUsuario}/>
+                <PermissaoAdmin exact path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
-                <Route exact path="/consultas/pacientes" component={ConsultasPacientes} />
+                <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />
                 <Route exact path="/sobre" component={Sobre} />
                 <PermissaoAdmin exact path="/cadastrarmedico" component={CadastrarMedico}/>
                 <PermissaoAdmin exact path="/cadastrarpaciente" component={CadastrarPaciente}/>
