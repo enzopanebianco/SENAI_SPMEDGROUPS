@@ -18,8 +18,7 @@ function CabecalhoAdmin() {
                     <li><Link to="/sobre"><a>SOBRE A CLÍNICA</a></Link></li>
                     <li><a href="">CONSULTAS</a></li>
                     <li><Link to="/login"><a href="">LOGIN</a></Link></li>
-                    <li><Link to="/login"><a href="">SAIR</a></Link></li>
-                
+                   
                 </ul>
                    
 

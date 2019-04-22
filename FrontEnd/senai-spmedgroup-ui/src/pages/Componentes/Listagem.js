@@ -1,13 +1,12 @@
 import React,{Component} from 'react';
-
+import logofundo from '../../assets/imagens/logofundo.png';
 function listagem (){
 
     
     return(
         <div>
-           
-                <table>
-                    <thead>
+           <section className="_list">
+           <thead className="th">
                         <tr>
                         <th>Paciente</th>
                         <th>Médico</th>
@@ -16,23 +15,8 @@ function listagem (){
                         <th>Situacao</th>
                         </tr>
                     </thead>
-                           <tbody>{
-                        this.state.lista.map(function(consulta){
-                            return(
-                                <tr key={consulta.id}>
-                                
-                                <td>{consulta.idPaciente}</td>
-                                <td>{consulta.idMedico}</td>
-                                <td>{consulta.dtAgendamento}</td>
-                                <td>{consulta.descricao}</td>
-                                <td>{consulta.idSituacao}</td>
-                            </tr>
-                            );
-                        })
-                    }
-                    
-                    </tbody>
-                </table>
+            </section>
+                    <img src={logofundo} alt="logo da empresa"/>
         </div>
     );
 }

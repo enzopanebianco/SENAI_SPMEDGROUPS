@@ -1,0 +1,98 @@
+.about{
+    background: #5581e0;
+    height: 600px;
+    border-top: 10px solid #80e289;
+}
+h2{
+    text-align: center;
+    color: #ffffff;
+    font-size: 25pt;
+    font-style: italic;
+}
+.about img{
+    position: absolute;
+    top:300px;
+    right: 200px;
+
+}
+.app-tt{
+    width: 230px;
+    height: 230px;
+    position: relative;
+    left: 23%;
+    top: 60px;
+    background: #5f8ff7;
+   
+}
+.app-tt h3{
+    text-align: center;
+    color: #80e289;
+    text-transform: uppercase;
+}
+.app-tt p{
+    font-size: 11pt;
+    color: white;
+    width: 200px;
+    transform: translateX(20px) translateY(10px);
+}
+.app-tt button{
+    position: relative;
+    left: 120px;
+    top: 10px;
+    font-size: 9pt;
+    background: #5f8ff7;
+    border-radius: 10px;
+    width: 80px;
+    border: 0.5px solid #fff;
+    height: 25px;
+    color: white;
+}
+.txt-a{
+    transform: translateY(-90px) translateX(-100px);
+    float: right;
+    width: 350px;
+    height: 350px;
+    background: #5f8ff7;
+    
+}
+.txt-b{
+    transform: translateY(-90px) translateX(-150px);
+    float: right;
+    width: 350px;
+    height: 350px;
+    background: #5f8ff7;
+    
+}
+.txt-a p{
+    position: relative;
+    left: 8%;
+    top: 20px;
+    font-family: segoe ui;
+    text-align: center;
+    width: 300px;
+    color: white;
+
+}
+.txt-b p{
+    position: relative;
+    left: 8%;
+    top: 20px;
+    font-family: segoe ui;
+    text-align: center;
+    width: 300px;
+    color: white;
+
+}
+.img_banner {
+    position: relative;
+    top: -339px;
+    right: 60%;
+   filter: hue-rotate(350deg) opacity(80%);
+  
+}
+.img_banner img{
+    width: 600px;
+    height: 331px;
+    -webkit-clip-path: polygon(100% 0, 73% 69%, 61% 100%, 0 100%, 0 0);
+clip-path: polygon(100% 0, 73% 69%, 61% 100%, 0 100%, 0 0);
+}

@@ -2,8 +2,7 @@ import React,{Component} from 'react';
 import Axios from 'axios';
 import Cabecalho from '../Componentes/Cabecalho' 
 import Rodape from '../Componentes/Rodape';
-
-import logofundo from '../../assets/imagens/logofundo.png';
+import Listagem from '../Componentes/Listagem';
 import '../../assets/CSS/list.css';
 
 class TodasConsultas extends Component{
@@ -97,18 +96,10 @@ class TodasConsultas extends Component{
                
                 <section className="list">
                 <h2>ListarTodas</h2>
-                    <img src={logofundo} alt="logo da empresa"/>
                 <table>
-                    <thead className="th">
-                        <tr>
-                        <th>Paciente</th>
-                        <th>Médico</th>
-                        <th>Data</th>
-                        <th>Descricao</th>
-                        <th>Situacao</th>
-                        </tr>
-                    </thead>
                     
+                        <Listagem />
+                  
                            <tbody className="tb">{
                         this.state.lista.map(function(consulta){
                             return(
@@ -126,6 +117,12 @@ class TodasConsultas extends Component{
                     </tbody>
                 </table>
                 </section>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 <section className="cadastro">
                 <h2>CADASTRAR</h2>
                 <form onSubmit={this.cadastrarConsultas.bind(this)}>

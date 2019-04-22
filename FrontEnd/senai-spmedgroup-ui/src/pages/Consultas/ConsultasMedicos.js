@@ -44,15 +44,8 @@ class ConsultasMedicos extends Component{
         return(
             <div>
               <table>
-                    <thead>
-                        <tr>
-                        <th>Paciente</th>
-                        <th>Médico</th>
-                        <th>Data</th>
-                        <th>Descricao</th>
-                        <th>Situacao</th>
-                        </tr>
-                    </thead>
+                   
+              <Listagem />
                            <tbody>{
                         this.state.lista.map(function(consulta){
                             return(

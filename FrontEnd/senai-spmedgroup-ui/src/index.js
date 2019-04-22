@@ -48,8 +48,8 @@ const rotas=(
                 <Permissao exact path="/consultas/medicos" component={ConsultasMedicos} />
                 <Permissao exact path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
-                <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />
-                <PermissaoAdmin exact path="/sobre" component={Sobre} />
+                <Route exact path="/consultas/pacientes" component={ConsultasPacientes} />
+                <Route exact path="/sobre" component={Sobre} />
                 <PermissaoAdmin exact path="/cadastrarmedico" component={CadastrarMedico}/>
                 <PermissaoAdmin exact path="/cadastrarpaciente" component={CadastrarPaciente}/>
                 {/* <Route component={NaoEncontrada} /> */}
