@@ -18,7 +18,7 @@ function Cabecalho () {
 
                         <li><Link to="/"><a >HOME</a></Link></li>
                         <li><Link to="/sobre"><a>SOBRE A CLÍNICA</a></Link></li>
-                        <li><a>CONSULTAS</a></li>
+                        <li><Link to="/consultas/pacientes"><a>CONSULTAS</a></Link></li>
                         <li><Link to="/login"><a href="">LOGIN</a></Link></li>
                         
                         

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
-
+import Listagem from '../Componentes/Listagem';
 import Cabecalho from '../Componentes/Cabecalho' 
 import Rodape from '../Componentes/Rodape';
 
@@ -45,28 +45,22 @@ class ConsultasMedicos extends Component{
         return(
             <div>
                 <Cabecalho />
-                   
+                <div className="titulo">
+               <h2>Consultas</h2>
+               </div>
               <section className="list">
               <table>
-             <thead className="_list">
-                        <tr>
-                        <th>Paciente</th>
-                        <th>Médico</th>
-                        <th>Data</th>
-                        <th>Descricao</th>
-                        <th>Situacao</th>
-                        </tr>
-                    </thead>
+            <Listagem />
                            <tbody>{
                                this.state.lista.map(function(consulta){
                                    return(
                                 <tr key={consulta.id}>
                                 
-                                <td>{consulta.idPaciente}</td>
-                                <td>{consulta.idMedico}</td>
-                                <td>{consulta.dtAgendamento}</td>
-                                <td>{consulta.descricao}</td>
-                                <td>{consulta.idSituacao}</td>
+                                <td >{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                                <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
+                                <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
+                                <td className="descri flex-list-td">{consulta.descricao}</td>
+                                <td className="situ flex-list-td">{consulta.idSituacaoNavigation.nome}</td>
                             </tr>
                             );
                         })

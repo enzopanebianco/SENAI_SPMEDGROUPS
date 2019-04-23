@@ -20,13 +20,6 @@ class ConsultasPacientes extends Component{
         }
     }
      listarConsultas(){
-         let jwtdecode = require('jwt-decode');
-         let decode = jwtdecode(localStorage.getItem("spmed-usuario"));
-         let nomePaciente = decode.nome;
-        
-         this.setState({idPaciente:nomePaciente});
-         console.log(decode.nome);    
-         console.log(decode);
          let tokenP = localStorage.getItem("spmed-usuario");
          var config = {
              headers: {
@@ -34,7 +27,7 @@ class ConsultasPacientes extends Component{
                  'Authorization': "bearer " + tokenP
              }
          };
-         Axios.get('http:localhost:5000/api/agendamentos/pacientes',config)
+         Axios.get('http://localhost:5000/api/agendamentos/pacientes',config)
              .then(data=>{
                  console.log(data);
                  this.setState({lista:data.data});
@@ -45,7 +38,7 @@ class ConsultasPacientes extends Component{
          }
        
      componentDidMount(){
-         console.log(decode());
+       
          this.listarConsultas();
      
 
@@ -54,20 +47,21 @@ class ConsultasPacientes extends Component{
         return(
             <div>
               <Cabecalho />
+              <div className="titulo">
+               <h2>Consultas</h2>
+               </div>
               <section className="list">
-                    <h2>Suas Consultas</h2>
                          <table>
                           <Listagem />
                            <tbody className="corpo">{
                                this.state.lista.map(function(consulta){
                                    return(
-                                       <tr key={consulta.id}>
-                                
-                                <td>{consulta.idPaciente}</td>
-                                <td className="medi">{consulta.idMedico}</td>
-                                <td className="dat">{consulta.dtAgendamento}</td>
-                                <td className="descri">{consulta.descricao}</td>
-                                <td className="situ">{consulta.idSituacao}</td>
+                            <tr key={consulta.id}>
+                                 <td >{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                                <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
+                                <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
+                                <td className="descri flex-list-td">{consulta.descricao}</td>
+                                <td className="situ flex-list-td">{consulta.idSituacao}</td>
                             </tr>
                             );
                         })
@@ -76,8 +70,7 @@ class ConsultasPacientes extends Component{
                     </tbody>
                 </table>
                     </section>
-                  
-            <Rodape />
+            
             </div>
         );
     }

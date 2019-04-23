@@ -1,18 +1,20 @@
 import React,{Component} from 'react';
+import '../../assets/CSS/list.css';
 import logofundo from '../../assets/imagens/logofundo.png';
 function listagem (){
 
     
     return(
         <div>
+            
            <section className="_list">
            <thead className="th">
                         <tr>
-                        <th>Paciente</th>
-                        <th>Médico</th>
-                        <th>Data</th>
-                        <th>Descricao</th>
-                        <th>Situacao</th>
+                        <th className="flex-list">Paciente</th>
+                        <th className="flex-list">Médico</th>
+                        <th className="flex-list">Data</th>
+                        <th className="flex-list">Descricao</th>
+                        <th className="flex-list">Situacao</th>
                         </tr>
                     </thead>
             </section>

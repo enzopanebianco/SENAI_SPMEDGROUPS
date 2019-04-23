@@ -18,5 +18,7 @@ namespace Senai_Spmedgroups_Web_Api.Domains
         public Pacientes IdPacienteNavigation { get; set; }
         
         public Situacao IdSituacaoNavigation { get; set; }
+       
     }
+
 }

@@ -19,7 +19,7 @@ import CadastrarPaciente from  '../src/pages/CadastrarPaciente/cadastrarpaciente
 const PermissaoAdmin = ({ component: Component }) => (
     <Route
       render={props =>
-        UsuarioAutenticado() && decode()=="0" ? (
+        UsuarioAutenticado() && decode()=="0"? (
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: "/" }} />
@@ -28,6 +28,17 @@ const PermissaoAdmin = ({ component: Component }) => (
     />
   );
 
+  const PermissaoMed = ({ component: Component }) => (
+    <Route
+      render={props =>
+        UsuarioAutenticado() && decode()=="2"? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/" }} />
+        )
+      }
+    />
+  );
 
 
 const Permissao=({component:Component})=>(
@@ -45,7 +56,7 @@ const rotas=(
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route exact path="/login" component={Login} />
-                <Permissao exact path="/consultas/medicos" component={ConsultasMedicos} />
+                <PermissaoMed exact path="/consultas/medicos" component={ConsultasMedicos} />
                 <PermissaoAdmin exact path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
                 <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />

@@ -62,7 +62,7 @@ class CadastrarUsuario extends Component{
         return(
             <div>
                 <Cabecalho />
-                <section className="cadastrar">
+                <section className="cadastro">
                 <h2>CadastrarUsuário</h2>
                 <form onSubmit={this.Cadastrar.bind(this)}>
                     <div className="item">

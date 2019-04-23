@@ -10,9 +10,7 @@ class TodasConsultas extends Component{
         super();
         this.state={
             lista:[],
-            listaP:[],
             idPaciente:"",
-            listaM:[],
             idMedico:"",
             dtAgendamento:"",
             descricao:"",
@@ -86,15 +84,18 @@ class TodasConsultas extends Component{
         this.setState({idSituacao:event.target.value})
     }
     componentDidMount(){
+    
         this.listartodas();
-        this.ListarPaciente();
+        
         
     }
     render(){
         return(
             <div>
                 <Cabecalho />
-               
+                <div className="titulo">
+               <h2>Consultas</h2>
+               </div>
                 <section className="list">
               
                 <table>
@@ -105,11 +106,11 @@ class TodasConsultas extends Component{
                         this.state.lista.map(function(consulta){
                             return(
                                 <tr key={consulta.id}>
-                                <td>{consulta.idPaciente}</td>   
-                                <td className="medi">{consulta.idMedico}</td>
-                                <td className="dat">{consulta.dtAgendamento}</td>
-                                <td className="descri">{consulta.descricao}</td>
-                                <td className="situ">{consulta.idSituacao}</td>
+                                <td >{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                                <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
+                                <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
+                                <td className="descri flex-list-td">{consulta.descricao}</td>
+                                <td className="situ flex-list-td">{consulta.idSituacao}</td>
                             </tr>
                             );
                         })
@@ -139,7 +140,7 @@ class TodasConsultas extends Component{
                     
                     <div className="item">
                         <a>data</a>
-                        <input type="text" value={this.state.dtAgendamento} onChange={this.atualizaDataForm} />
+                        <input type="date" value={this.state.dtAgendamento} onChange={this.atualizaDataForm} />
                     </div>
                     
                     <div className="item">

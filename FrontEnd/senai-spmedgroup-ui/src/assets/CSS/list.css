@@ -7,22 +7,25 @@
 }
 ._list{
     background: #4d9c55;  
-    width: 500px;
+    width: 700px;
+    transform: translateX(-50px);
 }
-
+.flex-list{
+    width: 300px;
+    transform: translateX(-80px);
+}
+.flex-list-td{
+   
+    position: relative;
+    right: 50%;
+}
 .list h2{
     color: #4390ba; 
     position: absolute;
     left: 10%;
     top: -10%;    
 }
-.h2consu{
-    color: #4390ba; 
-    color: #000;
-    left: 10%;
-    top: 90%;    
-    
-}
+
 .th th{
     color: #ffffff;
     left: 80px;
@@ -30,20 +33,19 @@
     text-align: center;
     position: relative;  
 }
-.corpo{
-    float: left;
-    padding: 10px;
-    transform: translateX(90px);
+.medi{
+    transform: translateX(-70px);
 }
 .dat{
     font-size: 9pt;   
+    transform: translateX(-10px);
 }
 .descri{
     font-size: 9pt;
     transform: translateX(45px);
 }
 .situ{
-    transform: translateX(50px);
+    transform: translateX(110px);
 }
 .list img{
    z-index: -1;
@@ -96,12 +98,17 @@
     outline: none;
 }
 .item select{
-    
+    width: 80px;
     color: rgb(0, 0, 0);
     border-radius: 6px;
     border: 0.25pt solid gray;
 }
-
+.especialidade{
+    position: relative;
+    top: 20px;
+    right: 40px;
+    
+}
 .agendada{
     background: white;
     color: black;
@@ -132,5 +139,8 @@
 .idu{
     position: absolute;
     left: 38%;
+}
+.titulo h2{
+    color: #4390ba;
 }
 

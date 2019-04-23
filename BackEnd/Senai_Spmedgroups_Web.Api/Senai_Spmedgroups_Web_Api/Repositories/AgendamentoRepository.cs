@@ -35,11 +35,8 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             using (SpmedContext ctx = new SpmedContext())
             {
 
-                return ctx.Agendamentos
-                      .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation.Nome)
-                    .Include(x => x.IdPacienteNavigation.IdUsuarioNavigation.Nome)
-                    .
-                    ToList();
+                return ctx.Agendamentos.Include(x=>x.IdMedicoNavigation.IdUsuarioNavigation
+                ).Include(x=>x.IdPacienteNavigation.IdUsuarioNavigation).ToList();
             }
         }
 
@@ -48,9 +45,8 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             using (SpmedContext ctx = new SpmedContext())
             {
                 
-                return ctx.Agendamentos
-                    .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation.Nome)
-                    .Include(x=>x.IdPacienteNavigation.IdUsuarioNavigation.Nome)
+                return ctx.Agendamentos.Include(x => x.IdMedicoNavigation.IdUsuarioNavigation
+                ).Include(x => x.IdPacienteNavigation.IdUsuarioNavigation)
                     .Where(x => x.IdMedico == id).ToList();
             }
 
@@ -60,7 +56,8 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
         {
             using (SpmedContext ctx = new SpmedContext())
             {
-                return ctx.Agendamentos.Where(x=>x.IdPaciente==id).ToList();
+                return ctx.Agendamentos.Include(x => x.IdMedicoNavigation.IdUsuarioNavigation
+                ).Include(x => x.IdPacienteNavigation.IdUsuarioNavigation).Where(x=>x.IdPaciente==id).ToList();
             }
         }
     }

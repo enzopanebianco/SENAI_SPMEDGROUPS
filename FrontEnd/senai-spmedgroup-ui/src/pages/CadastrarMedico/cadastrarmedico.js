@@ -57,19 +57,20 @@ class CadastrarMedico extends Component{
         return(
             <div>
                 <Cabecalho />
+                <section className="cadastro">                
                 <h2>CadastroDeMédicos</h2>
                 <form onSubmit={this.cadastrarMedico.bind(this)}>
-                    <div className="item_">
+                    <div className="item">
                     <a>IDUSUÁRIO:</a>
                     <input type="text" value={this.state.idusuario} onChange={this.atualizaEstadoIdUsuario.bind(this)}/>
                     
                     </div>
-                    <div className="item_" >
+                    <div className="item" >
                     <a>CRM:</a>
                     <input type="text"value={this.state.crm} onChange={this.atualizaEstadoCRM.bind(this)}/>
                     
                     </div>
-                    <div className="item_">
+                    <div className="especialidade">
                     <a>ESPECIALIDADE:</a>
                     <select value={this.state.idespecialidade} onChange={this.atualizaEstadoIdEspecialidade.bind(this)}>
                         <option value="0">Selecione</option>{
@@ -79,8 +80,11 @@ class CadastrarMedico extends Component{
                         }
                     </select>
                     <button type="submit">CADASTRAR</button>
-                    </div>
+                        </div>
+                    
                 </form>
+                </section>
+
                 <Rodape />
             </div>
         );

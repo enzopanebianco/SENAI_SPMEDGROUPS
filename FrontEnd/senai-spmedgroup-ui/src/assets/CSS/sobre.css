@@ -94,6 +94,5 @@ h2{
     width: 600px;
     height: 331px;
     -webkit-clip-path: polygon(100% 0, 73% 69%, 61% 100%, 0 100%, 0 0);
-clip-path: polygon(100% 0, 73% 69%, 61% 100%, 0 100%, 0 0);
-    border-bottom: 10px solid #80e289;
+    clip-path: polygon(100% 0, 73% 69%, 61% 100%, 0 100%, 0 0);
 }

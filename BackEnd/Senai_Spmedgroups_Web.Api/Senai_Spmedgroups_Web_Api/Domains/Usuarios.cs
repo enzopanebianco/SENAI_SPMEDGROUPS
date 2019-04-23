@@ -19,5 +19,6 @@ namespace Senai_Spmedgroups_Web_Api.Domains
         public Clinicas IdClinicaNavigation { get; set; }
         public Medicos Medicos { get; set; }
         public Pacientes Pacientes { get; set; }
+
     }
 }
