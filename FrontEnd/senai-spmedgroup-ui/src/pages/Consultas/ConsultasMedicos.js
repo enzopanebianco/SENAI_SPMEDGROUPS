@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Listagem from '../Componentes/Listagem';
 import Cabecalho from '../Componentes/Cabecalho' 
 import Rodape from '../Componentes/Rodape';
-
+import { Link } from 'react-router-dom';
 class ConsultasMedicos extends Component{
     constructor(){
         super();
@@ -55,12 +55,16 @@ class ConsultasMedicos extends Component{
                                this.state.lista.map(function(consulta){
                                    return(
                                 <tr key={consulta.id}>
-                                
-                                <td >{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                                <td className="id">{consulta.id}</td>
+                                <td className="flex-list-td paci">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
                                 <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
                                 <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
                                 <td className="descri flex-list-td">{consulta.descricao}</td>
-                                <td className="situ flex-list-td">{consulta.idSituacaoNavigation.nome}</td>
+                                <td className="situ flex-list-td">{consulta.idSituacaoNavigation.nome}
+                                <div className="edit">
+                                    <li><Link to="/consultas/atualizar/"><a>Editar</a></Link></li>
+                                    </div>
+                                    </td>
                             </tr>
                             );
                         })

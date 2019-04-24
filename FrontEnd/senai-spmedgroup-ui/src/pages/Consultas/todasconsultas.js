@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Cabecalho from '../Componentes/Cabecalho' 
 import Rodape from '../Componentes/Rodape';
 import Listagem from '../Componentes/Listagem';
+import { Link } from 'react-router-dom';
 import '../../assets/CSS/list.css';
 
 class TodasConsultas extends Component{
@@ -10,6 +11,7 @@ class TodasConsultas extends Component{
         super();
         this.state={
             lista:[],
+            id:"",
             idPaciente:"",
             idMedico:"",
             dtAgendamento:"",
@@ -20,7 +22,7 @@ class TodasConsultas extends Component{
         this.atualizaIdMedicoForm=this.atualizaIdMedico.bind(this);
         this.atualizaDataForm=this.atualizaData.bind(this);
         this.atualizaDescricaoForm=this.atualizaDescricao.bind(this);
-    
+        this.atualizaIDForm=this.atualizaID.bind(this);
         this.atualizaIdSituacaoForm=this.atualizaIdSituacao.bind(this);
         }
     ListarPaciente(){
@@ -29,6 +31,28 @@ class TodasConsultas extends Component{
             console.log(data)
             this.setState({listaP:data.data});
         })
+        .catch(erro=>console.log(erro))
+    }
+    AtualizarConsulta(event){
+        event.preventDefault();
+        
+        let tokenAtu = localStorage.getItem("spmed-usuario");
+        var config = {
+            headers: {
+                'Content-Type' : 'application/json',
+                'Authorization': "bearer " + tokenAtu
+            }
+        };
+        Axios.put('http://localhost:5000/api/agendamentos',{
+            id:this.state.id,
+            idPaciente:this.state.idPaciente,
+            idMedico:this.state.idMedico,
+            dtAgendamento:this.state.dtAgendamento,
+            descricao:this.state.descricao,
+            idSituacao:this.state.idSituacao
+        },config
+        )
+        .then(data=>console.log(data))
         .catch(erro=>console.log(erro))
     }
     cadastrarConsultas(event){
@@ -68,6 +92,9 @@ class TodasConsultas extends Component{
         .catch(erro=>console.log(erro))
         
     }
+    atualizaID(event){
+        this.setState({id:event.target.value})
+    }
     atualizaIdPaciente(event){
         this.setState({idPaciente:event.target.value})
     }
@@ -90,6 +117,8 @@ class TodasConsultas extends Component{
         
     }
     render(){
+      
+       
         return(
             <div>
                 <Cabecalho />
@@ -106,11 +135,16 @@ class TodasConsultas extends Component{
                         this.state.lista.map(function(consulta){
                             return(
                                 <tr key={consulta.id}>
-                                <td >{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                                <td className="id">{consulta.id}</td>
+                                <td className="flex-list-td paci">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
                                 <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
                                 <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
                                 <td className="descri flex-list-td">{consulta.descricao}</td>
-                                <td className="situ flex-list-td">{consulta.idSituacao}</td>
+                                <td className="situ flex-list-td">{consulta.idSituacao}
+                                    <div className="edit">
+                                    <li><Link to="/consultas/atualizar/"><a>Editar</a></Link></li>
+                                    </div>
+                                </td>
                             </tr>
                             );
                         })
@@ -119,15 +153,16 @@ class TodasConsultas extends Component{
                     </tbody>
                 </table>
                 </section>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <section className="cadastro">
-                <h2>CADASTRAR</h2>
-                <form onSubmit={this.cadastrarConsultas.bind(this)}>
+               
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <section className="cadastro">
+                    <h2>CADASTRAR</h2>
+                    <form onSubmit={this.cadastrarConsultas.bind(this)}>
                     <div className="item">
                         <a>idPaciente</a>
                         <input type="text" value={this.state.idPaciente} onChange={this.atualizaIdPacienteForm} />

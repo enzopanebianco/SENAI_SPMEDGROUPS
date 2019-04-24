@@ -1,13 +1,13 @@
 .list{
    align-items: center;
     position: relative;
-    left: 35%;
+    left: 28%;
     
     top: 10px;   
 }
 ._list{
     background: #4d9c55;  
-    width: 700px;
+    width: 800px;
     transform: translateX(-50px);
 }
 .flex-list{
@@ -15,7 +15,7 @@
     transform: translateX(-80px);
 }
 .flex-list-td{
-   
+    
     position: relative;
     right: 50%;
 }
@@ -33,8 +33,15 @@
     text-align: center;
     position: relative;  
 }
-.medi{
+.id{
+    color: #47994f;
+    font-weight: bold;
+}
+.paci{
     transform: translateX(-70px);
+}
+.medi{
+    transform: translateX(-50px);
 }
 .dat{
     font-size: 9pt;   
@@ -45,7 +52,7 @@
     transform: translateX(45px);
 }
 .situ{
-    transform: translateX(110px);
+    transform: translateX(100px);
 }
 .list img{
    z-index: -1;
@@ -143,4 +150,31 @@
 .titulo h2{
     color: #4390ba;
 }
+#campo-editar{
+    width: 600px;
+    background: #f1f1f1;
+  
+}
+#campo-editar h2{
+    color: black;
+    
+}
+#campo-editar button{
+    background: #000;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+    left: 300px;
+    position: relative;
+}
+.edit li{
+    list-style-type: none;
+  
+}
+.edit li a{
+    text-decoration: none;
+    color: #2f5f79;
+    background: rgb(243, 243, 243);
+}
+
 

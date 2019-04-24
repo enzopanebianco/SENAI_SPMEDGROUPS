@@ -24,9 +24,12 @@ h2{
     background: #5f8ff7;
 }
 
+
 .app-tt h3{
     text-align: center;
-    color: #80e289;
+    font-family: tw cen mt;
+    
+    color: #90ff9b;
     text-transform: uppercase;
 }
 .app-tt p{

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import CabecalhoAdmin from '../Componentes/CabecalhoAdministrador';
+import Cabecalho from '../Componentes/Cabecalho';
 import imgfundo from '../../assets/imagens/logofundo.png';
 import imgmed from '../../assets/imagens/medico-11022016-1000x552.jpg';
 import Rodape from '../Componentes/Rodape';
@@ -8,7 +8,7 @@ class Sobre extends Component{
     render(){
         return(
             <div>
-                <CabecalhoAdmin />
+                <Cabecalho />
                 <section class="about">
                 <h2>SOBRE A CLÍNICA</h2>
                 <img src={imgfundo} />

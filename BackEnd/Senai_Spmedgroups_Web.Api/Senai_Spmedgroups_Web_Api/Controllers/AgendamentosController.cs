@@ -30,7 +30,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             MedicoRepository = new MedicoRepository();
         }
         
-        [Authorize(Roles = "0")]
+        [Authorize(Roles = "0,2")]
         [HttpPut]
         public IActionResult Put(Agendamentos agendamentos)
         {

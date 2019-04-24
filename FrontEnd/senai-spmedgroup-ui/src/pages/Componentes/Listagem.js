@@ -10,6 +10,7 @@ function listagem (){
            <section className="_list">
            <thead className="th">
                         <tr>
+                        <th className="flex-list">ID</th>
                         <th className="flex-list">Paciente</th>
                         <th className="flex-list">Médico</th>
                         <th className="flex-list">Data</th>

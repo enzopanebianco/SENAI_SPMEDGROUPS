@@ -8,7 +8,7 @@ import Login from '../src/pages/Login/login'
 import ConsultasMedicos from '../src/pages/Consultas/ConsultasMedicos'
 import CadastrarUsuario from '../src/pages/CadastrarUsuario/CadastrarUsuario';
 import {UsuarioAutenticado} from './services/auth';
-
+import AtualizarConsulta from  '../src/pages/Consultas/atualizarConsulta'
 import {decode} from './services/auth';
 import TodasConsultas from '../src/pages/Consultas/todasconsultas'
 import ConsultasPacientes from '../src/pages/Consultas/ConsultasPacientes'
@@ -28,10 +28,10 @@ const PermissaoAdmin = ({ component: Component }) => (
     />
   );
 
-  const PermissaoMed = ({ component: Component }) => (
+  const PermissaoAdminMed = ({ component: Component }) => (
     <Route
       render={props =>
-        UsuarioAutenticado() && decode()=="2"? (
+        UsuarioAutenticado() && decode()=="2"||decode()==="0"? (
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: "/" }} />
@@ -56,10 +56,12 @@ const rotas=(
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route exact path="/login" component={Login} />
-                <PermissaoMed exact path="/consultas/medicos" component={ConsultasMedicos} />
+                <PermissaoAdminMed exact path="/consultas/medicos" component={ConsultasMedicos} />
                 <PermissaoAdmin exact path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
                 <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />
+                <PermissaoAdminMed exact path="/consultas/atualizar" component={AtualizarConsulta}/>
+                
                 <Route exact path="/sobre" component={Sobre} />
                 <PermissaoAdmin exact path="/cadastrarmedico" component={CadastrarMedico}/>
                 <PermissaoAdmin exact path="/cadastrarpaciente" component={CadastrarPaciente}/>

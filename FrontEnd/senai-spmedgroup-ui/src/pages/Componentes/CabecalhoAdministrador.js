@@ -26,8 +26,8 @@ function CabecalhoAdmin() {
         </section>
             <div className="sub-header-list">
             <ul>
-                <li><Link ><a>Cadastrar Paciente</a></Link></li>
-                <li><a>Cadastrar Médico</a></li>
+                <li><Link to="/cadastrarpaciente"><a>Cadastrar Paciente</a></Link></li>
+                <li><Link to="/cadastrarmedico"><a>Cadastrar Médico</a></Link></li>
                 <li><Link to="/todasconsultas"><a>Todas as Consultas</a></Link></li>
             </ul>
             </div>
