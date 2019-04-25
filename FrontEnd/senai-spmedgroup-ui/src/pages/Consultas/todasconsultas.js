@@ -12,7 +12,9 @@ class TodasConsultas extends Component{
         this.state={
             lista:[],
             id:"",
+            listaP:[],
             idPaciente:"",
+            listaM:[],
             idMedico:"",
             dtAgendamento:"",
             descricao:"",
@@ -111,10 +113,27 @@ class TodasConsultas extends Component{
         this.setState({idSituacao:event.target.value})
     }
     componentDidMount(){
-    
+        this.buscarpaciente();
+        this.buscarmedico();
         this.listartodas();
         
         
+    }
+    buscarpaciente(){
+        Axios.get('http://localhost:5000/api/pacientes')
+        .then(resposta=>{
+            const pacientes = resposta.data;
+            this.setState({listaP:pacientes});
+        })
+        console.log(this.listaP);
+    }
+    buscarmedico(){
+        Axios.get('http://localhost:5000/api/medicos')
+        .then(resposta=>{
+            const medicos = resposta.data;
+            this.setState({listaM:medicos});
+        })
+        console.log(this.listaM);
     }
     render(){
       
@@ -142,7 +161,7 @@ class TodasConsultas extends Component{
                                 <td className="descri flex-list-td">{consulta.descricao}</td>
                                 <td className="situ flex-list-td">{consulta.idSituacao}
                                     <div className="edit">
-                                    <li><Link to="/consultas/atualizar/"><a>Editar</a></Link></li>
+                                    <li><Link to="/consultas/${id}"><a>Editar</a></Link></li>
                                     </div>
                                 </td>
                             </tr>
@@ -164,13 +183,25 @@ class TodasConsultas extends Component{
                     <h2>CADASTRAR</h2>
                     <form onSubmit={this.cadastrarConsultas.bind(this)}>
                     <div className="item">
-                        <a>idPaciente</a>
-                        <input type="text" value={this.state.idPaciente} onChange={this.atualizaIdPacienteForm} />
+                        <a>Paciente</a>
+                        <select value={this.state.idpaciente} onChange={this.atualizaIdPacienteForm}>
+                        <option value="0">Selecione</option>{
+                            this.state.listaP.map((element)=>{
+                                return <option key={element.id} value={element.id}>{element.idUsuarioNavigation.nome}</option>
+                            })
+                        }
+                    </select>
                     </div>
                     
                     <div className="item">
-                        <a>idMedico</a>
-                        <input type="text" value={this.state.idMedico} onChange={this.atualizaIdMedicoForm} />
+                        <a>Médico</a>
+                        <select value={this.state.idMedico} onChange={this.atualizaIdMedicoForm}>
+                        <option value="0">Selecione</option>{
+                            this.state.listaM.map((element)=>{
+                                return <option key={element.id} value={element.id}>{element.idUsuarioNavigation.nome}</option>
+                            })
+                        }
+                    </select>
                     </div>
                     
                     <div className="item">
@@ -179,12 +210,12 @@ class TodasConsultas extends Component{
                     </div>
                     
                     <div className="item">
-                        <a>Descricao</a>
+                        <a>Descrição</a>
                         <input type="text" value={this.state.descricao} onChange={this.atualizaDescricaoForm} />
                     </div>
                     
                     <div className="item">
-                    <a>idsituacao</a>
+                    <a>Situação</a>
                         <select value={this.state.idSituacao} onChange={this.atualizaIdSituacaoForm}>
                             <option value="1" className="agendada">Agendada</option>
                             <option value="2" className="realizada">Realizada</option>

@@ -4,7 +4,7 @@ import logo from '../../assets/imagens/Ativo 1.png'
 import '../../assets/CSS/index.css';
 import {decode} from '../../services/auth';
 function Cabecalho () {
-     
+    
     return (
         <div>
             <section className="header">

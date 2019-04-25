@@ -57,7 +57,8 @@ class ConsultasPacientes extends Component{
                                this.state.lista.map(function(consulta){
                                    return(
                             <tr key={consulta.id}>
-                                 <td >{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                               <td className="id">{consulta.id}</td>
+                                 <td className="flex-list-td paci">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
                                 <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
                                 <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
                                 <td className="descri flex-list-td">{consulta.descricao}</td>

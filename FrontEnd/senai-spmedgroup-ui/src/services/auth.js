@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export const UsuarioAutenticado =()=>localStorage.getItem("spmed-usuario") !=null;
 
 export const parseJwt = () =>{
@@ -13,6 +14,7 @@ export const decode=()=>{
 
     return(permissao);
 }
+
 
         
    

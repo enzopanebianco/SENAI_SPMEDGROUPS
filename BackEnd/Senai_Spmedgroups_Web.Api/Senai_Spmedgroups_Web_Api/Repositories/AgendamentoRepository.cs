@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Senai_Spmedgroups_Web_Api.Domains;
 using Senai_Spmedgroups_Web_Api.Interfaces;
+using Senai_Spmedgroups_Web_Api.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             }
         }
 
+       
+
         public void Cadastrar(Agendamentos agendamentos)
         {
             using (SpmedContext ctx = new SpmedContext())
@@ -34,7 +37,7 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
         {
             using (SpmedContext ctx = new SpmedContext())
             {
-
+                
                 return ctx.Agendamentos.Include(x=>x.IdMedicoNavigation.IdUsuarioNavigation
                 ).Include(x=>x.IdPacienteNavigation.IdUsuarioNavigation).ToList();
             }
@@ -44,6 +47,7 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
         {
             using (SpmedContext ctx = new SpmedContext())
             {
+                
                 
                 return ctx.Agendamentos.Include(x => x.IdMedicoNavigation.IdUsuarioNavigation
                 ).Include(x => x.IdPacienteNavigation.IdUsuarioNavigation).Include(x => x.IdSituacaoNavigation)
@@ -58,6 +62,16 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             {
                 return ctx.Agendamentos.Include(x => x.IdMedicoNavigation.IdUsuarioNavigation
                 ).Include(x => x.IdPacienteNavigation.IdUsuarioNavigation).Include(x => x.IdSituacaoNavigation).Where(x=>x.IdPaciente==id).ToList();
+            }
+        }
+
+        public List<Agendamentos> ListarPeloId(int id)
+        {
+
+            using (SpmedContext ctx = new SpmedContext())
+            {
+                return ctx.Agendamentos.Include(x => x.IdMedicoNavigation.IdUsuarioNavigation
+                ).Include(x => x.IdPacienteNavigation.IdUsuarioNavigation).Include(x => x.IdSituacaoNavigation).Where(x => x.Id == id).ToList();
             }
         }
     }

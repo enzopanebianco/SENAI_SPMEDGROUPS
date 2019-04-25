@@ -8,10 +8,14 @@ namespace Senai_Spmedgroups_Web_Api.Interfaces
 {
      public interface IAgendamentoRepository
     {
+                                                                                                                       
         void Atualizar(Agendamentos agendamentos);
         void Cadastrar(Agendamentos agendamentos);
         List<Agendamentos> ListarPaciente(int id);
         List<Agendamentos> ListarMedico(int id);
-        List<Agendamentos> Listar(); 
+        List<Agendamentos> Listar();
+        List<Agendamentos> ListarPeloId(int id);
+
+
     }
 }

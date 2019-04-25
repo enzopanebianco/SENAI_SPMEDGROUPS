@@ -29,8 +29,9 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             PacienteRepository = new PacienteRepository();
             MedicoRepository = new MedicoRepository();
         }
-        
+
         [Authorize(Roles = "0,2")]
+        [Route("/{id}")]
         [HttpPut]
         public IActionResult Put(Agendamentos agendamentos)
         {
@@ -118,6 +119,21 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             }
             catch (Exception ex)
             {
+                return BadRequest();
+            }
+        }
+        //[Authorize(Roles = "0")]
+
+        [HttpGet("{id}")]
+        public IActionResult GetID(int id)
+        {
+            try
+            {
+                return Ok(AgendamentoRepository.ListarPeloId(id));
+            }
+            catch (Exception ex)
+            {
+
                 return BadRequest();
             }
         }

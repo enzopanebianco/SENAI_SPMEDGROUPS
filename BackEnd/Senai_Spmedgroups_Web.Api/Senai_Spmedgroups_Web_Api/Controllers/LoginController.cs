@@ -31,7 +31,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             try
             {
                 Usuarios usuario = UsuarioRepository.Buscar(login.Email,login.Senha);
-                Medicos medico;
+                
                 if (usuario == null)
                 {
                     return NotFound(new
@@ -57,7 +57,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                     issuer: "Spmedgroup.WebApi",
                     audience: "Spmedgroup.WebApi",
                     claims: claims,
-                    expires: DateTime.Now.AddMinutes(30),
+                    expires: DateTime.Now.AddMinutes(60),
                     signingCredentials: creds);
                     return Ok(new
                 {

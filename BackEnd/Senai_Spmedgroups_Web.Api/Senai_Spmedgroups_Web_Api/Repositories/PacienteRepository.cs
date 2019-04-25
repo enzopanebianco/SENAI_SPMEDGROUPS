@@ -32,7 +32,7 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
         {
             using (SpmedContext ctx  = new SpmedContext())
             {
-              return  ctx.Pacientes.ToList();
+              return  ctx.Pacientes.Include(x=>x.IdUsuarioNavigation).ToList();
             }
         }
 

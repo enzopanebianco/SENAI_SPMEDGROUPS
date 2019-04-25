@@ -58,12 +58,11 @@ class ConsultasMedicos extends Component{
                                 <td className="id">{consulta.id}</td>
                                 <td className="flex-list-td paci">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
                                 <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
+                                
                                 <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
                                 <td className="descri flex-list-td">{consulta.descricao}</td>
                                 <td className="situ flex-list-td">{consulta.idSituacaoNavigation.nome}
-                                <div className="edit">
-                                    <li><Link to="/consultas/atualizar/"><a>Editar</a></Link></li>
-                                    </div>
+                                
                                     </td>
                             </tr>
                             );

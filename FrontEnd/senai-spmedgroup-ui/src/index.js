@@ -55,16 +55,15 @@ const rotas=(
         <div>
             <Switch>
                 <Route exact path="/" component={App} />
-                <Route exact path="/login" component={Login} />
-                <PermissaoAdminMed exact path="/consultas/medicos" component={ConsultasMedicos} />
-                <PermissaoAdmin exact path="/cadastrarusuario" component={CadastrarUsuario}/>
+                <Route path="/login" component={Login} />
+                <PermissaoAdminMed path="/consultas/medicos" component={ConsultasMedicos} />
+                <PermissaoAdmin path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
-                <Permissao exact path="/consultas/pacientes" component={ConsultasPacientes} />
-                <PermissaoAdminMed exact path="/consultas/atualizar" component={AtualizarConsulta}/>
-                
-                <Route exact path="/sobre" component={Sobre} />
-                <PermissaoAdmin exact path="/cadastrarmedico" component={CadastrarMedico}/>
-                <PermissaoAdmin exact path="/cadastrarpaciente" component={CadastrarPaciente}/>
+                <PermissaoAdmin path="/todasconsultas/:id" component={AtualizarConsulta} />
+                <Permissao path="/consultas/pacientes" component={ConsultasPacientes} />
+                <Route path="/sobre" component={Sobre} />
+                <PermissaoAdmin path="/cadastrarmedico" component={CadastrarMedico}/>
+                <PermissaoAdmin path="/cadastrarpaciente" component={CadastrarPaciente}/>
                 {/* <Route component={NaoEncontrada} /> */}
             </Switch>
         </div>
