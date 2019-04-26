@@ -16,7 +16,7 @@ class Sobre extends Component{
                 <img src={imgmed} /> 
                 </div>
                 <div className="app-tt">
-                <h3>-Aplicativo</h3>
+                <h3>Aplicativo</h3>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
               dolore magna ag elit, sed diam nonummy nibh euismod magna ag elit, sed diam nonummy nibh euismod ti magna ag
               elit, sed diam nonummy </p>

@@ -136,12 +136,12 @@
     height: 30px;
     width: 100px;
     color: white;
-    border: 1pt solid #afafaf;
+    border: 1pt solid #e7e7e7;
     border-radius: 12px;
 }
 .cadastro button:active{
     background: #2f5e34;
-    
+    box-shadow: 1px 1px #4d9c55;
 }
 .idu{
     position: absolute;

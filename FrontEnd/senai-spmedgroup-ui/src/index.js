@@ -43,10 +43,11 @@ const PermissaoAdmin = ({ component: Component }) => (
 
 const Permissao=({component:Component})=>(
     <Route 
-        render={props=>UsuarioAutenticado()? 
-            (<Component {...props}/>):
-            (<Redirect to ={{pathname:'/login',state:{from:props.location}}} />)
-        }
+    render={props=>UsuarioAutenticado()? 
+      (<Component {...props}/>):
+      (<Redirect to ={{pathname:'/login',state:{from:props.location}}} />)
+      
+          }
     />
     
 );
@@ -64,7 +65,7 @@ const rotas=(
                 <Route path="/sobre" component={Sobre} />
                 <PermissaoAdmin path="/cadastrarmedico" component={CadastrarMedico}/>
                 <PermissaoAdmin path="/cadastrarpaciente" component={CadastrarPaciente}/>
-                {/* <Route component={NaoEncontrada} /> */}
+                <Route component={NaoEncontrada} />
             </Switch>
         </div>
     </Router>

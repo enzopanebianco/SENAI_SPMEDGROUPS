@@ -5,8 +5,9 @@ import Rodape from '../Componentes/Rodape';
 import Listagem from '../Componentes/Listagem';
 import { Link } from 'react-router-dom';
 import '../../assets/CSS/list.css';
-
+import {decode} from '../../services/auth'
 class TodasConsultas extends Component{
+    
     constructor(){
         super();
         this.state={
@@ -116,7 +117,8 @@ class TodasConsultas extends Component{
         this.buscarpaciente();
         this.buscarmedico();
         this.listartodas();
-        
+        console.log(decode());
+       
         
     }
     buscarpaciente(){
@@ -163,6 +165,7 @@ class TodasConsultas extends Component{
                                     <div className="edit">
                                     <li><Link to="/consultas/${id}"><a>Editar</a></Link></li>
                                     </div>
+                                <hr/>
                                 </td>
                             </tr>
                             );
@@ -173,12 +176,7 @@ class TodasConsultas extends Component{
                 </table>
                 </section>
                
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                  <br/>
                     <section className="cadastro">
                     <h2>CADASTRAR</h2>
                     <form onSubmit={this.cadastrarConsultas.bind(this)}>
@@ -211,7 +209,8 @@ class TodasConsultas extends Component{
                     
                     <div className="item">
                         <a>Descrição</a>
-                        <input type="text" value={this.state.descricao} onChange={this.atualizaDescricaoForm} />
+                        {/* <input type="text" value={this.state.descricao} onChange={this.atualizaDescricaoForm} /> */}
+                        <textarea type="text" value={this.state.descricao} onChange={this.atualizaDescricaoForm} placeholder="insira uma descrição"></textarea>
                     </div>
                     
                     <div className="item">

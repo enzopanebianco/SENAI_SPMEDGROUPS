@@ -85,8 +85,7 @@ class AtualizarConsulta extends Component {
         console.log(params.id);
 
         const a = ({ match }) => { console.log(match.params.id) };
-        a;
-
+        
         Axios.get(`http://localhost:5000/api/agendamentos/${params.id}`)
             .then(data => {
                 console.log(data);

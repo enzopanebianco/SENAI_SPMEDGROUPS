@@ -12,7 +12,7 @@ h2{
 .about img{
     position: absolute;
     top:300px;
-    right: 200px;
+    right: 100px;
 
 }
 .app-tt{
@@ -20,23 +20,27 @@ h2{
     height: 250px;
     position: relative;
     left: 23%;
-    top: 60px;
-    background: #5f8ff7;
+    top: 33px;
+    border-radius: 70px 0px 0px 0px;
+    background: #5f8ff7 ;
+    filter: opacity(100%);
+    border-top: 10px solid #5f8ff7 ;
 }
 
 
 .app-tt h3{
     text-align: center;
     font-family: tw cen mt;
-    
+    font-weight: 100;
     color: #90ff9b;
-    text-transform: uppercase;
+    font-size: 18pt;
 }
 .app-tt p{
     font-size: 11pt;
     color: white;
     width: 200px;
     transform: translateX(20px) translateY(10px);
+    
 }
 .app-tt button{
     position: relative;
@@ -49,6 +53,10 @@ h2{
     border: 0.5px solid #fff;
     height: 25px;
     color: white;
+}
+.app-tt button:hover{
+    background: #5284f0;
+    box-shadow: 2px 2px #5581e0;
 }
 .txt-a{
     transform: translateY(-90px) translateX(-100px);
