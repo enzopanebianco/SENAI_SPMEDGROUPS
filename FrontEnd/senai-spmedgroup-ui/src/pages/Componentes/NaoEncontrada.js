@@ -4,7 +4,7 @@ class NaoEncontrada extends Component{
     render(){
         return(
             <div>
-                <h1>N FOI</h1>
+                <h1>Página Não Encontrada</h1>
             </div>
         );
     }

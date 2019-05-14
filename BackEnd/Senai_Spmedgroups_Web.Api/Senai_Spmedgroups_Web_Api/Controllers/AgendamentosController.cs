@@ -109,7 +109,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 });
             }
         }
-        [Authorize(Roles = "0")]
+        //[Authorize(Roles = "0")]
         [HttpGet]
         public IActionResult Get()
         {

@@ -15,7 +15,7 @@ import ConsultasPacientes from '../src/pages/Consultas/ConsultasPacientes'
 import Sobre from '../src/pages/Sobre/sobre'
 import CadastrarMedico from '../src/pages/CadastrarMedico/cadastrarmedico';
 import CadastrarPaciente from  '../src/pages/CadastrarPaciente/cadastrarpaciente';
-
+import NaoEncontrada from '../src/pages/Componentes/NaoEncontrada'
 const PermissaoAdmin = ({ component: Component }) => (
     <Route
       render={props =>

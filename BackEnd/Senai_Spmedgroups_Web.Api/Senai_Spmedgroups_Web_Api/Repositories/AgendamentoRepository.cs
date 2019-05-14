@@ -38,8 +38,7 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             using (SpmedContext ctx = new SpmedContext())
             {
                 
-                return ctx.Agendamentos.Include(x=>x.IdMedicoNavigation.IdUsuarioNavigation
-                ).Include(x=>x.IdPacienteNavigation.IdUsuarioNavigation).ToList();
+                return ctx.Agendamentos.ToList();
             }
         }
 

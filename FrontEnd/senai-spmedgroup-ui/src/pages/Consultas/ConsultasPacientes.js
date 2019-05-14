@@ -40,7 +40,6 @@ class ConsultasPacientes extends Component{
      componentDidMount(){
        
          this.listarConsultas();
-     
 
     }
     render(){
@@ -62,7 +61,7 @@ class ConsultasPacientes extends Component{
                                 <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
                                 <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
                                 <td className="descri flex-list-td">{consulta.descricao}</td>
-                                <td className="situ flex-list-td">{consulta.idSituacao}</td>
+                                <td className="situ flex-list-td">{consulta.idSituacaoNavigation.nome}</td>
                             </tr>
                             );
                         })
@@ -75,5 +74,6 @@ class ConsultasPacientes extends Component{
             </div>
         );
     }
+
 }
 export default ConsultasPacientes;
