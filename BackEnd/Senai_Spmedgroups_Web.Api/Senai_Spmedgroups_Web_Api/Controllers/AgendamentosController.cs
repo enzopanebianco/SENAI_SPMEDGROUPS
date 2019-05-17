@@ -61,7 +61,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             }
         }
 
-        [Authorize(Roles = "0,1")]
+        //[Authorize(Roles = "0,1")]
         [HttpGet]
 
         [Route("pacientes")]
@@ -72,7 +72,7 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
             {
                 int usuariosId = Convert.ToInt32(HttpContext.User.Claims.First(a => a.Type == JwtRegisteredClaimNames.Jti).Value);
                 Pacientes pacientes = PacienteRepository.Procurar(usuariosId);
-                
+                Medicos medicos = MedicoRepository.Procurar(usuariosId);
                 if (pacientes==null)
                 {
                     return NotFound();
@@ -137,5 +137,34 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet]
+        [Authorize]
+        [Route("usuarios")]
+        public IActionResult GetByIdLogado()
+        {
+            try
+            {
+                int usuariosId = Convert.ToInt32(HttpContext.User.Claims.First(a => a.Type == JwtRegisteredClaimNames.Jti).Value);
+                string usuariotipo = HttpContext.User.Claims.First(a => a.Type == ClaimTypes.Role).Value;
+               
+                if (usuariotipo=="1")
+                {
+                    Pacientes pacientes = PacienteRepository.Procurar(usuariosId);
+                    return Ok(AgendamentoRepository.ListarPaciente(pacientes.Id));
+                } else if (usuariotipo=="2")
+                {
+                    Medicos medicos = MedicoRepository.Procurar(usuariosId);
+                    return Ok(AgendamentoRepository.ListarMedico(medicos.Id));
+                } else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

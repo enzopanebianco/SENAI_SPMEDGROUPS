@@ -65,11 +65,13 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 });
 
             }
+            
             catch (Exception ex)
-            {
+            {   
+               
                 return BadRequest(new
                 {
-                    mensagem = "Usuário não Encontrado"
+                    mensagem = "Email ou senha incorretos"
                 });
             }
         }

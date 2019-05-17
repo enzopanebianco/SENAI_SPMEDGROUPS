@@ -69,7 +69,7 @@ class TodasConsultas extends Component{
             }
         };
         
-        Axios.post('http://localhost:5000/api/agendamentos',{
+        Axios.post('http://192.168.3.48:5000/api/agendamentos',{
             idPaciente:this.state.idPaciente,
             idMedico:this.state.idMedico,
             dtAgendamento:this.state.dtAgendamento,
@@ -87,7 +87,7 @@ class TodasConsultas extends Component{
                 'Authorization': "bearer " + tokenL
             }
         };
-        Axios.get('http://localhost:5000/api/agendamentos',config)
+        Axios.get('http://192.168.3.48:5000/api/agendamentos',config)
         .then(data=>{
             console.log(data)
             this.setState({lista:data.data});
@@ -122,7 +122,7 @@ class TodasConsultas extends Component{
         
     }
     buscarpaciente(){
-        Axios.get('http://localhost:5000/api/pacientes')
+        Axios.get('http://192.168.3.48:5000/api/pacientes')
         .then(resposta=>{
             const pacientes = resposta.data;
             this.setState({listaP:pacientes});
@@ -130,7 +130,7 @@ class TodasConsultas extends Component{
         console.log(this.listaP);
     }
     buscarmedico(){
-        Axios.get('http://localhost:5000/api/medicos')
+        Axios.get('http://192.168.3.48:5000/api/medicos')
         .then(resposta=>{
             const medicos = resposta.data;
             this.setState({listaM:medicos});
@@ -157,8 +157,8 @@ class TodasConsultas extends Component{
                             return(
                                 <tr key={consulta.id}>
                                 <td className="id">{consulta.id}</td>
-                                <td className="flex-list-td paci">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
-                                <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
+                                <td className="flex-list-td paci">{consulta.idPaciente}</td>   
+                                <td className="medi flex-list-td">{consulta.idMedico}</td>
                                 <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
                                 <td className="descri flex-list-td">{consulta.descricao}</td>
                                 <td className="situ flex-list-td">{consulta.idSituacao}

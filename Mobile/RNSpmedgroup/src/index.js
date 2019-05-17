@@ -2,9 +2,9 @@ import { createBottomTabNavigator, createAppContainer, createStackNavigator, cre
 import Login from '../src/pages/login'
 import Consultas from '../src/pages/consultas'
 
-const AuthStack = createStackNavigator({Login});
+const AuthStack = createStackNavigator({Consultas});
 
-const MainNavigator = createStackNavigator({Consultas});
+const MainNavigator = createStackNavigator({Login});
 
 export default createAppContainer(createSwitchNavigator({
     MainNavigator,

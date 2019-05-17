@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {View,Text,StyleSheet,TextInput,TouchableOpacity,Image,AsyncStorage} from 'react-native';
 import api from '../services/api';
+//import console = require('console');
 
 class Login extends Component{
     static navigationOptions={
@@ -22,8 +23,10 @@ class Login extends Component{
         const token = resposta.data.token;
         
         await AsyncStorage.setItem("spmed",token);
-
         this.props.navigation.navigate("MainNavigator");
+
+        
+        
     }
    
     render(){

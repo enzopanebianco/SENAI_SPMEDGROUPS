@@ -27,7 +27,7 @@ class ConsultasPacientes extends Component{
                  'Authorization': "bearer " + tokenP
              }
          };
-         Axios.get('http://localhost:5000/api/agendamentos/pacientes',config)
+         Axios.get('http://192.168.3.48:5000/api/agendamentos/usuarios',config)
              .then(data=>{
                  console.log(data);
                  this.setState({lista:data.data});
