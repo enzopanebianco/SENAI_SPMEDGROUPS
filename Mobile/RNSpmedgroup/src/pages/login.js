@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import {View,Text,StyleSheet,TextInput,TouchableOpacity,Image,AsyncStorage} from 'react-native';
+import {View,Text,StyleSheet,TextInput,TouchableOpacity,Image,AsyncStorage,StatusBar} from 'react-native';
 import api from '../services/api';
-//import console = require('console');
+import { SafeAreaView } from 'react-navigation';
 
 class Login extends Component{
     static navigationOptions={
@@ -14,12 +14,14 @@ class Login extends Component{
             senha:""
         }
     }
+
     logar = async()=>{
       
         const resposta = await api.post("/login",{
             email:this.state.email,
             senha:this.state.senha
         })
+        .catch(this.erroLogin());
         const token = resposta.data.token;
         
         await AsyncStorage.setItem("spmed",token);
@@ -28,11 +30,25 @@ class Login extends Component{
         
         
     }
+    componentDidMount(){
+        AsyncStorage.clear();
+        
+    }
+    erroLogin=()=>{
+        return(
+        <View>
+            <Text>Usuário ou Senha Errados</Text>
+        </View>
+        );
+    }
    
     render(){
         
         return(
-            <View>
+
+            <SafeAreaView>
+            
+        <StatusBar translucent backgroundColor="white" barStyle="dark-content"/>   
             <View style={styles.Cabecalho}>
                 <Text style={styles.CabTitulo}>SPMEDICAL
                 
@@ -66,8 +82,9 @@ class Login extends Component{
             source={require("../assets/img/Ativo1.png")}
             style={styles.img}
             />
-            <Text style={styles.spmed}>SpmedGroup©</Text>
-            </View>
+            <Text style={styles.spmed}>©SpmedGroup</Text>
+           
+            </SafeAreaView>
         );
     
     }
@@ -77,7 +94,8 @@ const styles =  StyleSheet.create({
     Cabecalho:{
         height:70,
         fontStyle:"italic",
-        borderRadius:100
+        borderRadius:100,
+        marginTop:20,
     },
     CabTitulo:{
         color:"#80bdde",
@@ -87,7 +105,7 @@ const styles =  StyleSheet.create({
         textAlign:"center",
         marginTop:15,
         textShadowColor: '#f1f1f1',
-        textShadowOffset: {width: -1, height: 1},
+        textShadowOffset: {width: -2, height: 1},
         textShadowRadius: 1
     },
     titulo:{
@@ -122,19 +140,20 @@ const styles =  StyleSheet.create({
         textAlign:"center",
     },
     btn:{
-        backgroundColor:"black",
+        backgroundColor:"#80bdde",
         position:"relative",
         top:60,
         width:80,
         height:35,
         left:170,
+        
     },
     btnTXT:{
         color:"white",
         fontWeight:"100",
         position:"relative",
-        top:5,
-        left:15,
+        top:7,
+        left:17,
         fontSize:16,
         textTransform:"uppercase"
     },
@@ -142,12 +161,13 @@ const styles =  StyleSheet.create({
         position:"relative",
         left:165,
         top:140,
-        opacity:0.3,
+        opacity:0.2,
     },  
     spmed:{
         position:"relative",
         top:150,
         left:160,
+        fontStyle:"italic",
         color:"#cccccc"
     },
 })

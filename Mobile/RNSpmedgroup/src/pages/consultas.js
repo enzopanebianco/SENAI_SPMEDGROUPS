@@ -1,19 +1,24 @@
 import React,{Component} from 'react';
-import {View,Text,StyleSheet,TouchableOpacity,FlatList,AsyncStorage,Image} from 'react-native';
+import {View,Text,StyleSheet,TouchableOpacity,FlatList,AsyncStorage,Image,StatusBar} from 'react-native';
 import jwt from 'jwt-decode';
 import api from '../services/api';
+import { SafeAreaView } from 'react-navigation';
 
 class Consultas extends Component{
     static navigationOptions={
-        header:null
+        header:null,    
     };
     constructor(props){
         super(props);
         this.state={
             lista:[],
             nome:"",
-            token:""
+            token:"",
         }
+    }
+    sair=async()=>{
+      
+        return  alert("Obrigado"),this.props.navigation.navigate("AuthStack");
     }
     buscar = async()=>{
         const value= await AsyncStorage.getItem("spmed");
@@ -23,6 +28,7 @@ class Consultas extends Component{
       
     }
         listar = async() =>{
+            
             const value= await AsyncStorage.getItem("spmed");
            
             var config= {
@@ -37,9 +43,23 @@ class Consultas extends Component{
            
             this.setState({lista:dados});       
         }
+        ListaVazia = () => {
+            return (
+              <View>
+         
+                <Image
+                source={require("../assets/img/pranchetinha.png")}
+                style={styles.img2}
+            />
+                <Text style={{textAlign: 'center',color:"#999999"}}>Nenhuma Consulta Ainda...</Text>
+              </View>
+         
+            );
+          }
+        
     componentDidMount(){
         this.listar();
-       
+        
         this.buscar();
     }   
     render(){
@@ -47,7 +67,9 @@ class Consultas extends Component{
             
         
         return(
-            <View>
+            <SafeAreaView>
+                
+        <StatusBar translucent backgroundColor="white" barStyle="dark-content"/>
             <View style={styles.Cabecalho}>
                 <Text style={styles.CabTitulo}>SPMEDICAL
                 
@@ -55,44 +77,49 @@ class Consultas extends Component{
                         GROUP
                 </Text>
                 </Text>
-                <Text style={styles.NomeUsuario}>{this.state.nome}</Text>
-                
+                <Image
+            source={require("../assets/img/icon.png")}
+            style={styles.img}
+            />
+            <Text style={styles.NomeUsuario}>{this.state.nome}</Text>   
+           
+            <Text style={styles.exit} onPress={this.sair}>Sair</Text>        
             </View>
-         
-                
             <View>
                 <Text style={styles.titulo}>CONSULTAS</Text>
             </View>
-            
                 <FlatList 
                 data={this.state.lista}
                 keyExtractor={item=>item.id.toString()}
                 renderItem={this._renderizaLista}
-                
+                ListEmptyComponent={this.ListaVazia}
+                showsVerticalScrollIndicator={false}
+                vertical={true}
                 />
             
-            </View>
+            </SafeAreaView>
         );
         
       
     }
     _renderizaLista = ({item}) =>(
         <View style={styles.Getlist}>
+        
             <View>
             <Text >Paciente</Text>
             <Text style={{fontWeight:"300",color:"black"}} >{item.idPacienteNavigation.idUsuarioNavigation.nome}</Text>
             </View>
-            <View style={styles.medico}>
+            <View style={styles.medico} >
             <Text >Médico</Text>
             <Text style={{fontWeight:"300",color:"black"}} >{item.idMedicoNavigation.idUsuarioNavigation.nome}</Text>
             </View>
             <View style={styles.data}>
-            <Text >Data</Text>
+            <Text  >Data</Text>
             <Text style={{fontWeight:"300",color:"black"}} >{item.dtAgendamento}</Text>
             </View>
             <View style={styles.situacao}>
             <Text  >Situação</Text>
-            <Text style={{fontWeight:"300",color:"black",position:"relative",bottom:20}} >{item.idSituacaoNavigation.nome}</Text>
+            <Text style={{fontWeight:"300",color:"black"}} >{item.idSituacaoNavigation.nome}</Text>
             </View>
             <View style={styles.descricao}>
             <Text style={{textAlign:"center"}} >Descrição</Text>
@@ -105,7 +132,8 @@ const styles =  StyleSheet.create({
     Cabecalho:{
         height:70,
         fontStyle:"italic",
-        borderRadius:100
+        borderRadius:100,
+        marginTop:20,
     },
     CabTitulo:{
         color:"#80bdde",
@@ -133,10 +161,14 @@ const styles =  StyleSheet.create({
    
     Getlist:{
         marginTop:30,
-        flexDirection:"row",
+        flexDirection:"row",    
         backgroundColor:"white",
-        height:200,
+        height:230,
+        //F1FAFF
         backgroundColor:"#F1FAFF",
+        borderBottomColor:"#333",
+
+        borderBottomWidth:1,
     },
     data:{
         position:"relative",
@@ -147,41 +179,58 @@ const styles =  StyleSheet.create({
         position:"relative",
         top:70,
         right:50,
-        backgroundColor:"#fdfdfd",
-        width:100,
+        width:180,
         height:80,
-        borderBottomColor:"#80bdde",
-        borderBottomWidth:2,
-      
+        borderTopColor:"#80bdde",
+        borderTopWidth:2,
+
     },
     situacao:{
         position:"relative",
-        left:90
+        left:90,
+        height:20,
     },
     medico:{
         position:"absolute",
+       width:120,
         top:50,
         left:0,
     },
     NomeUsuario:{
         position:"absolute",
-        right:15,
-        top:20,
+        right:20,
+        top:17,
         width:100,
         color:"white",
         textAlign:"center",
         backgroundColor:"#80aade",
+        borderTopRightRadius:20,
     },
     img:{
         width:40,
         height:40,
         position:"absolute",
         zIndex:-1,
-        top:41,
-        right:15,
+        right:0,
         display:"none",
-        opacity:0.5
+        opacity:0.5,
     },
-
+    img2:{
+        opacity:0.1,
+        width:100,
+        height:100,
+        position:"relative",
+        left:"40%",
+        marginTop:100
+    },
+    exit:{
+        position:"relative",
+        left:360,
+        backgroundColor:"#eaeaea",
+        textAlign:"center",
+        width:50,
+        top:10,
+        color:"black",
+    },  
 });
 export default Consultas;
