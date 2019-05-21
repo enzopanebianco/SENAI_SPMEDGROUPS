@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
 import {View,Text,StyleSheet,TextInput,TouchableOpacity,Image,AsyncStorage,StatusBar} from 'react-native';
 import api from '../services/api';
-import { SafeAreaView } from 'react-navigation';
+
+
 
 class Login extends Component{
     static navigationOptions={
-        header:null
+       header:null
     };
     constructor(props){
         super(props);
@@ -21,7 +22,7 @@ class Login extends Component{
             email:this.state.email,
             senha:this.state.senha
         })
-        .catch(this.erroLogin());
+        .catch();
         const token = resposta.data.token;
         
         await AsyncStorage.setItem("spmed",token);
@@ -46,7 +47,7 @@ class Login extends Component{
         
         return(
 
-            <SafeAreaView>
+            <View style={{backgroundColor:"white    "}}>
             
         <StatusBar translucent backgroundColor="white" barStyle="dark-content"/>   
             <View style={styles.Cabecalho}>
@@ -61,10 +62,9 @@ class Login extends Component{
                 <Text style={styles.titulo}>ENTRAR</Text>
             </View>
                 
-            
                 <TextInput onChangeText={email=>this.setState({email})}
                 style={styles.inputE} placeholder="Email"
-                    
+                numberOfLines={2}  ellipsizeMode="middle"  
                 />
                 
                 <TextInput onChangeText={senha=>this.setState({senha})}
@@ -84,7 +84,7 @@ class Login extends Component{
             />
             <Text style={styles.spmed}>©SpmedGroup</Text>
            
-            </SafeAreaView>
+            </View>
         );
     
     }
@@ -122,6 +122,7 @@ const styles =  StyleSheet.create({
     inputE:{
         marginTop:70,
         backgroundColor:"#fbfbfb",
+        fontStyle:"italic",
         padding:10,
         borderBottomColor:"#80bdde",
         borderBottomWidth:2,
@@ -136,6 +137,7 @@ const styles =  StyleSheet.create({
         backgroundColor:"#fbfbfb",
         borderBottomColor:"#80bdde",
         borderBottomWidth:2,
+        fontStyle:"italic",
         marginLeft:55,
         textAlign:"center",
     },

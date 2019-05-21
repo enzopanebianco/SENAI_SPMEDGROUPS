@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {View,Text,StyleSheet,TouchableOpacity,FlatList,AsyncStorage,Image,StatusBar} from 'react-native';
+import {View,Text,StyleSheet,TouchableOpacity,FlatList,AsyncStorage,Image,StatusBar,ActivityIndicator} from 'react-native';
 import jwt from 'jwt-decode';
 import api from '../services/api';
 import { SafeAreaView } from 'react-navigation';
@@ -14,11 +14,13 @@ class Consultas extends Component{
             lista:[],
             nome:"",
             token:"",
+            data: [],
+            loading: false,
         }
     }
     sair=async()=>{
       
-        return  alert("Obrigado"),this.props.navigation.navigate("AuthStack");
+        return alert("$PMEDICALGROUP"),this.props.navigation.navigate("AuthStack");
     }
     buscar = async()=>{
         const value= await AsyncStorage.getItem("spmed");
@@ -36,12 +38,14 @@ class Consultas extends Component{
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer '+value}
             };
+            if (this.state.loading) return; 
+             this.setState({loading:true});
             const resposta = await api.get("/agendamentos/usuarios",config);
                 
               
             const dados = resposta.data;
            
-            this.setState({lista:dados});       
+            this.setState({lista:dados,loading:false});       
         }
         ListaVazia = () => {
             return (
@@ -51,11 +55,27 @@ class Consultas extends Component{
                 source={require("../assets/img/pranchetinha.png")}
                 style={styles.img2}
             />
-                <Text style={{textAlign: 'center',color:"#999999"}}>Nenhuma Consulta Ainda...</Text>
+                <Text style={{textAlign: 'center',color:"#999999",fontWeight:"600"}}>Nenhuma Consulta Ainda...</Text>
+                <View style={styles.imgLogo}>
+            <Image
+            source={require("../assets/img/Ativo1.png")}
+            
+            />
+            <Text style={styles.spmed}>©SpmedGroup</Text>
+           
+            </View>
               </View>
-         
+
             );
           }
+          renderFooter = () => {
+            if (!this.state.loading) return null;
+            return (
+              <View style={styles.loading}>
+                <ActivityIndicator />
+              </View>
+            );
+          };
         
     componentDidMount(){
         this.listar();
@@ -67,7 +87,7 @@ class Consultas extends Component{
             
         
         return(
-            <SafeAreaView>
+            <View style={{backgroundColor:"white"}}>
                 
         <StatusBar translucent backgroundColor="white" barStyle="dark-content"/>
             <View style={styles.Cabecalho}>
@@ -95,9 +115,12 @@ class Consultas extends Component{
                 ListEmptyComponent={this.ListaVazia}
                 showsVerticalScrollIndicator={false}
                 vertical={true}
+                onEndReached={this.listar}
+                onEndReachedThreshold={0.5}
+                ListFooterComponent={this.renderFooter}
                 />
             
-            </SafeAreaView>
+            </View>
         );
         
       
@@ -111,20 +134,22 @@ class Consultas extends Component{
             </View>
             <View style={styles.medico} >
             <Text >Médico</Text>
-            <Text style={{fontWeight:"300",color:"black"}} >{item.idMedicoNavigation.idUsuarioNavigation.nome}</Text>
+            <Text style={{fontWeight:"300",color:"black"}}  >{item.idMedicoNavigation.idUsuarioNavigation.nome}</Text>
             </View>
             <View style={styles.data}>
             <Text  >Data</Text>
-            <Text style={{fontWeight:"300",color:"black"}} >{item.dtAgendamento}</Text>
+            <Text  style={{fontWeight:"300",color:"black"}} >{item.dtAgendamento}</Text>
             </View>
             <View style={styles.situacao}>
             <Text  >Situação</Text>
             <Text style={{fontWeight:"300",color:"black"}} >{item.idSituacaoNavigation.nome}</Text>
             </View>
             <View style={styles.descricao}>
-            <Text style={{textAlign:"center"}} >Descrição</Text>
-            <Text style={{fontWeight:"300",color:"black",textAlign:"center"}}>{item.descricao}</Text>
+            <Text style={{textAlign:"center"}}>Descrição</Text>
+            
+            <Text style={{fontWeight:"400",color:"black",textAlign:"center"}}>{item.descricao}</Text>
             </View>
+        
         </View>
     );
 }
@@ -168,7 +193,7 @@ const styles =  StyleSheet.create({
         backgroundColor:"#F1FAFF",
         borderBottomColor:"#333",
 
-        borderBottomWidth:1,
+        borderBottomWidth:0.5,
     },
     data:{
         position:"relative",
@@ -181,8 +206,7 @@ const styles =  StyleSheet.create({
         right:50,
         width:180,
         height:80,
-        borderTopColor:"#80bdde",
-        borderTopWidth:2,
+        backgroundColor:"#ccedff",
 
     },
     situacao:{
@@ -205,6 +229,8 @@ const styles =  StyleSheet.create({
         textAlign:"center",
         backgroundColor:"#80aade",
         borderTopRightRadius:20,
+        borderBottomColor:"#80bdde",
+        borderBottomWidth:2
     },
     img:{
         width:40,
@@ -213,6 +239,7 @@ const styles =  StyleSheet.create({
         zIndex:-1,
         right:0,
         display:"none",
+        marginTop:15,
         opacity:0.5,
     },
     img2:{
@@ -231,6 +258,12 @@ const styles =  StyleSheet.create({
         width:50,
         top:10,
         color:"black",
+    },  
+    imgLogo:{
+        alignItems:"center",
+        marginTop:240,
+        
+        opacity:0.4,
     },  
 });
 export default Consultas;
