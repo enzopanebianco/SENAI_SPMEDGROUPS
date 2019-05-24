@@ -5,8 +5,6 @@ import Listagem from '../Componentes/Listagem';
 import Cabecalho from '../Componentes/Cabecalho'; 
 import Rodape from '../Componentes/Rodape';
 import '../../assets/CSS/list.css';
-import {decode} from '../../services/auth';
-
 class ConsultasPacientes extends Component{
     constructor(){
         super();
@@ -16,9 +14,11 @@ class ConsultasPacientes extends Component{
             idMedico:"",
             dtAgendamento:"",
             descricao:"",
-            idsituacao:""
+            idsituacao:"",
+            nome:""
         }
     }
+   
      listarConsultas(){
          let tokenP = localStorage.getItem("spmed-usuario");
          var config = {
@@ -38,7 +38,7 @@ class ConsultasPacientes extends Component{
          }
        
      componentDidMount(){
-       
+         
          this.listarConsultas();
 
     }
@@ -48,11 +48,14 @@ class ConsultasPacientes extends Component{
               <Cabecalho />
               <div className="titulo">
                <h2>Consultas</h2>
+               
                </div>
               <section className="list">
                          <table>
                           <Listagem />
-                           <tbody className="corpo">{
+                           <tbody className="corpo">
+                          
+                           {
                                this.state.lista.map(function(consulta){
                                    return(
                             <tr key={consulta.id}>

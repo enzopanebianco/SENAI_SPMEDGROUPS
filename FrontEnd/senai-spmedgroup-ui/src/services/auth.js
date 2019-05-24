@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 export const UsuarioAutenticado =()=>localStorage.getItem("spmed-usuario") !=null;
 
 export const parseJwt = () =>{
@@ -14,6 +15,9 @@ export const decode=()=>{
 
     return(permissao);
 }
+
+export const api =()=> Axios.create("http://192.168.3.48/api");
+
 
 
         

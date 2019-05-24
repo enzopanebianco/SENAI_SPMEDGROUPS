@@ -8,8 +8,11 @@ namespace Senai_Spmedgroups_Web_Api.ViewModels
 {
     public class ConsultaViewModel
     {
-        public Pacientes NomePaciente { get; set; }
-        public Medicos NomeMedico { get; set; } 
-        public Situacao NomeSituacao { get; set; }
+        public int ID { get; set; }
+        public string PacienteNome { get; set; }
+        public string MedicoNome { get; set; } 
+        public string Descricao { get; set; }
+        public DateTime DataConsulta { get; set; }
+        public string SituacaoNome { get; set; }
     }
 }

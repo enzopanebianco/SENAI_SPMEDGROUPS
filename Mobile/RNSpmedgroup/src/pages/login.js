@@ -1,9 +1,6 @@
 import React,{Component} from 'react';
 import {View,Text,StyleSheet,TextInput,TouchableOpacity,Image,AsyncStorage,StatusBar} from 'react-native';
 import api from '../services/api';
-
-
-
 class Login extends Component{
     static navigationOptions={
        header:null
@@ -38,7 +35,7 @@ class Login extends Component{
     erroLogin=()=>{
         return(
         <View>
-            <Text>Usuário ou Senha Errados</Text>
+            <Text style={{backgroundColor:"orange"}}>Usuário ou Senha Errados</Text>
         </View>
         );
     }
@@ -49,7 +46,7 @@ class Login extends Component{
 
             <View style={{backgroundColor:"white    "}}>
             
-        <StatusBar translucent backgroundColor="white" barStyle="dark-content"/>   
+        <StatusBar translucent backgroundColor="white" showHideTransition={'fade'} barStyle="dark-content"/>   
             <View style={styles.Cabecalho}>
                 <Text style={styles.CabTitulo}>SPMEDICAL
                 
@@ -118,28 +115,31 @@ const styles =  StyleSheet.create({
         width:100,
         fontSize:18,
         fontFamily:"roboto",
+        
     },
     inputE:{
         marginTop:70,
         backgroundColor:"#fbfbfb",
-        fontStyle:"italic",
-        padding:10,
+        fontSize:18,
         borderBottomColor:"#80bdde",
         borderBottomWidth:2,
         width:300,
         marginLeft:55,
         textAlign:"center",
+        height:55,
+        fontFamily:"sans-serif-light"
     },
     
     inputS:{
         marginTop:20,
         width:300,
+        fontSize:18,
         backgroundColor:"#fbfbfb",
         borderBottomColor:"#80bdde",
         borderBottomWidth:2,
-        fontStyle:"italic",
         marginLeft:55,
         textAlign:"center",
+        fontFamily:"sans-serif-light"
     },
     btn:{
         backgroundColor:"#80bdde",

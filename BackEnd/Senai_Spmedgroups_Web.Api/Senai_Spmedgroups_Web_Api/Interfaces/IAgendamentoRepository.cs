@@ -1,4 +1,5 @@
 ﻿using Senai_Spmedgroups_Web_Api.Domains;
+using Senai_Spmedgroups_Web_Api.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Senai_Spmedgroups_Web_Api.Interfaces
         List<Agendamentos> ListarMedico(int id);
         List<Agendamentos> Listar();
         List<Agendamentos> ListarPeloId(int id);
-
+        //Agendamentos ViewModel(List<ConsultaViewModel> lsconsultas);
 
     }
 }

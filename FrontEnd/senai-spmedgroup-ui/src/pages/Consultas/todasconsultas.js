@@ -157,11 +157,11 @@ class TodasConsultas extends Component{
                             return(
                                 <tr key={consulta.id}>
                                 <td className="id">{consulta.id}</td>
-                                <td className="flex-list-td paci">{consulta.idPaciente}</td>   
-                                <td className="medi flex-list-td">{consulta.idMedico}</td>
+                                <td className="flex-list-td paci">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                                <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
                                 <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
                                 <td className="descri flex-list-td">{consulta.descricao}</td>
-                                <td className="situ flex-list-td">{consulta.idSituacao}
+                                <td className="situ flex-list-td">{consulta.idSituacaoNavigation.nome}
                                     <div className="edit">
                                     <li><Link to="/consultas/${id}"><a>Editar</a></Link></li>
                                     </div>

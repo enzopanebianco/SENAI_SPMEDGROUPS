@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
-import {View,Text,StyleSheet,TouchableOpacity,FlatList,AsyncStorage,Image,StatusBar,ActivityIndicator} from 'react-native';
+import {View,Text,StyleSheet,FlatList,AsyncStorage,Image,StatusBar,TouchableOpacity,ImageBackground} from 'react-native';
 import jwt from 'jwt-decode';
 import api from '../services/api';
-import { SafeAreaView } from 'react-navigation';
 
 class Consultas extends Component{
     static navigationOptions={
@@ -14,18 +13,21 @@ class Consultas extends Component{
             lista:[],
             nome:"",
             token:"",
+            id:"",
             data: [],
             loading: false,
         }
     }
     sair=async()=>{
       
-        return alert("$PMEDICALGROUP"),this.props.navigation.navigate("AuthStack");
+        return alert("SPMEDICALGROUP"),this.props.navigation.navigate("AuthStack");
     }
     buscar = async()=>{
         const value= await AsyncStorage.getItem("spmed");
         this.setState({nome:jwt(value).nome});
+        
         this.setState({token:value});
+
         return(jwt(value).tipo);
       
     }
@@ -55,7 +57,7 @@ class Consultas extends Component{
                 source={require("../assets/img/pranchetinha.png")}
                 style={styles.img2}
             />
-                <Text style={{textAlign: 'center',color:"#999999",fontWeight:"600"}}>Nenhuma Consulta Ainda...</Text>
+                <Text style={{textAlign: 'center',color:"#777",fontWeight:"100"}}>Nenhuma Consulta Ainda...</Text>
                 <View style={styles.imgLogo}>
             <Image
             source={require("../assets/img/Ativo1.png")}
@@ -68,14 +70,6 @@ class Consultas extends Component{
 
             );
           }
-          renderFooter = () => {
-            if (!this.state.loading) return null;
-            return (
-              <View style={styles.loading}>
-                <ActivityIndicator />
-              </View>
-            );
-          };
         
     componentDidMount(){
         this.listar();
@@ -90,7 +84,7 @@ class Consultas extends Component{
             <View style={{backgroundColor:"white"}}>
                 
         <StatusBar translucent backgroundColor="white" barStyle="dark-content"/>
-            <View style={styles.Cabecalho}>
+         <View style={styles.Cabecalho}>
                 <Text style={styles.CabTitulo}>SPMEDICAL
                 
                 <Text style={{color: '#80e289'}}>
@@ -102,55 +96,56 @@ class Consultas extends Component{
             style={styles.img}
             />
             <Text style={styles.NomeUsuario}>{this.state.nome}</Text>   
-           
+          
             <Text style={styles.exit} onPress={this.sair}>Sair</Text>        
             </View>
             <View>
                 <Text style={styles.titulo}>CONSULTAS</Text>
             </View>
-                <FlatList 
+             <FlatList 
                 data={this.state.lista}
                 keyExtractor={item=>item.id.toString()}
                 renderItem={this._renderizaLista}
                 ListEmptyComponent={this.ListaVazia}
                 showsVerticalScrollIndicator={false}
                 vertical={true}
-                onEndReached={this.listar}
-                onEndReachedThreshold={0.5}
-                ListFooterComponent={this.renderFooter}
+               
                 />
-            
+              
             </View>
         );
         
       
     }
+   
     _renderizaLista = ({item}) =>(
-        <View style={styles.Getlist}>
         
-            <View>
-            <Text >Paciente</Text>
-            <Text style={{fontWeight:"300",color:"black"}} >{item.idPacienteNavigation.idUsuarioNavigation.nome}</Text>
+        <View style={styles.Getlist}>
+           <View >
+            <Text style={{color:"#999"}} >Paciente</Text>
+            <Text style={{fontWeight:"300",color:"black",fontSize:17,fontFamily:"notoserif"}} >{item.idPacienteNavigation.idUsuarioNavigation.nome}</Text>
             </View>
             <View style={styles.medico} >
-            <Text >Médico</Text>
-            <Text style={{fontWeight:"300",color:"black"}}  >{item.idMedicoNavigation.idUsuarioNavigation.nome}</Text>
+            <Text style={{color:"#999"}}>Médico</Text>
+            <Text style={{fontWeight:"300",color:"black",fontSize:17}}  >{item.idMedicoNavigation.idUsuarioNavigation.nome}</Text>
             </View>
             <View style={styles.data}>
-            <Text  >Data</Text>
-            <Text  style={{fontWeight:"300",color:"black"}} >{item.dtAgendamento}</Text>
+            <Text style={{color:"#999"}} >Data</Text>
+            <Text  style={{fontWeight:"300",color:"black",fontSize:15}} >{item.dtAgendamento}</Text>
             </View>
             <View style={styles.situacao}>
-            <Text  >Situação</Text>
-            <Text style={{fontWeight:"300",color:"black"}} >{item.idSituacaoNavigation.nome}</Text>
+            <Text  style={{color:"#999"}}>Situação</Text>
+            <Text style={{fontWeight:"300",color:"black",fontSize:17}} >{item.idSituacaoNavigation.nome}</Text>
             </View>
             <View style={styles.descricao}>
-            <Text style={{textAlign:"center"}}>Descrição</Text>
             
-            <Text style={{fontWeight:"400",color:"black",textAlign:"center"}}>{item.descricao}</Text>
+            <Text style={{textAlign:"center",backgroundColor:"#80bdde",color:"white"}}>Descrição
+            </Text>
+            
+            <Text style={{fontWeight:"200",color:"black",textAlign:"center",fontSize:12}}>{item.descricao}</Text>
             </View>
-        
         </View>
+       
     );
 }
 const styles =  StyleSheet.create({
@@ -169,45 +164,48 @@ const styles =  StyleSheet.create({
         marginLeft:15,
         marginTop:15,
         textShadowColor: '#f1f1f1',
-        textShadowOffset: {width: -1, height: 1},
+        textShadowOffset: {width: -2, height: 1},
         textShadowRadius: 1
     },
     titulo:{
         color:"#80aade",
         textAlign:"center",
-        fontWeight:"bold",
+        
         position:"relative",
         left:155,
         height:30,
         width:120,
-        fontSize:18,
-        fontFamily:"roboto",
+        fontSize:21,
+        fontStyle:"italic",
+        fontFamily:"sans-serif-light",
     },
    
     Getlist:{
         marginTop:30,
         flexDirection:"row",    
+        
         backgroundColor:"white",
-        height:230,
+        height:150,
         //F1FAFF
         backgroundColor:"#F1FAFF",
         borderBottomColor:"#333",
-
+        borderTopWidth:1,
+        borderTopColor:"#80bdde",
         borderBottomWidth:0.5,
     },
     data:{
         position:"relative",
-        left:50
-        
+        left:50,
     },
     descricao:{
         position:"relative",
         top:70,
         right:50,
-        width:180,
-        height:80,
-        backgroundColor:"#ccedff",
-
+        width:125,
+        height:70,
+        borderWidth:0.5,
+        borderColor:"#ccc",
+        
     },
     situacao:{
         position:"relative",
@@ -229,8 +227,6 @@ const styles =  StyleSheet.create({
         textAlign:"center",
         backgroundColor:"#80aade",
         borderTopRightRadius:20,
-        borderBottomColor:"#80bdde",
-        borderBottomWidth:2
     },
     img:{
         width:40,
@@ -251,13 +247,16 @@ const styles =  StyleSheet.create({
         marginTop:100
     },
     exit:{
-        position:"relative",
-        left:360,
-        backgroundColor:"#eaeaea",
+        position:"absolute",
+        right:2,
+        backgroundColor:"#80e289",
         textAlign:"center",
-        width:50,
-        top:10,
-        color:"black",
+        width:70,
+        height:23,
+        fontSize:15,
+        top:50,
+        color:"white",
+        borderTopLeftRadius:20,
     },  
     imgLogo:{
         alignItems:"center",
@@ -265,5 +264,13 @@ const styles =  StyleSheet.create({
         
         opacity:0.4,
     },  
+    imgDescription:{
+        width:30,
+        height:30,
+        backgroundColor:"#80bdde",
+        
+    },
 });
 export default Consultas;
+
+

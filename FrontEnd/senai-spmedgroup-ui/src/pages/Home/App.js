@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import api from '../../services/auth';
 
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'
@@ -23,7 +23,7 @@ class App extends Component {
     }
   }
     Listar(){
-      Axios.get('http://localhost:5000/api/clinicas')
+      api.get('/clinicas')
       .then(data => {
         console.log(data)
         this.setState({ lista: data.data });

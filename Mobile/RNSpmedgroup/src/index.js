@@ -3,9 +3,9 @@ import Login from '../src/pages/login'
 import Consultas from '../src/pages/consultas'
 import {AsyncStorage} from 'react-native';
 
-const AuthStack = createStackNavigator({Login});
+const AuthStack = createStackNavigator({Consultas});
 
-const MainNavigator = createStackNavigator({Consultas});
+const MainNavigator = createStackNavigator({Login});
 
 //const usuario = await AsyncStorage.getItem("spmed");
 
