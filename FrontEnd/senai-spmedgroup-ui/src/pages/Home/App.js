@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import api from '../../services/auth';
 
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'
@@ -8,7 +7,7 @@ import imgApp from '../../assets/imagens/1x/Ativo 2.png'
 import Cabecalho from '../Componentes/Cabecalho';
 import Rodape from '../Componentes/Rodape';
 import img from '../../assets/imagens/appointment-book-blur-care-40568.jpg'
-import Axios from 'axios';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,17 +21,17 @@ class App extends Component {
         
     }
   }
-    Listar(){
-      api.get('/clinicas')
-      .then(data => {
-        console.log(data)
-        this.setState({ lista: data.data });
-    })
-    .catch(erro => console.log(erro))
-    }
-  componentDidMount(){
-    this.Listar();
-  }
+  //   Listar(){
+  //     api.get('/clinicas')
+  //     .then(data => {
+  //       console.log(data)
+  //       this.setState({ lista: data.data });
+  //   })
+  //   .catch(erro => console.log(erro))
+  //   }
+  // componentDidMount(){
+  //   this.Listar();
+  // }
   render() {
     
     return (
