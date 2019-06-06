@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import firebase from '../../services/firebase';
-
+import Cabecalho from '../Componentes/Cabecalho';
+import {TituloCadastrar,ContainerFlex,CampoCadastro,CampoLabel,TextLabel,Input} from './style';
+import imgpesquisa from '../../assets/imagens/imgpesquisa.jpg'
+import api from '../../services/auth';
 export default class CadastrarAnlytics extends Component {
     constructor() {
         super();
@@ -10,7 +13,8 @@ export default class CadastrarAnlytics extends Component {
             longitude: "",
             descricao: "",
             idade: "",
-            especialidade: ""
+            listaE:[],
+            idespecialidade: ""
         }
     }
     cadastrar(event) {
@@ -21,7 +25,7 @@ export default class CadastrarAnlytics extends Component {
                 longitude: this.state.longitude,
                 descricao: this.state.descricao,
                 idade: this.state.idade,
-                especialidade: this.state.especialidade
+                idespecialidade: this.state.idespecialidade
             })
             .then(()=>{
                 alert("Muito Obrigado")
@@ -33,33 +37,57 @@ export default class CadastrarAnlytics extends Component {
     atualizaEstado(event){
         this.setState({[event.target.name] : event.target.value});
     }
+    buscarespecialidade(){
+        api.get("especialidades")
+        .then(resposta=>{
+            const especialidades = resposta.data;
+            this.setState({listaE:especialidades})
+        })
+    }
+    componentDidMount(){
+        this.buscarespecialidade();
+    }
     render() {
         return (
             <div>
-                <h2>Pesquisa</h2>
-                <form onSubmit={this.cadastrar.bind(this)}>
-                    <div>
-                        <label>latitude</label>
-                        <input type="text" name="latitude" value={this.state.latitude} onChange={this.atualizaEstado.bind(this)} />
-                    </div>
-                    <div>
-                        <label>longitude</label>
-                        <input type="text" name="longitude" value={this.state.longitude} onChange={this.atualizaEstado.bind(this)} />
-                    </div>
-                    <div>
-                        <label>descricao</label>
-                        <input type="text" name="descricao" value={this.state.descricao} onChange={this.atualizaEstado.bind(this)} />
-                    </div>
-                    <div>
-                        <label>idade</label>
-                        <input type="number" name="idade" value={this.state.idade} onChange={this.atualizaEstado.bind(this)} />
-                    </div>
-                    <div>
-                        <label>especialidade</label>
-                        <input type="text" name="especialidade" value={this.state.especialidade} onChange={this.atualizaEstado.bind(this)} />
-                    </div>
+                <Cabecalho />
+                <ContainerFlex>
+                <div>
+                <img src={imgpesquisa} style={{height:"497px",width:"700px"}} />
+                </div>
+                <div style={{position:"relative",left:"0%"}}>
+                <TituloCadastrar>PESQUISA</TituloCadastrar>
+                <CampoCadastro onSubmit={this.cadastrar.bind(this)}>
+                    <CampoLabel>
+                        <TextLabel>Latitude</TextLabel>
+                        <Input type="text" name="latitude" value={this.state.latitude} onChange={this.atualizaEstado.bind(this)} />
+                    </CampoLabel>
+                    <CampoLabel>
+                        <TextLabel>Longitude</TextLabel>
+                        <Input type="text" name="longitude" value={this.state.longitude} onChange={this.atualizaEstado.bind(this)} />
+                    </CampoLabel>
+                    <CampoLabel>
+                        <TextLabel>Descrição</TextLabel>
+                        <Input type="text" name="descricao" value={this.state.descricao} onChange={this.atualizaEstado.bind(this)} />
+                    </CampoLabel>
+                    <CampoLabel>
+                        <TextLabel>Idade</TextLabel>
+                        <Input type="number" name="idade" value={this.state.idade} onChange={this.atualizaEstado.bind(this)} />
+                    </CampoLabel>
+                    <CampoLabel>
+                        <TextLabel>Especialidade do Médico</TextLabel>
+                        <select name="idespecialidade" value={this.state.especialidade} onChange={this.atualizaEstado.bind(this)}>
+                        <option value="0">Selecione</option>{
+                            this.state.listaE.map((element)=>{
+                                return <option key={element.id} value={element.nome}>{element.nome}</option>
+                            })
+                        }
+                    </select>
+                    </CampoLabel>
                     <button type="submit">Enviar</button>
-                </form>
+                </CampoCadastro>
+                </div>
+                </ContainerFlex>
             </div>
         );
     }

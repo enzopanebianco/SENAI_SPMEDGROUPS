@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Variable', sans-serif;
-
+    
+}
+*, ::before, ::after {
+    box-sizing: inherit;
 }
 .header h1{
     color: #80bdde;
@@ -47,9 +50,15 @@
     font-size: 11pt;
 }
 
-.header li:hover{
-    background: #71a7c4;
-    border-radius: 50px;
+.header li:hover::after{
+    background:white;
+    width: 30px;
+    overflow: hidden;
+    height: 2px;
+    position: absolute;
+    top: 70px;
+    transform: translateX(-40px);
+    content: '';
 }
 
 .banner img{
@@ -220,6 +229,14 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80
     position: relative;
     text-align: center;
     padding: 2.8em;
+  }
+  .flex-Content{
+      padding: 15px 10px;
+    
+  }
+  .lati{
+      position: relative;
+      right: 20px;
   }
   .flex p{
     color: rgb(255, 255, 255);

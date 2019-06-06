@@ -16,7 +16,11 @@ export const decode=()=>{
     return(permissao);
 }
 
-export const api =()=> Axios.create("http://192.168.3.48/api");
+const api = Axios.create({
+    baseURL:'http://192.168.3.48:5000/api'
+});
+
+export default api;
 
 
 
