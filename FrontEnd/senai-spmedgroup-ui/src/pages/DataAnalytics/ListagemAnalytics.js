@@ -23,8 +23,10 @@ export default class ListagemAnalytics extends Component{
                     latitude:analytic.data().latitude,
                     longitude:analytic.data().longitude,
                     descricao:analytic.data().descricao,
-                    especialidade:analytic.data().especialidade,
-                    idade:analytic.data().idade
+                    idespecialidade:analytic.data().idespecialidade,
+                    idade:analytic.data().idade,
+                    nome:analytic.data().nome,
+                    email:analytic.data().email
                 })
             })
            
@@ -55,6 +57,8 @@ export default class ListagemAnalytics extends Component{
                         <th style={{fontWeight:"lighter"}}className="flex-Content">DOENÇA/DESCRIÇÃO</th>
                         <th style={{fontWeight:"lighter"}}className="flex-Content">IDADE</th>
                         <th style={{fontWeight:"lighter"}}className="flex-Content">ESPECIALIDADE DO MÉDICO</th>
+                        <th style={{fontWeight:"lighter"}}className="flex-Content">NOME</th>
+                        <th style={{fontWeight:"lighter"}}className="flex-Content">EMAIL</th> 
                     </tr>
                 </TabelaH>
                 <tbody>
@@ -66,7 +70,9 @@ export default class ListagemAnalytics extends Component{
                             <td>{list.longitude}</td>
                             <td>{list.descricao}</td>
                             <td>{list.idade}</td>
-                            <td>{list.especialidade}</td>
+                            <td>{list.idespecialidade}</td>
+                            <td>{list.nome}</td>
+                            <td>{list.email}</td>
                         </TabelaR>
                         );
                     })

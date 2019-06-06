@@ -67,8 +67,8 @@ const rotas=(
                 <Route path="/sobre" component={Sobre} />
                 <PermissaoAdmin path="/cadastrarmedico" component={CadastrarMedico}/>
                 <PermissaoAdmin path="/cadastrarpaciente" component={CadastrarPaciente}/>
-                <Route path="/analytics" component={ListagemAnalytics} />
-                <Route path="/pesquisa" component={CadastrarAnalytics} />
+                <PermissaoAdmin path="/analytics" component={ListagemAnalytics} />
+                <Permissao path="/pesquisa" component={CadastrarAnalytics} />
                 <Route component={NaoEncontrada} />
             </Switch>
         </div>

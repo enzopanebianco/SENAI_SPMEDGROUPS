@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width:800px;
-    background:#fafafa;
-    margin-left:30%;
-    border:1px solid #80bdde;
+    width:850px;
+    margin-left:25%;
     `;
 export const Titulo = styled.h2`
     color:white;
@@ -17,7 +15,6 @@ export const Titulo = styled.h2`
 `;
 export const Tabela = styled.table`
     flex:1;
-    margin-left:60px;
 `;
 export const TabelaH = styled.thead`
     color:white;
@@ -34,6 +31,7 @@ export const TituloCadastrar = styled.h2`
     text-align:center;
     font-style:normal;
     background:#5581e0;
+    border-left:3px solid #5590e9;
 `;
 export const ContainerFlex = styled.div`
 
@@ -42,10 +40,11 @@ export const ContainerFlex = styled.div`
     display:flex;
 `;
 export const CampoCadastro = styled.form`
-    background-image:linear-gradient(to right,#5581e0,#5590e0);
+    background-image:linear-gradient(to right,#5581e0,#5590e9);
     width:830px;
     height:458px;
     flex:1;
+    border-left:3px solid #5590e9;
     //#5581e0
 `;
 export const CampoLabel = styled.label`
@@ -64,7 +63,26 @@ export const TextLabel = styled.label`
 `;
 export const Input = styled.input`
     border-radius:4px;
-    background:#7a9eeb;
+    background-image:linear-gradient(to right ,#7a9eeb,#5b9efb);
     border:0.01em solid white;
     color:white;
+`;
+export const BotaoCadastrar = styled.button`
+    position:relative;
+    left:40%;
+    top:50px;
+    background:white;
+    border: 2px solid blue;
+    width:70px;
+    height:30px;
+    font-weight:bold;
+    text-transform:uppercase;
+    color:#5581e0;
+    border-radius:5px;
+`;
+export const Seletor = styled.select`
+    border: 1px solid white;
+    color:white;
+    border-radius:10px;
+    background:#5b9efb;
 `;

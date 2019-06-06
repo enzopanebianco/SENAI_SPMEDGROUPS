@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import firebase from '../../services/firebase';
 import Cabecalho from '../Componentes/Cabecalho';
-import {TituloCadastrar,ContainerFlex,CampoCadastro,CampoLabel,TextLabel,Input} from './style';
+import {TituloCadastrar,ContainerFlex,CampoCadastro,CampoLabel,TextLabel,Input,BotaoCadastrar,Seletor} from './style';
 import imgpesquisa from '../../assets/imagens/imgpesquisa.jpg'
 import api from '../../services/auth';
+
 export default class CadastrarAnlytics extends Component {
     constructor() {
         super();
@@ -14,8 +15,19 @@ export default class CadastrarAnlytics extends Component {
             descricao: "",
             idade: "",
             listaE:[],
-            idespecialidade: ""
+            idespecialidade: "",
+            nome:"",
+            tipo:"",
+            email:""
         }
+    }
+    buscar (){
+        const value = localStorage.getItem("spmed-usuario");
+        let jwtdecode = require('jwt-decode');
+        this.setState({nome:jwtdecode(value).nome});
+        this.setState({email:jwtdecode(value).email});
+        
+      
     }
     cadastrar(event) {
         event.preventDefault();
@@ -25,7 +37,9 @@ export default class CadastrarAnlytics extends Component {
                 longitude: this.state.longitude,
                 descricao: this.state.descricao,
                 idade: this.state.idade,
-                idespecialidade: this.state.idespecialidade
+                idespecialidade: this.state.idespecialidade,
+                nome:this.state.nome,
+                email:this.state.email
             })
             .then(()=>{
                 alert("Muito Obrigado")
@@ -46,6 +60,7 @@ export default class CadastrarAnlytics extends Component {
     }
     componentDidMount(){
         this.buscarespecialidade();
+        this.buscar();
     }
     render() {
         return (
@@ -53,7 +68,7 @@ export default class CadastrarAnlytics extends Component {
                 <Cabecalho />
                 <ContainerFlex>
                 <div>
-                <img src={imgpesquisa} style={{height:"497px",width:"700px"}} />
+                <img src={imgpesquisa} style={{height:"497px",width:"700px",background:"blue",opacity:0.8}} />
                 </div>
                 <div style={{position:"relative",left:"0%"}}>
                 <TituloCadastrar>PESQUISA</TituloCadastrar>
@@ -76,15 +91,15 @@ export default class CadastrarAnlytics extends Component {
                     </CampoLabel>
                     <CampoLabel>
                         <TextLabel>Especialidade do Médico</TextLabel>
-                        <select name="idespecialidade" value={this.state.especialidade} onChange={this.atualizaEstado.bind(this)}>
+                        <Seletor name="idespecialidade" value={this.state.especialidade} onChange={this.atualizaEstado.bind(this)}>
                         <option value="0">Selecione</option>{
                             this.state.listaE.map((element)=>{
                                 return <option key={element.id} value={element.nome}>{element.nome}</option>
                             })
                         }
-                    </select>
+                    </Seletor>
                     </CampoLabel>
-                    <button type="submit">Enviar</button>
+                    <BotaoCadastrar type="submit">Enviar</BotaoCadastrar>
                 </CampoCadastro>
                 </div>
                 </ContainerFlex>

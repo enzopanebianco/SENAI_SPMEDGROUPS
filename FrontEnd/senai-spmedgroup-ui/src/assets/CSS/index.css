@@ -50,16 +50,6 @@
     font-size: 11pt;
 }
 
-.header li:hover::after{
-    background:white;
-    width: 30px;
-    overflow: hidden;
-    height: 2px;
-    position: absolute;
-    top: 70px;
-    transform: translateX(-40px);
-    content: '';
-}
 
 .banner img{
     width: 390px;

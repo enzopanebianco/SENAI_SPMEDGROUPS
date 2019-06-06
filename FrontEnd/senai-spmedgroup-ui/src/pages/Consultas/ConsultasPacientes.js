@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
 import Listagem from '../Componentes/Listagem';
-
+import { Link } from 'react-router-dom';
+import {Pesquisinha,Texto,LL} from './styles';
 import Cabecalho from '../Componentes/Cabecalho'; 
 import Rodape from '../Componentes/Rodape';
 import '../../assets/CSS/list.css';
@@ -73,7 +74,6 @@ class ConsultasPacientes extends Component{
                     </tbody>
                 </table>
                     </section>
-            
             </div>
         );
     }
