@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import api from '../../services/auth';
 import imgmedicos from '../../assets/imagens/img-medicos-2.png'
 import barrinha from '../../assets/imagens/1x/barrinha.png'
 import imgprontuario from '../../assets/imagens/ambulance-architecture-building-263402.jpg';
@@ -39,23 +39,27 @@ class App extends Component {
      );   
     }
   }
-  //   Listar(){
-  //     api.get('/clinicas')
-  //     .then(data => {
-  //       console.log(data)
-  //       this.setState({ lista: data.data });
-  //   })
-  //   .catch(erro => console.log(erro))
-  //   }
-  // componentDidMount(){
-  //   this.Listar();
-  // }
+    Listar(){
+      api.get('/clinicas')
+      .then(data => {
+        console.log(data)
+        this.setState({ lista: data.data });
+    })
+    .catch(erro => console.log(erro))
+    }
+  componentDidMount(){
+    this.Listar();
+  }
   render() {
     
     return (
       <div>{
         this.checar()
       }
+      <br/>
+      <br/>
+      <br/>
+      <br/>
         <section className="banner">
           <img src={imgmedicos} alt="medicos" />
           <h2>SPMEDICALGROUP</h2>
@@ -116,6 +120,13 @@ class App extends Component {
               })
             }
             </div>
+          </div>
+          <div className="contato">
+            <div className="contato-txt">
+              <h3>CONTATO</h3>
+            </div>
+            <p>Telefone: 2002-0606</p>
+            <p>Email: SpmedicalGroup@gmail.com</p>
           </div>
         </section>
         <Rodape />

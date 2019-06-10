@@ -10,5 +10,6 @@ namespace Senai_Spmedgroups_Web_Api.Interfaces
     {
         void Cadastrar(Usuarios usuarios);
         Usuarios Buscar(string email ,string senha);
+        List<Usuarios> ListarPeloId(int id);
     }
 }

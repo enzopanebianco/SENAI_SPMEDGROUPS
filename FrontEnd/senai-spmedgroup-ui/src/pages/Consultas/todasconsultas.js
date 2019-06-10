@@ -3,6 +3,7 @@ import Axios from 'axios';
 import CabecalhoLogado from '../Componentes/CabecalhoLogado' 
 import Rodape from '../Componentes/Rodape';
 import Listagem from '../Componentes/Listagem';
+import {DivAnalytics} from '../Componentes/styles';
 import { Link } from 'react-router-dom';
 import '../../assets/CSS/list.css';
 import api from '../../services/auth';
@@ -148,10 +149,13 @@ class TodasConsultas extends Component{
                 <div className="titulo">
                <h2>Consultas</h2>
                </div>
+                <DivAnalytics>
+                    <Link to="/pesquisa"><p >Cadastrar Analytics</p></Link>
+                    <Link to="/analytics"><p>Listar Analytics</p></Link>
+                </DivAnalytics>
                 <section className="listtype">
               
                 <table>
-                    
                         <Listagem />
                   
                            <tbody className="corpolista">{
@@ -164,7 +168,7 @@ class TodasConsultas extends Component{
                                 <td className="pad" >{consulta.dtAgendamento}</td>
                                 <td className="pad" style={{fontSize:"9pt"}}>{consulta.descricao}</td>
                                 <td className="pad">{consulta.idSituacaoNavigation.nome}
-                                    
+                                <td>Editar</td>
                                 </td>
                             </tr>
                             );
@@ -223,6 +227,7 @@ class TodasConsultas extends Component{
                     <button type="submit" >Cadastrar</button>
                 </form>
                 </section>
+                
                 <Rodape />  
             </div>
         );

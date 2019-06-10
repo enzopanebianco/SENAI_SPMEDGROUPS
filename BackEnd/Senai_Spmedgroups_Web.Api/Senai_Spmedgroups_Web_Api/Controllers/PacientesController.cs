@@ -67,5 +67,38 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 return BadRequest();
             }
         }
+        [HttpGet("{id}")]
+        public IActionResult GetID(int id)
+        {
+            try
+            {
+                return Ok(PacienteRepository.ListarPeloId(id));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest();
+            }
+        }
+        [HttpPost]
+        [Route("/buscar")]
+        public IActionResult Buscar(int id)
+        {
+            try
+            {
+              Pacientes pacientes =  PacienteRepository.Buscar(id);
+                if (pacientes == null)
+                {
+                    return NotFound(new {
+                        mensagem = "n achei nd"
+                    });
+                } 
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
     }
 }

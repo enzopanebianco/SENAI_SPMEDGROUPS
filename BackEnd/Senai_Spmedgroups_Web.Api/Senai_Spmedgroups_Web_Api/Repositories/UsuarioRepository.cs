@@ -31,5 +31,12 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             }
         }
 
+        public List<Usuarios> ListarPeloId(int id)
+        {
+            using (SpmedContext ctx = new SpmedContext())
+            {
+                return ctx.Usuarios.Where(x => x.Id == id).ToList();
+            }
+        }
     }
 }

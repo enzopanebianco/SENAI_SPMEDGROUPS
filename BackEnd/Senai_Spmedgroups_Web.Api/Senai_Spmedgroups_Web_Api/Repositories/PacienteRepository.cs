@@ -10,6 +10,14 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
 {
     public class PacienteRepository : IPacienteRepository
     {
+        public Pacientes Buscar(int id)
+        {
+            using (SpmedContext ctx = new SpmedContext())
+            {
+                return ctx.Pacientes.FirstOrDefault(x=> x.Id == id);
+            }
+        }
+
         public void Cadastrar(Pacientes pacientes)
         {
             using (SpmedContext ctx = new SpmedContext())
@@ -33,6 +41,14 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             using (SpmedContext ctx  = new SpmedContext())
             {
               return  ctx.Pacientes.Include(x=>x.IdUsuarioNavigation).ToList();
+            }
+        }
+
+        public List<Pacientes> ListarPeloId(int id)
+        {
+            using (SpmedContext ctx = new SpmedContext())
+            {
+                return ctx.Pacientes.Where(x => x.Id == id).ToList();
             }
         }
 

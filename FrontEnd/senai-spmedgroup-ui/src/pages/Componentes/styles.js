@@ -12,8 +12,23 @@ export const MenuSecreto = styled.div`
     color:white;
     text-align:center;
     border-radius:50px 0px 0px 50px;
+    h5:hover{
+        color: aqua;
+        cursor: pointer;    
+
+    }
     `;
 export const Sair = styled.div`
     position:relative;
     top:5px;
+`;
+export const DivAnalytics = styled.div`
+    background-image: linear-gradient(to right, #80bdde,#80e289);
+    height:60px;
+    width:200px;
+    color:white;
+    font-weight:bold;
+    list-style-type:none;
+    text-decoration:none;
+    outline:none;
 `;

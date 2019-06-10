@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
-import Cabecalho from '../Componentes/Cabecalho'
 import '../../assets/CSS/cadastro.css'
-
+import CabecalhoLogado from '../Componentes/CabecalhoLogado';
+import api from '../../services/auth';
 class CadastrarUsuario extends Component{
     constructor(){
         super();
@@ -31,7 +31,7 @@ class CadastrarUsuario extends Component{
             }
         };
 
-        Axios.post('http://localhost:5000/api/usuarios',{
+        api.post("usuarios",{
             nome:this.state.nome,
             email:this.state.email,
             senha:this.state.senha,
@@ -61,7 +61,7 @@ class CadastrarUsuario extends Component{
     render(){
         return(
             <div>
-                <Cabecalho />
+                <CabecalhoLogado />
                 <section className="cadastro">
                 <h2>CadastrarUsuário</h2>
                 <form onSubmit={this.Cadastrar.bind(this)}>

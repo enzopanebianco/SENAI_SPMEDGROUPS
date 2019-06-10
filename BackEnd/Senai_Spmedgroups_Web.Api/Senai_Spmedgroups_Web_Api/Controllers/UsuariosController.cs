@@ -31,10 +31,8 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
         {
             try
             {
-                SendGridController gridController = new SendGridController();
-                    
                 UsuarioRepository.Cadastrar(usuarios);
-                gridController.Enviar(usuarios.Email);
+                
                 return Ok();
             }
             catch (Exception ex)
@@ -43,7 +41,19 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 
             }
         }
-        
+        [Authorize(Roles = "0")]
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+             {
+            try
+            {
+                return Ok(UsuarioRepository.ListarPeloId(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
         
     }
 }

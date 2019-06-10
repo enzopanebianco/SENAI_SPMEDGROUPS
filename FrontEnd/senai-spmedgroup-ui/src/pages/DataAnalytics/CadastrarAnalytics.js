@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from '../../services/firebase';
 import {TituloCadastrar,ContainerFlex,CampoCadastro,CampoLabel,TextLabel,Input,BotaoCadastrar,Seletor} from './style';
 import imgpesquisa from '../../assets/imagens/imgpesquisa.jpg'
+import Rodape from '../Componentes/Rodape';
 import api from '../../services/auth';
 import CabecalhoLogado from '../Componentes/CabecalhoLogado';
 
@@ -112,6 +113,7 @@ export default class CadastrarAnlytics extends Component {
                 </CampoCadastro>
                 </div>
                 </ContainerFlex>
+                <Rodape />
             </div>
         );
     }
