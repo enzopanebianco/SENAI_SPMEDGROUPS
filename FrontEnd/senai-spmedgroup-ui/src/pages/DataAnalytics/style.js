@@ -15,6 +15,8 @@ export const Titulo = styled.h2`
 `;
 export const Tabela = styled.table`
     flex:1;
+    
+    margin-left:40px;
 `;
 export const TabelaH = styled.thead`
     color:white;
@@ -44,7 +46,6 @@ export const CampoCadastro = styled.form`
     width:830px;
     height:458px;
     flex:1;
-    border-left:3px solid #5590e9;
     //#5581e0
 `;
 export const CampoLabel = styled.label`
@@ -72,7 +73,7 @@ export const BotaoCadastrar = styled.button`
     left:40%;
     top:50px;
     background:white;
-    border: 2px solid blue;
+    border: 1px solid beige;
     width:70px;
     height:30px;
     font-weight:bold;

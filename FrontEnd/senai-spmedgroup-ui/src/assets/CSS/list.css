@@ -36,8 +36,9 @@
 .id{
     color: #47994f;
     font-weight: bold;
+
 }
-.paci{
+/* .paci{
     transform: translateX(-70px);
 }
 .medi{
@@ -53,7 +54,7 @@
 }
 .situ{
     transform: translateX(100px);
-}
+} */
 .list img{
    z-index: -1;
    /* position: absolute;
@@ -176,5 +177,16 @@
     color: #2f5f79;
     background: rgb(243, 243, 243);
 }
-
-
+.corpolista{
+    display: inline;
+}
+.listtype{
+    text-align: center;
+    position: relative;
+    left: 400px;
+    width: 700px;    
+}
+.pad{
+    padding: 10px 10px;
+    transform: translateX(-40px);
+}

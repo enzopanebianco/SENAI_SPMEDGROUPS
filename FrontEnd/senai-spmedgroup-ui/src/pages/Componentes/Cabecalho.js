@@ -5,20 +5,7 @@ import UsuarioPerfil from  '../../assets/imagens/usuarioPerfil.png';
 import '../../assets/CSS/index.css';
 import {decode} from '../../services/auth';
 class Cabecalho extends Component {
-    constructor(){
-        super();
-        this.state={
-            nome:"",
-        }
-    }
-    // buscarNome(){
-    //     const value = localStorage.getItem("spmed-usuario");
-    //     let jwtdecode = require('jwt-decode');
-    //     this.setState({nome:jwtdecode(value).nome});
-    // }
-    // componentDidMount(){
-    //     this.buscarNome();
-    // }
+  
     render(){
     return (
         <div>

@@ -31,7 +31,14 @@ namespace Senai_Spmedgroups_Web_Api.Repositories
             }
         }
 
-       
+        public void Deletar(Agendamentos agendamentos)
+        {
+            using (SpmedContext ctx = new SpmedContext())
+            {
+                ctx.Agendamentos.Remove(agendamentos);
+                ctx.SaveChanges();
+            }
+        }
 
         public List<Agendamentos> Listar()
         {

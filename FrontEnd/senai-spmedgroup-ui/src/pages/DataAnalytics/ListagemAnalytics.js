@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import firebase from '../../services/firebase';
-import Cabecalho from '../Componentes/Cabecalho';   
+import CabecalhoLogado from '../Componentes/CabecalhoLogado';   
 import {Container,Titulo,Tabela,TabelaH,TabelaR} from './style'
 
 export default class ListagemAnalytics extends Component{
@@ -12,8 +12,7 @@ export default class ListagemAnalytics extends Component{
     }
     listar(){
         firebase.firestore().collection("analytics")
-        .get()
-        .then((analytics)=>
+        .onSnapshot((analytics)=>
         {
             let analyticsArray = [];
             analytics.forEach((analytic)=>
@@ -25,8 +24,7 @@ export default class ListagemAnalytics extends Component{
                     descricao:analytic.data().descricao,
                     idespecialidade:analytic.data().idespecialidade,
                     idade:analytic.data().idade,
-                    nome:analytic.data().nome,
-                    email:analytic.data().email
+                    idpaciente:analytic.data().idpaciente
                 })
             })
            
@@ -44,7 +42,7 @@ export default class ListagemAnalytics extends Component{
         return(
             <div>
 
-                <Cabecalho />
+                <CabecalhoLogado />
                 <Container>
                 <Titulo>
                 Analytics
@@ -57,8 +55,7 @@ export default class ListagemAnalytics extends Component{
                         <th style={{fontWeight:"lighter"}}className="flex-Content">DOENÇA/DESCRIÇÃO</th>
                         <th style={{fontWeight:"lighter"}}className="flex-Content">IDADE</th>
                         <th style={{fontWeight:"lighter"}}className="flex-Content">ESPECIALIDADE DO MÉDICO</th>
-                        <th style={{fontWeight:"lighter"}}className="flex-Content">NOME</th>
-                        <th style={{fontWeight:"lighter"}}className="flex-Content">EMAIL</th> 
+                        <th style={{fontWeight:"lighter"}}className="flex-Content">PACIENTES</th>
                     </tr>
                 </TabelaH>
                 <tbody>
@@ -71,8 +68,7 @@ export default class ListagemAnalytics extends Component{
                             <td>{list.descricao}</td>
                             <td>{list.idade}</td>
                             <td>{list.idespecialidade}</td>
-                            <td>{list.nome}</td>
-                            <td>{list.email}</td>
+                            <td>{list.idpaciente}</td>
                         </TabelaR>
                         );
                     })

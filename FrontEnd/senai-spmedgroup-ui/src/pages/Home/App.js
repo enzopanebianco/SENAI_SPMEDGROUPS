@@ -5,8 +5,11 @@ import barrinha from '../../assets/imagens/1x/barrinha.png'
 import imgprontuario from '../../assets/imagens/ambulance-architecture-building-263402.jpg';
 import imgApp from '../../assets/imagens/1x/Ativo 2.png'
 import Cabecalho from '../Componentes/Cabecalho';
+import CabecalhoLogado from '../Componentes/CabecalhoLogado';
 import Rodape from '../Componentes/Rodape';
 import img from '../../assets/imagens/appointment-book-blur-care-40568.jpg'
+
+
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +22,21 @@ class App extends Component {
         cnpj: "",
         endereço: ""
         
+    }
+  }
+  checar(){
+    const token =localStorage.getItem("spmed-usuario");
+    if (token==null) {
+      return(
+        <Cabecalho />
+      );
+      
+      
+    }
+    else{
+     return(
+       <CabecalhoLogado />
+     );   
     }
   }
   //   Listar(){
@@ -35,8 +53,9 @@ class App extends Component {
   render() {
     
     return (
-      <div>
-        <Cabecalho />
+      <div>{
+        this.checar()
+      }
         <section className="banner">
           <img src={imgmedicos} alt="medicos" />
           <h2>SPMEDICALGROUP</h2>

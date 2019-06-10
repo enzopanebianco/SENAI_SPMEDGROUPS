@@ -5,7 +5,7 @@ import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom
 import App from '../src/pages/Home/App';
 import * as serviceWorker from './serviceWorker';
 import Login from '../src/pages/Login/login'
-import ConsultasMedicos from '../src/pages/Consultas/ConsultasMedicos'
+
 import CadastrarUsuario from '../src/pages/CadastrarUsuario/CadastrarUsuario';
 import {UsuarioAutenticado} from './services/auth';
 import AtualizarConsulta from  '../src/pages/Consultas/atualizarConsulta'
@@ -59,7 +59,7 @@ const rotas=(
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/login" component={Login} />
-                <PermissaoAdminMed path="/consultas/medicos" component={ConsultasMedicos} />
+             
                 <PermissaoAdmin path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
                 <PermissaoAdmin path="/todasconsultas/:id" component={AtualizarConsulta} />
@@ -68,7 +68,7 @@ const rotas=(
                 <PermissaoAdmin path="/cadastrarmedico" component={CadastrarMedico}/>
                 <PermissaoAdmin path="/cadastrarpaciente" component={CadastrarPaciente}/>
                 <PermissaoAdmin path="/analytics" component={ListagemAnalytics} />
-                <Permissao path="/pesquisa" component={CadastrarAnalytics} />
+                <PermissaoAdmin path="/pesquisa" component={CadastrarAnalytics} />
                 <Route component={NaoEncontrada} />
             </Switch>
         </div>

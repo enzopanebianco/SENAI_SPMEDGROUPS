@@ -165,6 +165,20 @@ namespace Senai_Spmedgroups_Web_Api.Controllers
                 return BadRequest();
             }
         }
+        [Route("/{id}")]
+        [HttpDelete]
+        public IActionResult Deletar(Agendamentos agendamentos)
+        {
+            try
+            {
+                AgendamentoRepository.Deletar(agendamentos);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
 
     }
 }

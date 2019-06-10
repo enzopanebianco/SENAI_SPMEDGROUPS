@@ -3,9 +3,11 @@ import Axios from 'axios';
 import Listagem from '../Componentes/Listagem';
 import { Link } from 'react-router-dom';
 import {Pesquisinha,Texto,LL} from './styles';
-import Cabecalho from '../Componentes/Cabecalho'; 
+import CabecalhoLogado from '../Componentes/CabecalhoLogado'; 
 import Rodape from '../Componentes/Rodape';
 import '../../assets/CSS/list.css';
+import api from '../../services/auth';  
+
 class ConsultasPacientes extends Component{
     constructor(){
         super();
@@ -28,13 +30,14 @@ class ConsultasPacientes extends Component{
                  'Authorization': "bearer " + tokenP
              }
          };
-         Axios.get('http://192.168.3.48:5000/api/agendamentos/usuarios',config)
+         api.get('agendamentos/usuarios',config)
              .then(data=>{
                  console.log(data);
                  this.setState({lista:data.data});
                
              })
              .catch(erro=>console.log(erro)) 
+            
         
          }
        
@@ -46,7 +49,7 @@ class ConsultasPacientes extends Component{
     render(){
         return(
             <div>
-              <Cabecalho />
+              <CabecalhoLogado />
               <div className="titulo">
                <h2>Consultas</h2>
                

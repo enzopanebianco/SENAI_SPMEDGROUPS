@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import firebase from '../../services/firebase';
-import Cabecalho from '../Componentes/Cabecalho';
 import {TituloCadastrar,ContainerFlex,CampoCadastro,CampoLabel,TextLabel,Input,BotaoCadastrar,Seletor} from './style';
 import imgpesquisa from '../../assets/imagens/imgpesquisa.jpg'
 import api from '../../services/auth';
+import CabecalhoLogado from '../Componentes/CabecalhoLogado';
 
 export default class CadastrarAnlytics extends Component {
     constructor() {
@@ -15,19 +15,10 @@ export default class CadastrarAnlytics extends Component {
             descricao: "",
             idade: "",
             listaE:[],
+            listaP:[],
             idespecialidade: "",
-            nome:"",
-            tipo:"",
-            email:""
+            idpaciente:""
         }
-    }
-    buscar (){
-        const value = localStorage.getItem("spmed-usuario");
-        let jwtdecode = require('jwt-decode');
-        this.setState({nome:jwtdecode(value).nome});
-        this.setState({email:jwtdecode(value).email});
-        
-      
     }
     cadastrar(event) {
         event.preventDefault();
@@ -38,8 +29,7 @@ export default class CadastrarAnlytics extends Component {
                 descricao: this.state.descricao,
                 idade: this.state.idade,
                 idespecialidade: this.state.idespecialidade,
-                nome:this.state.nome,
-                email:this.state.email
+                idpaciente: this.state.idpaciente,
             })
             .then(()=>{
                 alert("Muito Obrigado")
@@ -51,6 +41,14 @@ export default class CadastrarAnlytics extends Component {
     atualizaEstado(event){
         this.setState({[event.target.name] : event.target.value});
     }
+    buscarpaciente(){
+        api.get("pacientes")
+        .then(resposta=>{
+            const pacientes = resposta.data;
+            this.setState({listaP:pacientes});
+        })
+        console.log(this.listaP);
+    }
     buscarespecialidade(){
         api.get("especialidades")
         .then(resposta=>{
@@ -60,18 +58,18 @@ export default class CadastrarAnlytics extends Component {
     }
     componentDidMount(){
         this.buscarespecialidade();
-        this.buscar();
+        this.buscarpaciente();
     }
     render() {
         return (
             <div>
-                <Cabecalho />
+                <CabecalhoLogado />
                 <ContainerFlex>
                 <div>
                 <img src={imgpesquisa} style={{height:"497px",width:"700px",background:"blue",opacity:0.8}} />
                 </div>
                 <div style={{position:"relative",left:"0%"}}>
-                <TituloCadastrar>PESQUISA</TituloCadastrar>
+                <TituloCadastrar>CONSULTAS DESCRIÇÕES</TituloCadastrar>
                 <CampoCadastro onSubmit={this.cadastrar.bind(this)}>
                     <CampoLabel>
                         <TextLabel>Latitude</TextLabel>
@@ -98,6 +96,17 @@ export default class CadastrarAnlytics extends Component {
                             })
                         }
                     </Seletor>
+
+                    </CampoLabel>
+                    <CampoLabel>
+                        <TextLabel>Paciente</TextLabel>
+                        <Seletor name="idpaciente" value={this.state.pacientes} onChange={this.atualizaEstado.bind(this)}>
+                        <option value="0">Selecione</option>{
+                            this.state.listaP.map((element)=>{
+                                return <option key={element.id} value={element.idUsuarioNavigation.nome}>{element.idUsuarioNavigation.nome}</option>
+                            })
+                        }
+                        </Seletor>
                     </CampoLabel>
                     <BotaoCadastrar type="submit">Enviar</BotaoCadastrar>
                 </CampoCadastro>

@@ -15,6 +15,7 @@ namespace Senai_Spmedgroups_Web_Api.Interfaces
         List<Agendamentos> ListarPaciente(int id);
         List<Agendamentos> ListarMedico(int id);
         List<Agendamentos> Listar();
+        void Deletar(Agendamentos agendamentos);
         List<Agendamentos> ListarPeloId(int id);
         //Agendamentos ViewModel(List<ConsultaViewModel> lsconsultas);
 

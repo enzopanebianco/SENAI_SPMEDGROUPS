@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
 import Axios from 'axios';
-import Cabecalho from '../Componentes/Cabecalho' 
+import CabecalhoLogado from '../Componentes/CabecalhoLogado' 
 import Rodape from '../Componentes/Rodape';
 import Listagem from '../Componentes/Listagem';
 import { Link } from 'react-router-dom';
 import '../../assets/CSS/list.css';
+import api from '../../services/auth';
 import {decode} from '../../services/auth'
 class TodasConsultas extends Component{
     
@@ -69,7 +70,7 @@ class TodasConsultas extends Component{
             }
         };
         
-        Axios.post('http://192.168.3.48:5000/api/agendamentos',{
+        api.post("agendamentos",{
             idPaciente:this.state.idPaciente,
             idMedico:this.state.idMedico,
             dtAgendamento:this.state.dtAgendamento,
@@ -78,6 +79,7 @@ class TodasConsultas extends Component{
         },config)
         .then(data=>console.log(data))
         .catch(erro=>console.log(erro))
+      
     }
     listartodas(){
         let tokenL = localStorage.getItem("spmed-usuario");
@@ -87,7 +89,7 @@ class TodasConsultas extends Component{
                 'Authorization': "bearer " + tokenL
             }
         };
-        Axios.get('http://192.168.3.48:5000/api/agendamentos',config)
+        api.get('agendamentos',config)
         .then(data=>{
             console.log(data)
             this.setState({lista:data.data});
@@ -142,30 +144,27 @@ class TodasConsultas extends Component{
        
         return(
             <div>
-                <Cabecalho />
+                <CabecalhoLogado />
                 <div className="titulo">
                <h2>Consultas</h2>
                </div>
-                <section className="list">
+                <section className="listtype">
               
                 <table>
                     
                         <Listagem />
                   
-                           <tbody className="corpo">{
+                           <tbody className="corpolista">{
                         this.state.lista.map(function(consulta){
                             return(
                                 <tr key={consulta.id}>
-                                <td className="id">{consulta.id}</td>
-                                <td className="flex-list-td paci">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
-                                <td className="medi flex-list-td">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
-                                <td className="dat flex-list-td" value="date">{consulta.dtAgendamento}</td>
-                                <td className="descri flex-list-td">{consulta.descricao}</td>
-                                <td className="situ flex-list-td">{consulta.idSituacaoNavigation.nome}
-                                    <div className="edit">
-                                    <li><Link to="/consultas/${id}"><a>Editar</a></Link></li>
-                                    </div>
-                                <hr/>
+                                <td className="pad id">{consulta.id}</td>
+                                <td className="pad">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
+                                <td className="pad">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
+                                <td className="pad" >{consulta.dtAgendamento}</td>
+                                <td className="pad" style={{fontSize:"9pt"}}>{consulta.descricao}</td>
+                                <td className="pad">{consulta.idSituacaoNavigation.nome}
+                                    
                                 </td>
                             </tr>
                             );
@@ -221,7 +220,7 @@ class TodasConsultas extends Component{
                             <option value="3" className="cancelada">Cancelada</option>
                         </select>
                     </div>
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit" >Cadastrar</button>
                 </form>
                 </section>
                 <Rodape />  

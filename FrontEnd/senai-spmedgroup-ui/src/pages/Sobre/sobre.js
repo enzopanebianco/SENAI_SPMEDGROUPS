@@ -3,12 +3,28 @@ import Cabecalho from '../Componentes/Cabecalho';
 import imgfundo from '../../assets/imagens/logofundo.png';
 import imgmed from '../../assets/imagens/medico-11022016-1000x552.jpg';
 import Rodape from '../Componentes/Rodape';
+import CabecalhoLogado from '../Componentes/CabecalhoLogado'
 import '../../assets/CSS/sobre.css'
 class Sobre extends Component{
+    checar(){
+        const token =localStorage.getItem("spmed-usuario");
+        if (token==null) {
+          return(
+            <Cabecalho />
+          );
+          
+          
+        }
+        else{
+         return(
+           <CabecalhoLogado />
+         );   
+        }
+      }
     render(){
         return(
             <div>
-                <Cabecalho />
+                {this.checar()}
                 <section class="about">
                 <h2>SOBRE A CLÍNICA</h2>
                 <img src={imgfundo} />

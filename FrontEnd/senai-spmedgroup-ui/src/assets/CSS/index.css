@@ -43,6 +43,14 @@
     list-style-type: none;
     padding: 40px;    
 }
+.header-list ul li a:hover{
+    color: rgb(183, 247, 193);
+}
+.header-list p{
+    color: white;
+    font-size: 11pt;
+    font-weight: 600;
+}
 .header ul li a {
     color: white;
     text-decoration: none;
