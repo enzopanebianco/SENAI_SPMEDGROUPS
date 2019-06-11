@@ -253,7 +253,7 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80
   }
   .local{
     transform:translateY(70px); 
-    width: 1515px;
+   
     height: 700px;
     background-image:linear-gradient(to right,#5581e0,#5590e9);
     border-top: 10px solid #80E290;
@@ -323,7 +323,7 @@ clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70
     color: white;
 }
 .rodape{
-    width: 1516px;
+    
     height: 60px;
     background: #242424;
     position: relative;

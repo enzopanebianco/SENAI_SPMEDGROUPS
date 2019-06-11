@@ -17,6 +17,7 @@ import CadastrarMedico from '../src/pages/CadastrarMedico/cadastrarmedico';
 import CadastrarPaciente from  '../src/pages/CadastrarPaciente/cadastrarpaciente';
 import ListagemAnalytics from '../src/pages/DataAnalytics/ListagemAnalytics';
 import CadastrarAnalytics from '../src/pages/DataAnalytics/CadastrarAnalytics';
+import Admin from  '../src/pages/Administrador/admin'
 import NaoEncontrada from '../src/pages/Componentes/NaoEncontrada'
 const PermissaoAdmin = ({ component: Component }) => (
     <Route
@@ -59,7 +60,7 @@ const rotas=(
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/login" component={Login} />
-             
+                <Route path="/paineladministrador" component={Admin} />
                 <PermissaoAdmin path="/cadastrarusuario" component={CadastrarUsuario}/>
                 <PermissaoAdmin exact path="/todasconsultas" component={TodasConsultas} />
                 <PermissaoAdmin path="/todasconsultas/:id" component={AtualizarConsulta} />
