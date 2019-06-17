@@ -170,7 +170,7 @@ const styles =  StyleSheet.create({
     titulo:{
         color:"#80aade",
         textAlign:"center",
-        
+       
         position:"relative",
         left:155,
         height:30,

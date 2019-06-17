@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Rodape from '../Componentes/Rodape';
-import Cabecalho from '../Componentes/Cabecalho';
+import CabecalhoLogado from '../Componentes/CabecalhoLogado';
 import Axios from 'axios';
 
 class CadastrarPaciente extends Component{
@@ -56,11 +56,14 @@ class CadastrarPaciente extends Component{
     render(){
         return(
             <div>
-                <Cabecalho />
+                <CabecalhoLogado />
                 
                 <section className="cadastro">
-                    <h2>CADASTRAR PACIENTE</h2>
-                
+                <h2>Cadastro
+                <h2 style={{color:"#80e289",position:"relative",left:"0%"}}>
+                 Pacientes
+                </h2>
+                </h2>
                 <form onSubmit={this.cadastrarPaciente.bind(this)}>
                     <div className="item flexx">
                         <a>IDUSUARIO:</a>
@@ -71,7 +74,7 @@ class CadastrarPaciente extends Component{
                         <input type="text" value={this.state.cpf} onChange={this.atualizaEstadoCpf.bind(this)}/>
                         </div>
                     <div className="item flexx">
-                        <a>RG</a>
+                        <a>RG:</a>
                         <input type="text" value={this.state.rg} onChange={this.atualizaEstadoRg.bind(this)}/>
                        </div>
                     <div className="item flexx">
@@ -80,14 +83,14 @@ class CadastrarPaciente extends Component{
                        
                     </div>
                     <div className="item flexx">
-                        <a>Data Nascimento:</a>
+                        <a>Data Nascimento</a>
                         <input type="date" value={this.state.dtnascimento} onChange={this.atualizaEstadoData.bind(this)}/>
                        
                     </div>
                     <button type="submit">CADASTRAR</button>
                 </form>
                 </section>
-                <Rodape />
+               
             </div>
         );
     }

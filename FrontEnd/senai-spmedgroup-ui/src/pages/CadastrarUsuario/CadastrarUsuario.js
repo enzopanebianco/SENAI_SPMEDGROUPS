@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Axios from 'axios';
+
 import '../../assets/CSS/cadastro.css'
 import CabecalhoLogado from '../Componentes/CabecalhoLogado';
 import api from '../../services/auth';
@@ -63,7 +63,11 @@ class CadastrarUsuario extends Component{
             <div>
                 <CabecalhoLogado />
                 <section className="cadastro">
-                <h2>CadastrarUsuário</h2>
+                <h2>Cadastro
+                <h2 style={{color:"#80e289",position:"relative",left:"0%"}}>
+                 Usuários
+                </h2>
+                </h2>
                 <form onSubmit={this.Cadastrar.bind(this)}>
                     <div className="item">
                     <label>

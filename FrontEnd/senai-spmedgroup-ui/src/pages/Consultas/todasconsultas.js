@@ -4,9 +4,11 @@ import CabecalhoLogado from '../Componentes/CabecalhoLogado'
 import Rodape from '../Componentes/Rodape';
 import Listagem from '../Componentes/Listagem';
 import {DivAnalytics} from '../Componentes/styles';
+import {FaEllipsisH} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../../assets/CSS/list.css';
 import api from '../../services/auth';
+
 import {decode} from '../../services/auth'
 class TodasConsultas extends Component{
     
@@ -80,7 +82,7 @@ class TodasConsultas extends Component{
         },config)
         .then(data=>console.log(data))
         .catch(erro=>console.log(erro))
-      
+        this.listartodas();
     }
     listartodas(){
         let tokenL = localStorage.getItem("spmed-usuario");
@@ -140,6 +142,8 @@ class TodasConsultas extends Component{
         })
         console.log(this.listaM);
     }
+    
+    
     render(){
       
        
@@ -166,13 +170,14 @@ class TodasConsultas extends Component{
                                 <td className="pad">{consulta.idPacienteNavigation.idUsuarioNavigation.nome}</td>   
                                 <td className="pad">{consulta.idMedicoNavigation.idUsuarioNavigation.nome}</td>
                                 <td className="pad" >{consulta.dtAgendamento}</td>
-                                <td className="pad" style={{fontSize:"9pt"}}>{consulta.descricao}</td>
+                                
+                                <td   className="pad" style={{fontSize:"9pt"}}>{consulta.descricao}</td>
                                 <td className="pad">{consulta.idSituacaoNavigation.nome}
-                                <td>Editar</td>
+                                <Link to='/todasconsultas/:id'><td>Editar</td></Link>
                                 </td>
                             </tr>
                             );
-                        })
+                        }) 
                     }
                    
                     </tbody>
@@ -207,7 +212,7 @@ class TodasConsultas extends Component{
                     
                     <div className="item">
                         <a>data</a>
-                        <input type="date" value={this.state.dtAgendamento} onChange={this.atualizaDataForm} />
+                        <input type="date"  value={this.state.dtAgendamento} onChange={this.atualizaDataForm} />
                     </div>
                     
                     <div className="item">
@@ -224,11 +229,11 @@ class TodasConsultas extends Component{
                             <option value="3" className="cancelada">Cancelada</option>
                         </select>
                     </div>
-                    <button type="submit" >Cadastrar</button>
+                    <button type="submit"  >Cadastrar</button>
                 </form>
                 </section>
                 
-                <Rodape />  
+                 
             </div>
         );
     }

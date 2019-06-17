@@ -49,7 +49,8 @@
     padding: 40px;    
 }
 .header-list ul li a:hover{
-    color: rgb(183, 247, 193);
+    color: rgb(94, 255, 0);
+    text-shadow: 1px 1px 0px rgb(158, 154, 154);
 }
 .header-list p{
     color: white;
@@ -253,7 +254,7 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80
   }
   .local{
     transform:translateY(70px); 
-   
+    
     height: 700px;
     background-image:linear-gradient(to right,#5581e0,#5590e9);
     border-top: 10px solid #80E290;
@@ -274,15 +275,17 @@ clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80
    left: 100px;
    background: #5590e9;
    height: 280px;
+   
    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 .local-txt h3{
-    color: gray;
+    color: white;
     text-align: center;
     font-style: italic;
     transform: translateY(10px);
-    background: #fff;
+    background: #90bdde;
+
     font-size: 14pt;
     font-weight: lighter;
 }
@@ -356,35 +359,4 @@ clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70
 .local-clinica td{
     padding: 10px;
 }
-/* .sub-header-list{
-    color: white;
-    position: absolute;
-    right:1.6%;
-    width: 600px;
-    top: 11.5%;
-    background: #4390ba;
-    text-align: center;
-    border-radius: 50px 0px 0px 50px;
-    transition: 0.7s;
-   
-}
-.sub-header-list ul{
-    display: flex;
-    font-size: 10pt;
-    outline: none;
-}
-.sub-header-list ul li{
-    list-style-type: none;
-    padding: 9px;
-    transform: translateX(50px);
-    font-weight: bold;
-    
-}
-.sub-header-list ul li a{
-    text-decoration: none;
-}
-.sub-header-list ul li:hover{
-    background: #80bdde;
-    border-radius: 50px;
-    transition: 0.3s;
-} */
+

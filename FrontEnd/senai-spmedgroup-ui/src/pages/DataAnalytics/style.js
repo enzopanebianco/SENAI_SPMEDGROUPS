@@ -43,8 +43,8 @@ export const ContainerFlex = styled.div`
 `;
 export const CampoCadastro = styled.form`
     background-image:linear-gradient(to right,#5581e0,#5590e9);
-    width:830px;
-    height:458px;
+    width:835px;
+    height:457.5px;
     flex:1;
     //#5581e0
 `;

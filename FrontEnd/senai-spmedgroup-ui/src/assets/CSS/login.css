@@ -5,19 +5,24 @@
 .campo-Logar{
     position: relative;
     top: 20px;
+   
+   
 }
 .campo-Logar form {
     display: flex;
     justify-content: center;
    position: relative;
    right: 200px;
+  
 }
 .campo-Logar h2{
     font-style: normal;
     position: relative;
     color: #80e289;
-    text-shadow: 0.2px 0.2px 0px #000;
+    text-shadow: 0.2px 0.2px 0px gray;
     text-align: center;
+    font-weight: bolder;
+    
 }
 .item{
     padding: 1px;
@@ -33,6 +38,9 @@
     justify-content: center;
     display: flex;
 }
+.campo-Logar form input:focus{
+    background: beige;
+}
 .campo-Logar ::placeholder{
     font-size: 10pt;
     color: gray;
@@ -45,11 +53,16 @@
     background: #117fbb;
     color: white;
     box-shadow: none;
-    border: 1px solid rgb(136, 136, 136);
+    border: 1px solid #114dbb;
     border-radius: 20px;
     width: 90px;
     font-size: 11pt;
     font-weight: 500;
+}
+.campo-Logar button:hover{
+    cursor: pointer;
+    background: #114dbb;
+    box-sizing: inherit;
 }
 .campo-Logar button:active{
     background: #15aafa;

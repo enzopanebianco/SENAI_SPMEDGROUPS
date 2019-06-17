@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import api from '../../services/auth'
 import Cabecalho from '../Componentes/Cabecalho'
 import Rodape from '../Componentes/Rodape';
 import Listagem from '../Componentes/Listagem';
@@ -50,7 +50,7 @@ class AtualizarConsulta extends Component {
                 'Authorization': "bearer " + tokenA
             }
         };
-        Axios.put('http://localhost:5000/api/agendamentos', {
+        api.put('agendamentos', {
             id: this.state.id,
             idPaciente: this.state.idPaciente,
             idMedico: this.state.idMedico,
@@ -72,7 +72,7 @@ class AtualizarConsulta extends Component {
             }
         };
 
-        Axios.get('http://localhost:5000/api/agendamentos/' + this.state.id, config)
+        api.get('agendamentos/' + this.state.id, config)
             .then(data => {
                 console.log(data)
                 this.setState({ lista: data.data });
@@ -81,16 +81,17 @@ class AtualizarConsulta extends Component {
 
     }
     componentDidMount() {
-        const { match: { params } } = this.props;
-        console.log(params.id);
+        // const { match: { params } } = this.props.id;
+        // console.log(params.id);
 
-        const a = ({ match }) => { console.log(match.params.id) };
+        // // const a = ({ match }) => { console.log(match.params.id) };
         
-        Axios.get(`http://localhost:5000/api/agendamentos/${params.id}`)
-            .then(data => {
-                console.log(data);
-            });
-        // this.listar();
+        // api.get(`agendamentos/${params}`)
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+        //     .catch(erro=>console.log(erro));
+        // // this.listar();
     }
     render() {
         return (

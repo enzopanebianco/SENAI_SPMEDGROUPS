@@ -31,7 +31,7 @@ class Login extends Component{
                 //Verifica o tipo de usuário e redireciona para a página default
                 console.log(parseJwt().Role);
                 if(parseJwt().tipo === "0"){
-                  this.props.history.push("/todasconsultas");
+                  this.props.history.push("/paineladministrador");
                 } else {
                   this.props.history.push("/");
                 }
@@ -39,10 +39,18 @@ class Login extends Component{
             
        
         })
-        .catch(erro=>("erro login",erro))
-        
+        .catch(erro=>("erro login",erro)
+
+        )
         
     }
+    
+    
+    renderizaerro(){
+        return(
+            <div>Erro</div>
+        );
+    }  
     atualizaEstadoEmail(event){
         this.setState({email:event.target.value})
     }
@@ -73,9 +81,9 @@ class Login extends Component{
                     
                 <div className="aa">
                     
-            <Rodape />
             </div>
                     </section>
+            
             </div>
         );
     }

@@ -77,8 +77,8 @@
     right: 23%;
 }
 .cadastro form{
-    background: rgb(233, 233, 233);
-   
+    background: rgb(255, 255, 255);
+    border: 1px solid gray;
     height: 300px;
     width: 800px;
     text-align: center;
@@ -90,11 +90,17 @@
     position: relative;
     left: 18%;
     color: black;
+    text-transform: uppercase;
+    
+}
+.date{
+    width: 100px;
 }
 .item a{
     font-family: segoe ui;
     position: relative;
     right: 10px;
+    background: #f6f6f6;
 }
 .item input{    
     background:none ;
@@ -106,7 +112,7 @@
     outline: none;
 }
 .item select{
-    width: 80px;
+    width: 180px;
     color: rgb(0, 0, 0);
     border-radius: 6px;
     border: 0.25pt solid gray;
@@ -137,8 +143,14 @@
     height: 30px;
     width: 100px;
     color: white;
-    border: 1pt solid #e7e7e7;
+    border: 1pt solid #f7f6f6;
     border-radius: 12px;
+    cursor: pointer;
+}
+.cadastro button:hover{
+    background: #2d9c55;
+    box-sizing: inherit;
+    
 }
 .cadastro button:active{
     background: #2f5e34;

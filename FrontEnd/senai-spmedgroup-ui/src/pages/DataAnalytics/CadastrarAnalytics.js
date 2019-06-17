@@ -82,11 +82,11 @@ export default class CadastrarAnlytics extends Component {
                     </CampoLabel>
                     <CampoLabel>
                         <TextLabel>Descrição</TextLabel>
-                        <Input type="text" name="descricao" value={this.state.descricao} onChange={this.atualizaEstado.bind(this)} />
+                        <Input type="text" name="descricao" max="5" value={this.state.descricao} onChange={this.atualizaEstado.bind(this)} />
                     </CampoLabel>
                     <CampoLabel>
                         <TextLabel>Idade</TextLabel>
-                        <Input type="number" name="idade" value={this.state.idade} onChange={this.atualizaEstado.bind(this)} />
+                        <Input type="number" name="idade" min="0" max="100" value={this.state.idade} onChange={this.atualizaEstado.bind(this)} />
                     </CampoLabel>
                     <CampoLabel>
                         <TextLabel>Especialidade do Médico</TextLabel>
@@ -113,7 +113,7 @@ export default class CadastrarAnlytics extends Component {
                 </CampoCadastro>
                 </div>
                 </ContainerFlex>
-                <Rodape />
+               
             </div>
         );
     }

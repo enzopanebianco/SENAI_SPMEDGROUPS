@@ -1,7 +1,7 @@
 import React,{Component} from  'react';
 import Rodape from '../Componentes/Rodape';
 import Cabecalho from '../Componentes/Cabecalho';
-import Axios from 'axios';
+import api from '../../services/auth';
 
 class CadastrarMedico extends Component{
     constructor(){
@@ -24,7 +24,7 @@ class CadastrarMedico extends Component{
                 'Authorization': "bearer " + tokenMM
             }
         };
-        Axios.post('http://localhost:5000/api/medicos',{
+        api.post('medicos',{
             id:this.state.id,
             idusuario:this.state.idusuario,
             crm:this.state.crm,
@@ -43,7 +43,7 @@ class CadastrarMedico extends Component{
         this.setState({idespecialidade:event.target.value})
     }
     buscarespecialidade(){
-        Axios.get('http://localhost:5000/api/especialidades')
+        api.get('especialidades')
         .then(resposta=>{
             const especialidades = resposta.data;
             this.setState({listaE:especialidades});
@@ -58,7 +58,11 @@ class CadastrarMedico extends Component{
             <div>
                 <Cabecalho />
                 <section className="cadastro">                
-                <h2>CadastroDeMédicos</h2>
+                <h2>Cadastro
+                <h2 style={{color:"#80e289",position:"relative",left:"0%"}}>
+                 Médicos
+                </h2>
+                </h2>
                 <form onSubmit={this.cadastrarMedico.bind(this)}>
                     <div className="item">
                     <a>IDUSUÁRIO:</a>
@@ -85,7 +89,7 @@ class CadastrarMedico extends Component{
                 </form>
                 </section>
 
-                <Rodape />
+               
             </div>
         );
     }

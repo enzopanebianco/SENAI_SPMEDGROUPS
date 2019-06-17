@@ -14,8 +14,8 @@ function listagem (){
                         <th className="flex-list">Paciente</th>
                         <th className="flex-list">Médico</th>
                         <th className="flex-list">Data</th>
-                        <th className="flex-list">Descricao</th>
-                        <th className="flex-list">Situacao</th>
+                        <th className="flex-list">Descrição</th>
+                        <th className="flex-list">Situação</th>
                         </tr>
                     </thead>
             </section>

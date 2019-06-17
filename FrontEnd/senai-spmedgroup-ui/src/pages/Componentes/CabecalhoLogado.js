@@ -11,6 +11,7 @@ class CabecalhoLogado extends Component {
         super();
         this.state={
             nome:"",
+            tipo:""
         }
     }
      mostrar() {
@@ -57,7 +58,9 @@ class CabecalhoLogado extends Component {
                                 <h5  onClick={this.sair}>Sair  <FaSignOutAlt/></h5>
                                 
                             </Sair>
-
+                            { 
+                                
+                            }
                         </MenuSecreto>
                     </ul>
 
@@ -76,3 +79,4 @@ class CabecalhoLogado extends Component {
 
 
 export default CabecalhoLogado;
+
